@@ -14,30 +14,29 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CAAnimationDelegate {
   // MARK: - Methods
   func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
     // Override point for customization after application launch.
-    
     self.window = UIWindow(frame: UIScreen.main.bounds)
     self.window!.backgroundColor = UIColor(red: 157/255, green: 220/255, blue: 249/255, alpha: 1)
     self.window!.makeKeyAndVisible()
     
-    // rootViewController from StoryBoard
+    // RootViewController from Storyboard
     let mainStoryboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
     let navigationController = mainStoryboard.instantiateViewController(withIdentifier: "mainTabBarController") as UIViewController
     self.window!.rootViewController = navigationController
     
-    // logo mask
+    // Logo mask
     navigationController.view.layer.mask = CALayer()
     navigationController.view.layer.mask!.contents = UIImage(named: "Logo")!.cgImage
-    navigationController.view.layer.mask!.bounds = CGRect(x: 0, y: 0, width: 60, height: 60)
+    navigationController.view.layer.mask!.bounds = CGRect(x: 0, y: 0, width: 200, height: 200)
     navigationController.view.layer.mask!.anchorPoint = CGPoint(x: 0.5, y: 0.5)
     navigationController.view.layer.mask!.position = CGPoint(x: navigationController.view.frame.width / 2, y: navigationController.view.frame.height / 2)
     
-    // logo mask background view
+    // Logo mask background view
     let maskBgView = UIView(frame: navigationController.view.frame)
     maskBgView.backgroundColor = UIColor.white
     navigationController.view.addSubview(maskBgView)
     navigationController.view.bringSubview(toFront: maskBgView)
     
-    // logo mask animation
+    // Logo mask animation
     let transformAnimation = CAKeyframeAnimation(keyPath: "bounds")
     transformAnimation.delegate = self
     transformAnimation.duration = 1

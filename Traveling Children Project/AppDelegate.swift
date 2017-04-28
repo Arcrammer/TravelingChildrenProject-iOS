@@ -87,6 +87,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CAAnimationDelegate {
     flyingLogoBackgroundView.layer.add(logoOpacityAnimation, forKey: "opacityAnimation")
     
     // Root view animation
+    self.window!.rootViewController!.view.transform = CGAffineTransform(scaleX: 0.95, y: 0.95)
     UIView.animate(withDuration: 0.25,
       delay: 0.85,
       options: [],

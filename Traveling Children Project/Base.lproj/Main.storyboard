@@ -62,7 +62,7 @@
                             <constraint firstItem="eGs-va-946" firstAttribute="top" secondItem="tsR-hK-woN" secondAttribute="top" id="OfJ-Pm-16U"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="" id="acW-dT-cKf"/>
+                    <tabBarItem key="tabBarItem" title="" image="first" id="acW-dT-cKf"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="W5J-7L-Pyd" sceneMemberID="firstResponder"/>
             </objects>
@@ -139,8 +139,8 @@
                     <connections>
                         <segue destination="9pv-A4-QxB" kind="relationship" relationship="viewControllers" id="u7Y-xg-7CH"/>
                         <segue destination="8rJ-Kc-sve" kind="relationship" relationship="viewControllers" id="lzU-1b-eKA"/>
-                        <segue destination="DCl-Gl-1vl" kind="relationship" relationship="viewControllers" id="CLa-df-dus"/>
                         <segue destination="bzO-15-BLz" kind="relationship" relationship="viewControllers" id="YcX-dk-lWY"/>
+                        <segue destination="DCl-Gl-1vl" kind="relationship" relationship="viewControllers" id="CLa-df-dus"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HuB-VB-40B" sceneMemberID="firstResponder"/>
@@ -199,7 +199,7 @@
                             <constraint firstAttribute="trailing" secondItem="uR0-DY-TPZ" secondAttribute="trailing" id="vrs-rp-7J3"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="" image="second" id="ufm-pm-3dL"/>
+                    <tabBarItem key="tabBarItem" title="" image="first" id="ufm-pm-3dL"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Umn-Pv-fEO" sceneMemberID="firstResponder"/>
             </objects>
@@ -265,6 +265,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="first" width="30" height="30"/>
         <image name="second" width="30" height="30"/>
     </resources>
 </document>

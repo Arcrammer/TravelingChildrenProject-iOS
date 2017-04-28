@@ -31,7 +31,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CAAnimationDelegate {
     // Logo background animation
     UIView.animate(withDuration: 1.0, delay: 1.0, options: .curveEaseOut, animations: {
       flyingLogoBackgroundView.backgroundColor = UIColor.clear
-    }, completion: nil)
+    }, completion: {
+        _ in
+        
+        flyingLogoBackgroundView.removeFromSuperview()
+    })
 
     // Create the logo layer
     let flyingLogo = CALayer()
@@ -87,7 +91,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CAAnimationDelegate {
       delay: 0.85,
       options: [],
       animations: {
-        self.window!.rootViewController!.view.transform = CGAffineTransform(scaleX: 1.05, y: 1.05)
+        self.window!.rootViewController!.view.transform = CGAffineTransform(scaleX: 1.0, y: 1.0)
       }, completion: {
         finished in
 

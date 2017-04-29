@@ -19,14 +19,19 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CAAnimationDelegate {
     self.window!.makeKeyAndVisible()
     
     // Set the first view controller
-    let mainTabBarController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "mainTabBarController") as UIViewController
-    self.window!.rootViewController = mainTabBarController
+    let firstViewController: UIViewController
+    if (false) {
+      firstViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "mainAuthenticationView")
+    } else {
+      firstViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "mainTabBarView")
+    }
+    self.window!.rootViewController = firstViewController
 
     // Logo mask background view
-    let flyingLogoBackgroundView = UIView(frame: mainTabBarController.view.frame)
+    let flyingLogoBackgroundView = UIView(frame: firstViewController.view.frame)
     flyingLogoBackgroundView.backgroundColor = self.window!.backgroundColor
-    mainTabBarController.view.addSubview(flyingLogoBackgroundView)
-    mainTabBarController.view.bringSubview(toFront: flyingLogoBackgroundView)
+    firstViewController.view.addSubview(flyingLogoBackgroundView)
+    firstViewController.view.bringSubview(toFront: flyingLogoBackgroundView)
 
     // Create the logo layer
     let flyingLogo = CALayer()
@@ -34,10 +39,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CAAnimationDelegate {
     flyingLogo.contents = UIImage(named: "Logo")!.cgImage
     flyingLogo.bounds = CGRect(x: 0, y: 0, width: 200, height: 200)
     flyingLogo.anchorPoint = CGPoint(x: 0.5, y: 0.5)
-    flyingLogo.position = CGPoint(x: mainTabBarController.view.frame.width / 2, y: mainTabBarController.view.frame.height / 2)
+    flyingLogo.position = CGPoint(x: firstViewController.view.frame.width / 2, y: firstViewController.view.frame.height / 2)
     
     // Insert it above all the other sublayers
-    mainTabBarController.view.layer.insertSublayer(flyingLogo, at: UInt32(mainTabBarController.view.layer.sublayers!.count))
+    firstViewController.view.layer.insertSublayer(flyingLogo, at: UInt32(firstViewController.view.layer.sublayers!.count))
     
     // Logo scaling animation
     let logoScaleAnimation = CAKeyframeAnimation(keyPath: "bounds")

@@ -28,15 +28,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CAAnimationDelegate {
     mainTabBarController.view.addSubview(flyingLogoBackgroundView)
     mainTabBarController.view.bringSubview(toFront: flyingLogoBackgroundView)
 
-    // Logo background animation
-    UIView.animate(withDuration: 1.0, delay: 1.0, options: .curveEaseOut, animations: {
-      flyingLogoBackgroundView.backgroundColor = UIColor.clear
-    }, completion: {
-        _ in
-        
-        flyingLogoBackgroundView.removeFromSuperview()
-    })
-
     // Create the logo layer
     let flyingLogo = CALayer()
     flyingLogo.name = "flyingLogo"
@@ -95,6 +86,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CAAnimationDelegate {
         self.window!.rootViewController!.view.transform = CGAffineTransform(scaleX: 1.0, y: 1.0)
       }, completion: {
         finished in
+        flyingLogoBackgroundView.removeFromSuperview()
 
         UIView.animate(
           withDuration: 0.3,

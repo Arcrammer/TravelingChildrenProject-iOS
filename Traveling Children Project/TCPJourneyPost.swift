@@ -7,8 +7,11 @@
 import UIKit
 
 class TCPJourneyPost: UITableViewCell {
+  // MARK: - Outlets
   @IBOutlet var titleLabel: UILabel!
-
+  @IBOutlet var bodyCopy: UITextView!
+  
+  // MARK: - Methods
   required init?(coder: NSCoder) {
     super.init(coder: coder)
   }

@@ -37,7 +37,10 @@ class TCPJourneyPostController: UIViewController, UITableViewDelegate, UITableVi
    * Grabs journeys from the server
    */
   private func loadJourneys() {
-    let journeyTask = URLSession.shared.dataTask(with: URL(string: "http://10.0.0.8:3000/api/journeys")!) {
+    var journeyRequest = URLRequest(url: URL(string: "http://10.0.0.8:3000/api/journeys")!)
+    journeyRequest.httpMethod = "POST"
+    
+    let journeyTask = URLSession.shared.dataTask(with: journeyRequest) {
       data, response, error in
       
       // Make sure there aren't any errors
@@ -60,12 +63,17 @@ class TCPJourneyPostController: UIViewController, UITableViewDelegate, UITableVi
       
       for serializedJourney in journeys {
         guard let title = serializedJourney["title"] as? String,
-          let travelerName = serializedJourney["traveler_name"] as? String else {
+          let travelerName = serializedJourney["traveler_name"] as? String,
+          let body = serializedJourney["body"] as? String else {
           print("Missing journey data for journey with _id:", serializedJourney["_id"]!)
           return
         }
 
-        let journeyPost = Journey(title: title, travelerName: travelerName)
+        let journeyPost = Journey(
+          title: title,
+          travelerName: travelerName,
+          body: body
+        )
         
         self.journeyPosts.insert(journeyPost, at: self.journeyPosts.count)
       }
@@ -84,8 +92,9 @@ class TCPJourneyPostController: UIViewController, UITableViewDelegate, UITableVi
     let journeyPost = tableView.dequeueReusableCell(withIdentifier: "journeyPostCell") as! TCPJourneyPost
     let journey = self.journeyPosts[indexPath.row]
 
-    // Set the view properties starting with the title
+    // Set the view properties
     journeyPost.titleLabel.text = "TC Journey to " + journey.title
+    journeyPost.bodyCopy.text = journey.body
     
     return journeyPost
   }

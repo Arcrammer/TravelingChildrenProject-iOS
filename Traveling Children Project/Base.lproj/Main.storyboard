@@ -27,7 +27,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" keyboardDismissMode="onDrag" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="171" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="nE4-nT-rp5">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" keyboardDismissMode="onDrag" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="171" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="nE4-nT-rp5">
                                 <rect key="frame" x="0.0" y="75" width="414" height="612"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
@@ -160,14 +160,20 @@
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="75"/>
                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="MY JOURNEYS" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CbU-rH-0Ui">
-                                                    <rect key="frame" x="20" y="20" width="139" height="47"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="MY JOURNEYS" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CbU-rH-0Ui">
+                                                    <rect key="frame" x="8.0000000000000071" y="32" width="119.66666666666669" height="35"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="35" id="djT-O5-l8Y"/>
+                                                    </constraints>
                                                     <fontDescription key="fontDescription" name="ProximaSansRegular" family="ProximaSansRegular" pointSize="18"/>
                                                     <color key="textColor" white="0.1032924107" alpha="1" colorSpace="calibratedWhite"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
+                                            <constraints>
+                                                <constraint firstItem="CbU-rH-0Ui" firstAttribute="top" secondItem="qwJ-5k-w4b" secondAttribute="top" constant="32" id="aRg-5I-6Ne"/>
+                                                <constraint firstItem="CbU-rH-0Ui" firstAttribute="leading" secondItem="qwJ-5k-w4b" secondAttribute="leading" constant="8" id="ozl-Dp-khu"/>
+                                            </constraints>
                                         </view>
                                         <blurEffect style="light"/>
                                     </visualEffectView>
@@ -257,14 +263,20 @@
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="75"/>
                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="LIKED JOURNEYS" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vho-x7-7Uh">
-                                                    <rect key="frame" x="20" y="20" width="172" height="47"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="LIKED JOURNEYS" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vho-x7-7Uh">
+                                                    <rect key="frame" x="8" y="32" width="140.33333333333334" height="35"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="35" id="fOD-I6-swU"/>
+                                                    </constraints>
                                                     <fontDescription key="fontDescription" name="ProximaSansRegular" family="ProximaSansRegular" pointSize="18"/>
                                                     <color key="textColor" white="0.1032924107" alpha="1" colorSpace="calibratedWhite"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
+                                            <constraints>
+                                                <constraint firstItem="Vho-x7-7Uh" firstAttribute="top" secondItem="APS-jm-4gV" secondAttribute="top" constant="32" id="12Z-MT-NSV"/>
+                                                <constraint firstItem="Vho-x7-7Uh" firstAttribute="leading" secondItem="APS-jm-4gV" secondAttribute="leading" constant="8" id="rkG-ZR-FZG"/>
+                                            </constraints>
                                         </view>
                                         <blurEffect style="light"/>
                                     </visualEffectView>
@@ -294,10 +306,10 @@
             </objects>
             <point key="canvasLocation" x="1610" y="-321"/>
         </scene>
-        <!--Second View Controller-->
+        <!--Journey Post Controller-->
         <scene sceneID="oIf-xb-0Ga">
             <objects>
-                <viewController id="DCl-Gl-1vl" customClass="SecondViewController" customModule="Traveling_Children_Project" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="DCl-Gl-1vl" customClass="TCPJourneyPostController" customModule="Traveling_Children_Project" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="rMc-dC-YN6"/>
                         <viewControllerLayoutGuide type="bottom" id="RD8-Ai-sxw"/>
@@ -315,14 +327,20 @@
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="75"/>
                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="NAVIGATOR" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kD0-vG-ybN">
-                                                    <rect key="frame" x="20" y="20" width="139" height="47"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="NAVIGATOR" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kD0-vG-ybN">
+                                                    <rect key="frame" x="8" y="32" width="99" height="35"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="35" id="uBd-xQ-7mb"/>
+                                                    </constraints>
                                                     <fontDescription key="fontDescription" name="ProximaSansRegular" family="ProximaSansRegular" pointSize="18"/>
                                                     <color key="textColor" white="0.1032924107" alpha="1" colorSpace="calibratedWhite"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
+                                            <constraints>
+                                                <constraint firstItem="kD0-vG-ybN" firstAttribute="top" secondItem="Ej3-in-as6" secondAttribute="top" constant="32" id="8pM-mh-u6n"/>
+                                                <constraint firstItem="kD0-vG-ybN" firstAttribute="leading" secondItem="Ej3-in-as6" secondAttribute="leading" constant="8" id="sse-qw-6s4"/>
+                                            </constraints>
                                         </view>
                                         <blurEffect style="light"/>
                                     </visualEffectView>

@@ -8,7 +8,7 @@ import UIKit
 
 class TCPJourneyPostController: UIViewController, UITableViewDelegate, UITableViewDataSource {
   // MARK: - Outlets
-  @IBOutlet var journeyTable: UITableView!
+  @IBOutlet var journeyTable: UITableView?
   
   // MARK: - Actions
   @IBAction func loadData(_ sender: UIButton) {
@@ -21,6 +21,13 @@ class TCPJourneyPostController: UIViewController, UITableViewDelegate, UITableVi
   // MARK: - Methods
   override func viewDidLoad() {
     super.viewDidLoad()
+    
+    guard let journeyTable = journeyTable else {
+      print("Btw... No journey table view in this view controller")
+      return
+    }
+    
+    self.journeyTable = journeyTable
     
     // Ask the server for some journeys
     loadJourneys()
@@ -80,7 +87,7 @@ class TCPJourneyPostController: UIViewController, UITableViewDelegate, UITableVi
       
       // Reload table view data
       DispatchQueue.main.async(execute: {
-        self.journeyTable.reloadData()
+        self.journeyTable!.reloadData()
       })
     }
     

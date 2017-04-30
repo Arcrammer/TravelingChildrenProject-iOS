@@ -82,7 +82,10 @@
                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="JOURNEY BLOG" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="o2O-zO-m9S">
-                                                    <rect key="frame" x="8" y="32" width="130" height="35"/>
+                                                    <rect key="frame" x="8" y="28" width="130" height="35"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="35" id="3B7-Fz-6Jo"/>
+                                                    </constraints>
                                                     <fontDescription key="fontDescription" name="ProximaSansRegular" family="ProximaSansRegular" pointSize="18"/>
                                                     <color key="textColor" white="0.10329241071428572" alpha="1" colorSpace="calibratedWhite"/>
                                                     <nil key="highlightedColor"/>
@@ -101,10 +104,9 @@
                                             </subviews>
                                             <constraints>
                                                 <constraint firstAttribute="trailing" secondItem="tmm-K8-jXH" secondAttribute="trailing" constant="8" id="2fV-BR-Td7"/>
-                                                <constraint firstAttribute="bottom" secondItem="o2O-zO-m9S" secondAttribute="bottom" constant="8" id="KWd-b7-Ri7"/>
                                                 <constraint firstItem="o2O-zO-m9S" firstAttribute="leading" secondItem="TCb-qi-fnO" secondAttribute="leading" constant="8" id="rcA-ND-AXn"/>
                                                 <constraint firstItem="tmm-K8-jXH" firstAttribute="top" secondItem="TCb-qi-fnO" secondAttribute="top" constant="32" id="vZu-05-PKg"/>
-                                                <constraint firstItem="o2O-zO-m9S" firstAttribute="top" secondItem="TCb-qi-fnO" secondAttribute="top" constant="32" id="w7U-DD-BHn"/>
+                                                <constraint firstItem="o2O-zO-m9S" firstAttribute="top" secondItem="TCb-qi-fnO" secondAttribute="top" constant="28" id="w7U-DD-BHn"/>
                                             </constraints>
                                         </view>
                                         <blurEffect style="light"/>
@@ -161,7 +163,7 @@
                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="MY JOURNEYS" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CbU-rH-0Ui">
-                                                    <rect key="frame" x="8.0000000000000071" y="32" width="119.66666666666669" height="35"/>
+                                                    <rect key="frame" x="8.0000000000000071" y="28" width="119.66666666666669" height="35"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="35" id="djT-O5-l8Y"/>
                                                     </constraints>
@@ -171,7 +173,7 @@
                                                 </label>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="CbU-rH-0Ui" firstAttribute="top" secondItem="qwJ-5k-w4b" secondAttribute="top" constant="32" id="aRg-5I-6Ne"/>
+                                                <constraint firstItem="CbU-rH-0Ui" firstAttribute="top" secondItem="qwJ-5k-w4b" secondAttribute="top" constant="28" id="aRg-5I-6Ne"/>
                                                 <constraint firstItem="CbU-rH-0Ui" firstAttribute="leading" secondItem="qwJ-5k-w4b" secondAttribute="leading" constant="8" id="ozl-Dp-khu"/>
                                             </constraints>
                                         </view>
@@ -264,7 +266,7 @@
                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="LIKED JOURNEYS" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vho-x7-7Uh">
-                                                    <rect key="frame" x="8" y="32" width="140.33333333333334" height="35"/>
+                                                    <rect key="frame" x="8" y="28" width="140.33333333333334" height="35"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="35" id="fOD-I6-swU"/>
                                                     </constraints>
@@ -274,7 +276,7 @@
                                                 </label>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="Vho-x7-7Uh" firstAttribute="top" secondItem="APS-jm-4gV" secondAttribute="top" constant="32" id="12Z-MT-NSV"/>
+                                                <constraint firstItem="Vho-x7-7Uh" firstAttribute="top" secondItem="APS-jm-4gV" secondAttribute="top" constant="28" id="12Z-MT-NSV"/>
                                                 <constraint firstItem="Vho-x7-7Uh" firstAttribute="leading" secondItem="APS-jm-4gV" secondAttribute="leading" constant="8" id="rkG-ZR-FZG"/>
                                             </constraints>
                                         </view>
@@ -328,7 +330,7 @@
                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="NAVIGATOR" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kD0-vG-ybN">
-                                                    <rect key="frame" x="8" y="32" width="99" height="35"/>
+                                                    <rect key="frame" x="8" y="28" width="99" height="35"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="35" id="uBd-xQ-7mb"/>
                                                     </constraints>
@@ -338,7 +340,7 @@
                                                 </label>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="kD0-vG-ybN" firstAttribute="top" secondItem="Ej3-in-as6" secondAttribute="top" constant="32" id="8pM-mh-u6n"/>
+                                                <constraint firstItem="kD0-vG-ybN" firstAttribute="top" secondItem="Ej3-in-as6" secondAttribute="top" constant="28" id="8pM-mh-u6n"/>
                                                 <constraint firstItem="kD0-vG-ybN" firstAttribute="leading" secondItem="Ej3-in-as6" secondAttribute="leading" constant="8" id="sse-qw-6s4"/>
                                             </constraints>
                                         </view>

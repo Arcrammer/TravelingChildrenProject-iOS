@@ -21,9 +21,6 @@ class TCPNavigatorController: UIViewController, UITableViewDelegate, UITableView
   
   // MARK: - Methods
   override func viewWillAppear(_ animated: Bool) {
-    // Remove extra cell separators
-    self.menuTable.tableFooterView = UIView()
-    
     // Make the tab bar orange
     self.tabBarController!.tabBar.barTintColor = UIColor.TCPOrange
   }
@@ -37,10 +34,28 @@ class TCPNavigatorController: UIViewController, UITableViewDelegate, UITableView
     navigatorCell.selectedBackgroundView = UIView()
     navigatorCell.selectedBackgroundView!.backgroundColor = UIColor.TCPLightBrown
     
+    // Custom (thicker) separators
+    let separatorWidth: CGFloat = 3
+    let separator = UIView(frame: CGRect(
+      x: 0,
+      y: navigatorCell.frame.size.height - separatorWidth,
+      width: navigatorCell.frame.size.width,
+      height: separatorWidth)
+    )
+    separator.backgroundColor = UIColor.TCPLightBrown
+    navigatorCell.addSubview(separator)
+    separator.leadingAnchor.constraint(equalTo: navigatorCell.leadingAnchor)
+    separator.trailingAnchor.constraint(equalTo: navigatorCell.trailingAnchor)
+    
     return navigatorCell
   }
   
   func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
     return self.menuLabels.count
+  }
+  
+  // MARK: - UITableViewDelegate Methods
+  func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+    tableView.deselectRow(at: indexPath, animated: false)
   }
 }

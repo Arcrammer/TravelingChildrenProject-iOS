@@ -306,10 +306,10 @@
             </objects>
             <point key="canvasLocation" x="1610" y="-321"/>
         </scene>
-        <!--Journey Post Controller-->
+        <!--Navigator Controller-->
         <scene sceneID="oIf-xb-0Ga">
             <objects>
-                <viewController id="DCl-Gl-1vl" customClass="TCPJourneyPostController" customModule="Traveling_Children_Project" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="DCl-Gl-1vl" customClass="TCPNavigatorController" customModule="Traveling_Children_Project" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="rMc-dC-YN6"/>
                         <viewControllerLayoutGuide type="bottom" id="RD8-Ai-sxw"/>
@@ -353,22 +353,50 @@
                                     <constraint firstAttribute="trailing" secondItem="oLg-lo-wEO" secondAttribute="trailing" id="uKq-oy-eSj"/>
                                 </constraints>
                             </view>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="70" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="xE3-cT-T5E">
+                                <rect key="frame" x="0.0" y="75" width="414" height="612"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <color key="separatorColor" red="0.37254901960784315" green="0.22352941176470587" blue="0.090196078431372548" alpha="1" colorSpace="calibratedRGB"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="0.0" shouldIndentWhileEditing="NO" reuseIdentifier="navigatorCell" id="ZqO-b1-vHN">
+                                        <rect key="frame" x="0.0" y="28" width="414" height="70"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ZqO-b1-vHN" id="Hf9-qc-mft">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="69.666666666666671"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="DCl-Gl-1vl" id="GKi-xn-P1g"/>
+                                    <outlet property="delegate" destination="DCl-Gl-1vl" id="x29-gA-tk7"/>
+                                </connections>
+                            </tableView>
                         </subviews>
                         <color key="backgroundColor" red="0.23137254901960785" green="0.14117647058823529" blue="0.086274509803921567" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
+                            <constraint firstItem="RD8-Ai-sxw" firstAttribute="top" secondItem="xE3-cT-T5E" secondAttribute="bottom" id="24g-gd-5Yu"/>
                             <constraint firstItem="sSI-cC-JBN" firstAttribute="top" secondItem="IfK-g1-2Cj" secondAttribute="top" id="9WT-wf-kaF"/>
                             <constraint firstItem="sSI-cC-JBN" firstAttribute="top" secondItem="IfK-g1-2Cj" secondAttribute="top" id="DLg-GK-S3G"/>
+                            <constraint firstAttribute="trailing" secondItem="xE3-cT-T5E" secondAttribute="trailing" id="GM2-ul-n4R"/>
                             <constraint firstAttribute="trailing" secondItem="sSI-cC-JBN" secondAttribute="trailing" id="e1m-5R-bsa"/>
+                            <constraint firstItem="xE3-cT-T5E" firstAttribute="top" secondItem="sSI-cC-JBN" secondAttribute="bottom" id="eGx-Ji-gCK"/>
                             <constraint firstItem="sSI-cC-JBN" firstAttribute="leading" secondItem="IfK-g1-2Cj" secondAttribute="leading" id="fo3-rG-KqA"/>
                             <constraint firstItem="sSI-cC-JBN" firstAttribute="leading" secondItem="IfK-g1-2Cj" secondAttribute="leading" id="iPI-Q3-VKU"/>
+                            <constraint firstItem="xE3-cT-T5E" firstAttribute="leading" secondItem="IfK-g1-2Cj" secondAttribute="leading" id="p8O-3g-lMF"/>
                             <constraint firstAttribute="trailing" secondItem="sSI-cC-JBN" secondAttribute="trailing" id="pen-ph-M27"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="" image="second" id="1HB-vp-oet"/>
+                    <connections>
+                        <outlet property="menuTable" destination="xE3-cT-T5E" id="JZU-ub-KLc"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xa6-V7-lSY" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1609" y="359"/>
+            <point key="canvasLocation" x="1608.6956521739132" y="358.69565217391306"/>
         </scene>
     </scenes>
     <resources>

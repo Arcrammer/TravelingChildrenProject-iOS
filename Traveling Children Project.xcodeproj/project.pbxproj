@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		11296B8E1EA44AB500DFFE3A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11296B8D1EA44AB500DFFE3A /* AppDelegate.swift */; };
 		11296B901EA44AB500DFFE3A /* TCPJourneyPostController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11296B8F1EA44AB500DFFE3A /* TCPJourneyPostController.swift */; };
-		11296B921EA44AB500DFFE3A /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11296B911EA44AB500DFFE3A /* SecondViewController.swift */; };
 		11296B951EA44AB500DFFE3A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 11296B931EA44AB500DFFE3A /* Main.storyboard */; };
 		11296B971EA44AB500DFFE3A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 11296B961EA44AB500DFFE3A /* Assets.xcassets */; };
 		11296B9A1EA44AB500DFFE3A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 11296B981EA44AB500DFFE3A /* LaunchScreen.storyboard */; };
@@ -24,7 +23,6 @@
 		11296B8A1EA44AB500DFFE3A /* Traveling Children Project.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Traveling Children Project.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		11296B8D1EA44AB500DFFE3A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		11296B8F1EA44AB500DFFE3A /* TCPJourneyPostController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TCPJourneyPostController.swift; sourceTree = "<group>"; };
-		11296B911EA44AB500DFFE3A /* SecondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
 		11296B941EA44AB500DFFE3A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		11296B961EA44AB500DFFE3A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		11296B991EA44AB500DFFE3A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -96,7 +94,6 @@
 			children = (
 				11EDC0961EACEE0D003A0ADD /* TCPTabBarController.swift */,
 				11296B8F1EA44AB500DFFE3A /* TCPJourneyPostController.swift */,
-				11296B911EA44AB500DFFE3A /* SecondViewController.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -270,7 +267,6 @@
 			files = (
 				11FD85A81EB55FEA00FBDE55 /* Journey.swift in Sources */,
 				11EDC0971EACEE0D003A0ADD /* TCPTabBarController.swift in Sources */,
-				11296B921EA44AB500DFFE3A /* SecondViewController.swift in Sources */,
 				11FD85A51EB50CFD00FBDE55 /* TCPJourneyPost.swift in Sources */,
 				11296B8E1EA44AB500DFFE3A /* AppDelegate.swift in Sources */,
 				11296B901EA44AB500DFFE3A /* TCPJourneyPostController.swift in Sources */,

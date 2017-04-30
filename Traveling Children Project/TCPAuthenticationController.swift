@@ -78,4 +78,12 @@ class TCPAuthenticationController: UIViewController, UIGestureRecognizerDelegate
 
     return true
   }
+  
+  func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+    if textField.tag == 4 && range.location >= 4 {
+      return false
+    } else {
+      return true
+    }
+  }
 }

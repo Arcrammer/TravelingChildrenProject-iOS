@@ -6,6 +6,14 @@
 //
 import UIKit
 
+// Official TCP colors
+extension UIColor {
+  static let TCPBrown = UIColor(red: 59/255, green: 36/255, blue: 22/255, alpha: 1)
+  static let TCPLightBrown = UIColor(red: 95/255, green: 57/255, blue: 23/255, alpha: 1)
+  static let TCPOrange = UIColor(red: 241/255, green: 102/255, blue: 35/255, alpha: 1)
+  static let TCPYellow = UIColor(red: 254/255, green: 225/255, blue: 136/255, alpha: 1)
+}
+
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate, CAAnimationDelegate {
   // MARK: - Properties

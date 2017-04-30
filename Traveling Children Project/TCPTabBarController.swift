@@ -12,7 +12,7 @@ class TCPTabBarController: UITabBarController {
     // Do any additional setup after loading the view, typically from a nib.
   }
   
-  override func viewDidLayoutSubviews() {
+  override func viewWillAppear(_ animated: Bool) {
     // Remove tab bar titles
     for tab in tabBar.items! {
       tab.title = nil

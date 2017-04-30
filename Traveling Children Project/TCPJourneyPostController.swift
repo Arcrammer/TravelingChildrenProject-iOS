@@ -21,9 +21,10 @@ class TCPJourneyPostController: UIViewController, UITableViewDelegate, UITableVi
   // MARK: - Methods
   override func viewDidLoad() {
     super.viewDidLoad()
-    
+
+    // TODO: TODO: Make sure we always have a journey table
     guard let journeyTable = journeyTable else {
-      print("Btw... No journey table view in this view controller")
+      print("No journey table view in this view controller")
       return
     }
     
@@ -33,6 +34,12 @@ class TCPJourneyPostController: UIViewController, UITableViewDelegate, UITableVi
     loadJourneys()
   }
 
+  override func viewWillAppear(_ animated: Bool) {
+    // Reset tab bar colors
+    self.tabBarController!.tabBar.barTintColor = UIColor.TCPBrown // Background
+    self.tabBarController!.tabBar.unselectedItemTintColor = UIColor.TCPLightBrown // Light brown unselected icons
+  }
+  
   override func didReceiveMemoryWarning() {
     super.didReceiveMemoryWarning()
     // Dispose of any resources that can be recreated.

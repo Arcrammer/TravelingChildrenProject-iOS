@@ -20,9 +20,12 @@ class TCPNavigatorController: UIViewController, UITableViewDelegate, UITableView
   ]
   
   // MARK: - Methods
-  override func viewDidLoad() {
+  override func viewWillAppear(_ animated: Bool) {
     // Remove extra cell separators
     self.menuTable.tableFooterView = UIView()
+    
+    // Make the tab bar orange
+    self.tabBarController!.tabBar.barTintColor = UIColor.TCPOrange
   }
   
   // MARK: - UITableViewDataSource Methods
@@ -32,7 +35,7 @@ class TCPNavigatorController: UIViewController, UITableViewDelegate, UITableView
     navigatorCell.textLabel!.textColor = UIColor.white
     navigatorCell.textLabel!.font = UIFont(name: "ProximaSansRegular", size: 20)
     navigatorCell.selectedBackgroundView = UIView()
-    navigatorCell.selectedBackgroundView!.backgroundColor = UIColor(red: 95/255, green: 57/255, blue: 23/255, alpha: 1)
+    navigatorCell.selectedBackgroundView!.backgroundColor = UIColor.TCPLightBrown
     
     return navigatorCell
   }

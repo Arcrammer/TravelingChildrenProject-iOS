@@ -57,7 +57,8 @@
 	</array>
 	<key>UIAppFonts</key>
 	<array>
-		<string>Proxima Sans Regular.ttf</string>
+		<string>ProximaNova-Regular.ttf</string>
+		<string>ProximaNova-Semibold.ttf</string>
 	</array>
 </dict>
 </plist>

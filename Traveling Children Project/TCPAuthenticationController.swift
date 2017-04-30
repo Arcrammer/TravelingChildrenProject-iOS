@@ -10,6 +10,7 @@ class TCPAuthenticationController: UIViewController, UIGestureRecognizerDelegate
   // MARK: - Outlets
   @IBOutlet var container: UIView!
   @IBOutlet var scrollViewBottom: NSLayoutConstraint!
+  @IBOutlet var firstFormField: UITextField!
 
   // MARK: - Actions
   @IBAction func handleContainerTap(_ sender: Any) {
@@ -22,13 +23,25 @@ class TCPAuthenticationController: UIViewController, UIGestureRecognizerDelegate
     // Give the form view rounded corners
     self.container.layer.cornerRadius = 10
     
+    // Give the launch animation a chance to finish then show
+    // the keyboard if this is the root view controller
+    if UIApplication.shared.keyWindow!.rootViewController! == self {
+      if let firstFormField = self.firstFormField {
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.75, execute: {
+          firstFormField.becomeFirstResponder()
+        })
+      }
+    } else {
+      // Select the first field without delay
+      self.firstFormField.becomeFirstResponder()
+    }
+    
     // Watch the keyboard so we can adjust the bottom position of the scroll view when it shows and hides
     NotificationCenter.default.addObserver(self, selector: #selector(keyboardDidShow), name: .UIKeyboardDidShow, object: nil)
     NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name: .UIKeyboardWillHide, object: nil)
   }
-
+  
   override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-    // Dismiss the keyboard
     self.view.endEditing(true)
   }
   

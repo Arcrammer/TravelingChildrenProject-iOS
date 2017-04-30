@@ -16,6 +16,7 @@
 		11B73D5A1EB4DDB600E83D89 /* Proxima Sans Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 11B73D591EB4DDB600E83D89 /* Proxima Sans Regular.ttf */; };
 		11EDC0971EACEE0D003A0ADD /* TCPTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11EDC0961EACEE0D003A0ADD /* TCPTabBarController.swift */; };
 		11FD85A51EB50CFD00FBDE55 /* TCPJourneyPost.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11FD85A41EB50CFD00FBDE55 /* TCPJourneyPost.swift */; };
+		11FD85A81EB55FEA00FBDE55 /* Journey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11FD85A71EB55FEA00FBDE55 /* Journey.swift */; };
 		994E0B2C02D51B764D9F0A19 /* Pods_Traveling_Children_Project.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8687EB342DE5C63457F43643 /* Pods_Traveling_Children_Project.framework */; };
 /* End PBXBuildFile section */
 
@@ -31,6 +32,7 @@
 		11B73D591EB4DDB600E83D89 /* Proxima Sans Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Proxima Sans Regular.ttf"; sourceTree = "<group>"; };
 		11EDC0961EACEE0D003A0ADD /* TCPTabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TCPTabBarController.swift; sourceTree = "<group>"; };
 		11FD85A41EB50CFD00FBDE55 /* TCPJourneyPost.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TCPJourneyPost.swift; sourceTree = "<group>"; };
+		11FD85A71EB55FEA00FBDE55 /* Journey.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Journey.swift; sourceTree = "<group>"; };
 		362A35C5C5B646F5CA1B420F /* Pods-Traveling Children Project.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Traveling Children Project.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Traveling Children Project/Pods-Traveling Children Project.debug.xcconfig"; sourceTree = "<group>"; };
 		8687EB342DE5C63457F43643 /* Pods_Traveling_Children_Project.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Traveling_Children_Project.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BBE5ACA350C127DA75C08D8E /* Pods-Traveling Children Project.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Traveling Children Project.release.xcconfig"; path = "Pods/Target Support Files/Pods-Traveling Children Project/Pods-Traveling Children Project.release.xcconfig"; sourceTree = "<group>"; };
@@ -70,6 +72,7 @@
 			isa = PBXGroup;
 			children = (
 				11296B8D1EA44AB500DFFE3A /* AppDelegate.swift */,
+				11FD85A91EB55FEE00FBDE55 /* Models */,
 				11FD85A61EB50D0400FBDE55 /* Views */,
 				11EDC0941EACEDBB003A0ADD /* Controllers */,
 				11EDC0951EACEDCA003A0ADD /* Storyboards */,
@@ -113,6 +116,14 @@
 				11FD85A41EB50CFD00FBDE55 /* TCPJourneyPost.swift */,
 			);
 			name = Views;
+			sourceTree = "<group>";
+		};
+		11FD85A91EB55FEE00FBDE55 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				11FD85A71EB55FEA00FBDE55 /* Journey.swift */,
+			);
+			name = Models;
 			sourceTree = "<group>";
 		};
 		25EE24C6FE8509CEBE8B8444 /* Pods */ = {
@@ -257,6 +268,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				11FD85A81EB55FEA00FBDE55 /* Journey.swift in Sources */,
 				11EDC0971EACEE0D003A0ADD /* TCPTabBarController.swift in Sources */,
 				11296B921EA44AB500DFFE3A /* SecondViewController.swift in Sources */,
 				11FD85A51EB50CFD00FBDE55 /* TCPJourneyPost.swift in Sources */,

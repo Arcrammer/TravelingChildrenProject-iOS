@@ -82,16 +82,29 @@
                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="JOURNEY BLOG" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="o2O-zO-m9S">
-                                                    <rect key="frame" x="20" y="20" width="130" height="47"/>
+                                                    <rect key="frame" x="8" y="32" width="139" height="35"/>
                                                     <fontDescription key="fontDescription" name="ProximaSansRegular" family="ProximaSansRegular" pointSize="18"/>
                                                     <color key="textColor" white="0.10329241071428572" alpha="1" colorSpace="calibratedWhite"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tmm-K8-jXH">
+                                                    <rect key="frame" x="293" y="32" width="113" height="30"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="30" id="HLW-q2-odg"/>
+                                                        <constraint firstAttribute="width" constant="113" id="lVU-ty-YX2"/>
+                                                    </constraints>
+                                                    <state key="normal" title="Load Some Data"/>
+                                                    <connections>
+                                                        <action selector="loadData:" destination="9pv-A4-QxB" eventType="touchUpInside" id="8o5-R6-ITQ"/>
+                                                    </connections>
+                                                </button>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="o2O-zO-m9S" firstAttribute="leading" secondItem="TCb-qi-fnO" secondAttribute="leading" constant="20" id="EqX-rN-FJM"/>
-                                                <constraint firstItem="o2O-zO-m9S" firstAttribute="top" secondItem="TCb-qi-fnO" secondAttribute="top" constant="20" id="SCt-DO-3ne"/>
-                                                <constraint firstAttribute="bottom" secondItem="o2O-zO-m9S" secondAttribute="bottom" constant="8" id="fGe-4K-tBq"/>
+                                                <constraint firstAttribute="trailing" secondItem="tmm-K8-jXH" secondAttribute="trailing" constant="8" id="2fV-BR-Td7"/>
+                                                <constraint firstAttribute="bottom" secondItem="o2O-zO-m9S" secondAttribute="bottom" constant="8" id="KWd-b7-Ri7"/>
+                                                <constraint firstItem="o2O-zO-m9S" firstAttribute="leading" secondItem="TCb-qi-fnO" secondAttribute="leading" constant="8" id="rcA-ND-AXn"/>
+                                                <constraint firstItem="tmm-K8-jXH" firstAttribute="top" secondItem="TCb-qi-fnO" secondAttribute="top" constant="32" id="vZu-05-PKg"/>
+                                                <constraint firstItem="o2O-zO-m9S" firstAttribute="top" secondItem="TCb-qi-fnO" secondAttribute="top" constant="32" id="w7U-DD-BHn"/>
                                             </constraints>
                                         </view>
                                         <blurEffect style="light"/>
@@ -118,6 +131,9 @@
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="" image="first" id="acW-dT-cKf"/>
+                    <connections>
+                        <outlet property="journeyTable" destination="nE4-nT-rp5" id="F4u-Lk-6SW"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="W5J-7L-Pyd" sceneMemberID="firstResponder"/>
             </objects>

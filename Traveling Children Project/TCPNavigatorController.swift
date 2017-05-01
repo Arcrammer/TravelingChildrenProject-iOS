@@ -43,9 +43,9 @@ class TCPNavigatorController: UIViewController, UITableViewDelegate, UITableView
       height: separatorWidth)
     )
     separator.backgroundColor = UIColor.TCPLightBrown
-    navigatorCell.addSubview(separator)
     separator.leadingAnchor.constraint(equalTo: navigatorCell.leadingAnchor)
     separator.trailingAnchor.constraint(equalTo: navigatorCell.trailingAnchor)
+    navigatorCell.addSubview(separator)
     
     return navigatorCell
   }

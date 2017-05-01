@@ -30,7 +30,7 @@ class TCPNavigatorController: UIViewController, UITableViewDelegate, UITableView
     let navigatorCell = tableView.dequeueReusableCell(withIdentifier: "navigatorCell")!
     navigatorCell.textLabel!.text = self.menuLabels[indexPath.row].uppercased()
     navigatorCell.textLabel!.textColor = UIColor.white
-    navigatorCell.textLabel!.font = UIFont(name: "ProximaSansRegular", size: 20)
+    navigatorCell.textLabel!.font = UIFont(name: "ProximaSansSemibold", size: 20)
     navigatorCell.selectedBackgroundView = UIView()
     navigatorCell.selectedBackgroundView!.backgroundColor = UIColor.TCPLightBrown
     

@@ -43,7 +43,9 @@ class TCPJourneyPostController: UIViewController, UITableViewDelegate, UITableVi
 
     // Move the journeys down past the top bar
     journeyTable.contentInset = UIEdgeInsets(top: 75, left: 0, bottom: 0, right: 0)
-    
+  }
+  
+  override func viewDidAppear(_ animated: Bool) {
     // Reset tab bar colors
     self.tabBarController!.tabBar.barTintColor = UIColor.TCPBrown // Background
     self.tabBarController!.tabBar.unselectedItemTintColor = UIColor.TCPLightBrown // Light brown unselected icons

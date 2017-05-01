@@ -19,4 +19,14 @@ class TCPJourneyPost: UITableViewCell {
   override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
     super.init(style: style, reuseIdentifier: reuseIdentifier)
   }
+  
+  override func layoutSubviews() {
+    self.contentView.frame = UIEdgeInsetsInsetRect(self.contentView.frame, UIEdgeInsets(
+      top: 10,
+      left: 10,
+      bottom: 10,
+      right: 10
+    ))
+    self.contentView.layer.cornerRadius = 10
+  }
 }

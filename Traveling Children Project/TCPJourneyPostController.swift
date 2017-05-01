@@ -21,6 +21,17 @@ class TCPJourneyPostController: UIViewController, UITableViewDelegate, UITableVi
   // MARK: - Methods
   override func viewDidLoad() {
     super.viewDidLoad()
+    
+    let alert = UIAlertController(title: "Okay?", message: "Okay?", preferredStyle: .alert)
+    alert.addAction(UIAlertAction(title: "Okay.", style: .default, handler: nil))
+    alert.view.tintColor = UIColor.TCPBrown
+    
+    // Make all the views yellow
+    for subSubview in alert.view.subviews.first!.subviews.first!.subviews {
+      subSubview.backgroundColor = UIColor.TCPYellow
+    }
+    
+    self.present(alert, animated: true, completion: nil)
 
     // TODO: TODO: Make sure we always have a journey table
     guard let journeyTable = journeyTable else {

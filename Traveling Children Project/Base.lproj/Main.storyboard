@@ -45,7 +45,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="TC Journey to" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NV0-Ev-gqS">
-                                                    <rect key="frame" x="8" y="8" width="398" height="21"/>
+                                                    <rect key="frame" x="8" y="8" width="1008" height="21"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="21" id="r88-xp-SMn"/>
                                                     </constraints>
@@ -627,7 +627,7 @@
                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="LIKED JOURNEYS" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vho-x7-7Uh">
-                                                    <rect key="frame" x="20" y="26" width="163.33333333333334" height="35"/>
+                                                    <rect key="frame" x="20" y="26" width="163.66666666666666" height="35"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="35" id="fOD-I6-swU"/>
                                                     </constraints>
@@ -692,9 +692,9 @@
                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="NAVIGATOR" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kD0-vG-ybN">
-                                                    <rect key="frame" x="20" y="26" width="112.66666666666666" height="30"/>
+                                                    <rect key="frame" x="20" y="26" width="112.66666666666666" height="35"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="height" constant="30" id="uBd-xQ-7mb"/>
+                                                        <constraint firstAttribute="height" constant="35" id="uBd-xQ-7mb"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" name="ProximaNova-Bold" family="Proxima Nova" pointSize="20"/>
                                                     <color key="textColor" red="0.23137254900000001" green="0.14117647059999999" blue="0.086274509799999996" alpha="1" colorSpace="calibratedRGB"/>

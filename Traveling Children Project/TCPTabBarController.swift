@@ -21,8 +21,8 @@ class TCPTabBarController: UITabBarController {
   }
   
   override func viewWillLayoutSubviews() {
-    self.tabBar.frame.size.height = 80
-    self.tabBar.frame.origin.y = self.view.frame.size.height - 80
+    self.tabBar.frame.size.height = 60
+    self.tabBar.frame.origin.y = self.view.frame.size.height - 60
   }
   
   override func didReceiveMemoryWarning() {

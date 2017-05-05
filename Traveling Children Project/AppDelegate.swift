@@ -28,7 +28,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CAAnimationDelegate {
     
     // Set the first view controller
     let firstViewController: UIViewController
-    if (false) {
+    if (true) {
       firstViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "mainAuthenticationView")
     } else {
       firstViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "mainTabBarView")

@@ -35,7 +35,7 @@ class TCPNavigatorController: UIViewController, UITableViewDelegate, UITableView
     navigatorCell.selectedBackgroundView!.backgroundColor = UIColor.TCPLightBrown
     
     // Custom (thicker) separators
-    let separatorWidth: CGFloat = 3
+    let separatorWidth: CGFloat = 2
     let separator = UIView(frame: CGRect(
       x: 0,
       y: navigatorCell.frame.size.height - separatorWidth,

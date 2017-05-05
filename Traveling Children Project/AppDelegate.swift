@@ -44,7 +44,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CAAnimationDelegate {
     // Create the logo layer
     let flyingLogo = CALayer()
     flyingLogo.name = "flyingLogo"
-    flyingLogo.contents = UIImage(named: "Logo")!.cgImage
+    flyingLogo.contents = UIImage(named: "LaunchLogo")!.cgImage
     flyingLogo.bounds = CGRect(x: 0, y: 0, width: 200, height: 200)
     flyingLogo.anchorPoint = CGPoint(x: 0.5, y: 0.5)
     flyingLogo.position = CGPoint(x: firstViewController.view.frame.width / 2, y: firstViewController.view.frame.height / 2)

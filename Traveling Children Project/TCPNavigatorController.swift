@@ -9,6 +9,7 @@ import UIKit
 class TCPNavigatorController: UIViewController, UITableViewDelegate, UITableViewDataSource {
   // MARK: - IBOutlets
   @IBOutlet var menuTable: UITableView!
+  @IBOutlet var iconLabel: UILabel!
   
   // MARK: - Properties
   let menuLabels = [
@@ -49,6 +50,11 @@ class TCPNavigatorController: UIViewController, UITableViewDelegate, UITableView
     navigatorCell.addSubview(separator)
     
     return navigatorCell
+  }
+  
+  override func viewDidAppear(_ animated: Bool) {
+    self.iconLabel.font = UIFont(name: "FontAwesome", size: 20)!
+    self.iconLabel.text = "\u{f141}"
   }
   
   func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

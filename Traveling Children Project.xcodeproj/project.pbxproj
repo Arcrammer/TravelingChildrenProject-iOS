@@ -187,7 +187,7 @@
 				TargetAttributes = {
 					11296B891EA44AB500DFFE3A = {
 						CreatedOnToolsVersion = 8.0;
-						DevelopmentTeam = 63B57N68Z8;
+						DevelopmentTeam = 3CK3256F94;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -411,10 +411,10 @@
 			baseConfigurationReference = 362A35C5C5B646F5CA1B420F /* Pods-Traveling Children Project.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = 63B57N68Z8;
+				DEVELOPMENT_TEAM = 3CK3256F94;
 				INFOPLIST_FILE = "Traveling Children Project/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.tcp.Traveling-Children-Project";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.tcp.Traveling-Children-Project-1";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};
@@ -425,10 +425,10 @@
 			baseConfigurationReference = BBE5ACA350C127DA75C08D8E /* Pods-Traveling Children Project.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = 63B57N68Z8;
+				DEVELOPMENT_TEAM = 3CK3256F94;
 				INFOPLIST_FILE = "Traveling Children Project/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.tcp.Traveling-Children-Project";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.tcp.Traveling-Children-Project-1";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};

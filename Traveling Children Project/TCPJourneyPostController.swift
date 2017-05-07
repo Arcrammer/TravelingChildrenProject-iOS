@@ -9,6 +9,7 @@ import UIKit
 class TCPJourneyPostController: UIViewController, UITableViewDelegate, UITableViewDataSource {
   // MARK: - Outlets
   @IBOutlet var journeyTable: UITableView?
+  @IBOutlet var iconLabel: UILabel!
   
   // MARK: - Actions
   @IBAction func loadData(_ sender: UIButton) {
@@ -21,7 +22,7 @@ class TCPJourneyPostController: UIViewController, UITableViewDelegate, UITableVi
   // MARK: - Methods
   override func viewDidLoad() {
     super.viewDidLoad()
-
+    
     // TODO: TODO: Make sure we always have a journey table
     guard let journeyTable = journeyTable else {
       print("No journey table view in this view controller")
@@ -35,7 +36,7 @@ class TCPJourneyPostController: UIViewController, UITableViewDelegate, UITableVi
   }
 
   override func viewWillAppear(_ animated: Bool) {
-    // TODO: TODO: Make sure we always have a journey table
+    // TODO: Make sure we always have a journey table
     guard let journeyTable = journeyTable else {
       print("No journey table view in this view controller")
       return
@@ -46,6 +47,20 @@ class TCPJourneyPostController: UIViewController, UITableViewDelegate, UITableVi
   }
   
   override func viewDidAppear(_ animated: Bool) {
+    // Set the icon
+    self.iconLabel.font = UIFont(name: "FontAwesome", size: 20)!
+      
+    switch self.tabBarController!.selectedIndex {
+      case 0:
+        self.iconLabel.text = "\u{f124}"
+      case 1:
+        self.iconLabel.text = "\u{f067}"
+      case 2:
+        self.iconLabel.text = "\u{f004}"
+      default:
+        return
+    }
+
     // Reset tab bar colors
     self.tabBarController!.tabBar.barTintColor = UIColor.TCPBrown // Background
     self.tabBarController!.tabBar.unselectedItemTintColor = UIColor.TCPLightBrown // Light brown unselected icons

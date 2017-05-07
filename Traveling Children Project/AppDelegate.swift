@@ -56,7 +56,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CAAnimationDelegate {
     let logoScaleAnimation = CAKeyframeAnimation(keyPath: "bounds")
     logoScaleAnimation.delegate = self
     logoScaleAnimation.duration = 1
-    logoScaleAnimation.beginTime = CACurrentMediaTime() // + 1 // Add 1 second delay
+    logoScaleAnimation.beginTime = CACurrentMediaTime() + 1 // Add 1 second delay
     logoScaleAnimation.values = [
       NSValue(cgRect: flyingLogo.bounds),
       NSValue(cgRect: CGRect(x: 0, y: 0, width: 50, height: 50)),
@@ -75,7 +75,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CAAnimationDelegate {
     let logoOpacityAnimation = CAKeyframeAnimation(keyPath: "opacity")
     logoOpacityAnimation.delegate = self
     logoOpacityAnimation.duration = 1
-    logoOpacityAnimation.beginTime = CACurrentMediaTime()
+    logoOpacityAnimation.beginTime = CACurrentMediaTime() + 1 // Add 1 second delay
     logoOpacityAnimation.values = [
       NSNumber(floatLiteral: 1.0),
       NSNumber(floatLiteral: 0.0)
@@ -93,7 +93,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CAAnimationDelegate {
     // Root view animation
     self.window!.rootViewController!.view.transform = CGAffineTransform(scaleX: 0.95, y: 0.95)
     UIView.animate(withDuration: 0.25,
-      delay: 0.85,
+      delay: 1.85,
       options: [],
       animations: {
         self.window!.rootViewController!.view.transform = CGAffineTransform(scaleX: 1.0, y: 1.0)

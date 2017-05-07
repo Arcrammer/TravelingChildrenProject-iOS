@@ -11,7 +11,7 @@ class TCPAuthenticationController: UIViewController, UIGestureRecognizerDelegate
   @IBOutlet var signInForm: UIView!
   @IBOutlet var signUpForm: UIScrollView!
   @IBOutlet var signUpView: UIView!
-  @IBOutlet var scrollViewBottom: NSLayoutConstraint!
+  @IBOutlet var signUpViewBottom: NSLayoutConstraint!
   @IBOutlet var firstFormField: UITextField!
 
   // MARK: - Actions
@@ -56,29 +56,31 @@ class TCPAuthenticationController: UIViewController, UIGestureRecognizerDelegate
   func keyboardDidShow(notification: NSNotification) {
     // Make sure we have the keyboard frame and the bottom scroll view constraint
     guard let keyboardFrame = (notification.userInfo?[UIKeyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue,
-          let scrollViewBottom = self.scrollViewBottom else {
+          let signUpViewBottom = self.signUpViewBottom else {
       return
     }
     
     // Move the bottom of the scroll view to the top
     // of the keyboard now that we know its' height
-    scrollViewBottom.constant = keyboardFrame.size.height
+    signUpViewBottom.constant = keyboardFrame.size.height
   }
   
   func keyboardWillHide(notification: NSNotification) {
     // Remove the extra space we added earlier when the keyboard is dismissed
-    guard let scrollViewBottom = self.scrollViewBottom else {
+    guard let signUpViewBottom = self.signUpViewBottom else {
       return
     }
     
     // Move the scroll view back to the bottom
-    scrollViewBottom.constant = 0
+    signUpViewBottom.constant = 0
   }
   
   // MARK: - UIGestureRecognizerDelegate Methods
   func gestureRecognizer(_ gestureRecognizer: UIGestureRecognizer, shouldReceive touch: UITouch) -> Bool {
-    // Dismiss the keyboard if you tap the Sign Up scroll view
-    self.view.endEditing(true)
+    // Dismiss the keyboard if you tap the 'Sign Up' scroll view
+    if touch.view! == self.signUpForm {
+      self.view.endEditing(true)
+    }
 
     return true
   }

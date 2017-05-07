@@ -8,26 +8,34 @@ import UIKit
 
 class TCPAuthenticationController: UIViewController, UIGestureRecognizerDelegate, UITextFieldDelegate {
   // MARK: - Outlets
-  @IBOutlet var container: UIView!
+  @IBOutlet var signInForm: UIView!
+  @IBOutlet var signUpForm: UIScrollView!
+  @IBOutlet var signUpView: UIView!
   @IBOutlet var scrollViewBottom: NSLayoutConstraint!
   @IBOutlet var firstFormField: UITextField!
 
   // MARK: - Actions
-  @IBAction func handleContainerTap(_ sender: Any) {
-    // Dismiss the keyboard
-    self.view.endEditing(true)
+  @IBAction func revealSignUpForm() {
+    self.signInForm.isHidden = true
+    self.signUpForm.isHidden = false
+  }
+
+  @IBAction func revealSignInForm() {
+    self.signUpForm.isHidden = true
+    self.signInForm.isHidden = false
   }
   
   // MARK: - Methods
   override func viewWillAppear(_ animated: Bool) {
     // Give the form view rounded corners
-    self.container.layer.cornerRadius = 10
+    self.signInForm.layer.cornerRadius = 10
+    self.signUpView.layer.cornerRadius = 10
     
     // Give the launch animation a chance to finish then show
     // the keyboard if this is the root view controller
     if UIApplication.shared.keyWindow!.rootViewController! == self {
       if let firstFormField = self.firstFormField {
-        DispatchQueue.main.asyncAfter(deadline: .now() + 0.75, execute: {
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1.75, execute: {
           firstFormField.becomeFirstResponder()
         })
       }
@@ -65,6 +73,14 @@ class TCPAuthenticationController: UIViewController, UIGestureRecognizerDelegate
     
     // Move the scroll view back to the bottom
     scrollViewBottom.constant = 0
+  }
+  
+  // MARK: - UIGestureRecognizerDelegate Methods
+  func gestureRecognizer(_ gestureRecognizer: UIGestureRecognizer, shouldReceive touch: UITouch) -> Bool {
+    // Dismiss the keyboard if you tap the Sign Up scroll view
+    self.view.endEditing(true)
+
+    return true
   }
   
   // MARK: - UITextFieldDelegate Methods

@@ -45,7 +45,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="TC Journey to" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NV0-Ev-gqS">
-                                                    <rect key="frame" x="8" y="8" width="752" height="21"/>
+                                                    <rect key="frame" x="8" y="8" width="398" height="21"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="21" id="r88-xp-SMn"/>
                                                     </constraints>
@@ -292,9 +292,9 @@
                                         <state key="normal" title="SIGN IN">
                                             <color key="titleColor" red="0.94509803921568625" green="0.40000000000000002" blue="0.13725490196078433" alpha="1" colorSpace="calibratedRGB"/>
                                         </state>
-                                        <connections>
-                                            <action selector="revealSignUpForm" destination="TlB-a3-xut" eventType="touchUpInside" id="XCB-A2-IUv"/>
-                                        </connections>
+                                        <state key="highlighted">
+                                            <color key="titleColor" red="0.23137254900000001" green="0.14117647059999999" blue="0.086274509799999996" alpha="1" colorSpace="calibratedRGB"/>
+                                        </state>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="1000" horizontalCompressionResistancePriority="250" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NJZ-Lc-y26">
                                         <rect key="frame" x="0.0" y="104" width="199" height="50"/>
@@ -305,6 +305,9 @@
                                         <fontDescription key="fontDescription" name="ProximaNova-Semibold" family="Proxima Nova" pointSize="20"/>
                                         <state key="normal" title="SIGN UP">
                                             <color key="titleColor" red="0.99607843139999996" green="0.88235294119999996" blue="0.53333333329999999" alpha="1" colorSpace="calibratedRGB"/>
+                                        </state>
+                                        <state key="highlighted">
+                                            <color key="titleColor" red="0.23137254900000001" green="0.14117647059999999" blue="0.086274509799999996" alpha="1" colorSpace="calibratedRGB"/>
                                         </state>
                                         <connections>
                                             <action selector="revealSignUpForm" destination="TlB-a3-xut" eventType="touchUpInside" id="1uW-QK-QeC"/>
@@ -354,6 +357,9 @@
                                                 <fontDescription key="fontDescription" name="ProximaNova-Semibold" family="Proxima Nova" pointSize="20"/>
                                                 <state key="normal" title="SIGN UP">
                                                     <color key="titleColor" red="0.94509803920000002" green="0.40000000000000002" blue="0.13725490200000001" alpha="1" colorSpace="calibratedRGB"/>
+                                                </state>
+                                                <state key="highlighted">
+                                                    <color key="titleColor" red="0.23137254900000001" green="0.14117647059999999" blue="0.086274509799999996" alpha="1" colorSpace="calibratedRGB"/>
                                                 </state>
                                             </button>
                                             <textField opaque="NO" clipsSubviews="YES" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Last Name ( parent / guardian / educator )" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="bV1-p4-ghp">
@@ -436,12 +442,16 @@
                                                 <state key="normal" title="SIGN IN">
                                                     <color key="titleColor" red="0.99607843139999996" green="0.88235294119999996" blue="0.53333333329999999" alpha="1" colorSpace="calibratedRGB"/>
                                                 </state>
+                                                <state key="highlighted">
+                                                    <color key="titleColor" red="0.23137254900000001" green="0.14117647059999999" blue="0.086274509799999996" alpha="1" colorSpace="calibratedRGB"/>
+                                                </state>
                                                 <connections>
                                                     <action selector="revealSignInForm" destination="TlB-a3-xut" eventType="touchUpInside" id="A1J-bw-LyB"/>
                                                 </connections>
                                             </button>
                                         </subviews>
                                         <color key="backgroundColor" red="0.99607843139999996" green="0.88235294119999996" blue="0.53333333329999999" alpha="1" colorSpace="calibratedRGB"/>
+                                        <gestureRecognizers/>
                                         <constraints>
                                             <constraint firstAttribute="trailing" secondItem="bV1-p4-ghp" secondAttribute="trailing" constant="8" id="0ZI-kZ-3Eg"/>
                                             <constraint firstItem="bdm-fK-qbT" firstAttribute="top" secondItem="aWm-15-OSl" secondAttribute="bottom" constant="8" id="47y-tf-uF5"/>
@@ -494,6 +504,9 @@
                                                 <include reference="DTY-W6-Wqy"/>
                                             </mask>
                                         </variation>
+                                        <connections>
+                                            <outletCollection property="gestureRecognizers" destination="GgN-G8-sKD" appends="YES" id="bWU-d4-w66"/>
+                                        </connections>
                                     </view>
                                 </subviews>
                                 <gestureRecognizers/>
@@ -564,6 +577,11 @@
                         <outlet property="delegate" destination="TlB-a3-xut" id="h2a-8b-npf"/>
                     </connections>
                 </tapGestureRecognizer>
+                <tapGestureRecognizer id="GgN-G8-sKD">
+                    <connections>
+                        <outlet property="delegate" destination="TlB-a3-xut" id="sVQ-OH-gmg"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="0.0" y="-843.47826086956525"/>
         </scene>
@@ -612,7 +630,7 @@
                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="LIKED JOURNEYS" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vho-x7-7Uh">
-                                                    <rect key="frame" x="20" y="26" width="163.66666666666666" height="35"/>
+                                                    <rect key="frame" x="20" y="26" width="163.33333333333334" height="35"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="35" id="fOD-I6-swU"/>
                                                     </constraints>
@@ -621,7 +639,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nVx-CK-j1M">
-                                                    <rect key="frame" x="191.66666666666666" y="26" width="35" height="34"/>
+                                                    <rect key="frame" x="191.33333333333334" y="26" width="35" height="34"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="34" id="oCv-mg-jKU"/>
                                                         <constraint firstAttribute="width" constant="35" id="ocD-5c-YLK"/>

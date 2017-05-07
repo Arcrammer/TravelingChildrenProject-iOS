@@ -13,7 +13,7 @@ class TCPAuthenticationController: UIViewController, UIGestureRecognizerDelegate
   @IBOutlet var signUpView: UIView!
   @IBOutlet var signUpViewBottom: NSLayoutConstraint!
   @IBOutlet var firstFormField: UITextField!
-
+  
   // MARK: - Actions
   @IBAction func revealSignUpForm() {
     self.signInForm.isHidden = true
@@ -78,7 +78,7 @@ class TCPAuthenticationController: UIViewController, UIGestureRecognizerDelegate
   // MARK: - UIGestureRecognizerDelegate Methods
   func gestureRecognizer(_ gestureRecognizer: UIGestureRecognizer, shouldReceive touch: UITouch) -> Bool {
     // Dismiss the keyboard if you tap the 'Sign Up' scroll view
-    if touch.view! == self.signUpForm {
+    if touch.view! == self.signUpForm || touch.view! == self.signUpView {
       self.view.endEditing(true)
     }
 

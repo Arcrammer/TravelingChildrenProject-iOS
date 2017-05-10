@@ -295,6 +295,9 @@
                                         <state key="highlighted">
                                             <color key="titleColor" red="0.23137254900000001" green="0.14117647059999999" blue="0.086274509799999996" alpha="1" colorSpace="calibratedRGB"/>
                                         </state>
+                                        <connections>
+                                            <action selector="signIn" destination="TlB-a3-xut" eventType="touchUpInside" id="8Bp-CR-xsI"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="1000" horizontalCompressionResistancePriority="250" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NJZ-Lc-y26">
                                         <rect key="frame" x="0.0" y="104" width="199" height="50"/>
@@ -361,6 +364,9 @@
                                                 <state key="highlighted">
                                                     <color key="titleColor" red="0.23137254900000001" green="0.14117647059999999" blue="0.086274509799999996" alpha="1" colorSpace="calibratedRGB"/>
                                                 </state>
+                                                <connections>
+                                                    <action selector="signUp" destination="TlB-a3-xut" eventType="touchUpInside" id="JrQ-sI-YES"/>
+                                                </connections>
                                             </button>
                                             <textField opaque="NO" clipsSubviews="YES" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Last Name ( parent / guardian / educator )" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="bV1-p4-ghp">
                                                 <rect key="frame" x="8" y="56" width="382" height="40"/>
@@ -391,6 +397,9 @@
                                                 <nil key="textColor"/>
                                                 <fontDescription key="fontDescription" name="ProximaNova-Regular" family="Proxima Nova" pointSize="18"/>
                                                 <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="numberPad" returnKeyType="next" enablesReturnKeyAutomatically="YES" secureTextEntry="YES"/>
+                                                <connections>
+                                                    <outlet property="delegate" destination="TlB-a3-xut" id="AhV-jQ-u9e"/>
+                                                </connections>
                                             </textField>
                                             <textField opaque="NO" clipsSubviews="YES" tag="6" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Confirm Password" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Jkr-V9-CgO">
                                                 <rect key="frame" x="8" y="296" width="382" height="40"/>
@@ -443,7 +452,7 @@
                                                     <color key="titleColor" red="0.99607843139999996" green="0.88235294119999996" blue="0.53333333329999999" alpha="1" colorSpace="calibratedRGB"/>
                                                 </state>
                                                 <state key="highlighted">
-                                                    <color key="titleColor" red="0.23137254900000001" green="0.14117647059999999" blue="0.086274509799999996" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <color key="titleColor" red="0.99607843139999996" green="0.88235294119999996" blue="0.53333333329999999" alpha="1" colorSpace="calibratedRGB"/>
                                                 </state>
                                                 <connections>
                                                     <action selector="revealSignInForm" destination="TlB-a3-xut" eventType="touchUpInside" id="A1J-bw-LyB"/>
@@ -565,8 +574,17 @@
                     </view>
                     <connections>
                         <outlet property="firstFormField" destination="EwP-TY-XoQ" id="xZr-5r-STx"/>
+                        <outlet property="signInEmailField" destination="EwP-TY-XoQ" id="MPt-4U-r0M"/>
                         <outlet property="signInForm" destination="lGo-pk-aGE" id="s03-sB-1jj"/>
-                        <outlet property="signUpForm" destination="01Z-rV-yQK" id="302-iY-T0E"/>
+                        <outlet property="signInPasswordField" destination="JLL-BL-rjS" id="dF5-aj-M7t"/>
+                        <outlet property="signUpFirstNameField" destination="AP9-Lq-gYI" id="Pb3-C8-XWO"/>
+                        <outlet property="signUpForm" destination="01Z-rV-yQK" id="gUT-RG-5Cg"/>
+                        <outlet property="signUpLastNameField" destination="bV1-p4-ghp" id="R3r-ah-DxL"/>
+                        <outlet property="signUpParentEmailField" destination="aWm-15-OSl" id="a6A-5F-HRu"/>
+                        <outlet property="signUpParentPINCodeField" destination="bdm-fK-qbT" id="7hw-gk-M9m"/>
+                        <outlet property="signUpPasswordConfirmationField" destination="Jkr-V9-CgO" id="Jj8-66-IQ5"/>
+                        <outlet property="signUpPasswordField" destination="bDh-KL-Yxl" id="0TS-RK-cay"/>
+                        <outlet property="signUpTravelerFirstNameField" destination="28D-VI-hCF" id="135-Ys-Azh"/>
                         <outlet property="signUpView" destination="lMH-Ec-b1u" id="v5s-fO-1Ru"/>
                         <outlet property="signUpViewBottom" destination="YVb-q4-jZe" id="Ky4-mA-9Zo"/>
                     </connections>

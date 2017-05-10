@@ -14,6 +14,19 @@ class TCPAuthenticationController: UIViewController, UIGestureRecognizerDelegate
   @IBOutlet var signUpViewBottom: NSLayoutConstraint!
   @IBOutlet var firstFormField: UITextField!
   
+  // Sign-in Fields
+  @IBOutlet var signInEmailField: UITextField!
+  @IBOutlet var signInPasswordField: UITextField!
+  
+  // Sign-up Fields
+  @IBOutlet var signUpFirstNameField: UITextField!
+  @IBOutlet var signUpLastNameField: UITextField!
+  @IBOutlet var signUpTravelerFirstNameField: UITextField!
+  @IBOutlet var signUpParentEmailField: UITextField!
+  @IBOutlet var signUpParentPINCodeField: UITextField!
+  @IBOutlet var signUpPasswordField: UITextField!
+  @IBOutlet var signUpPasswordConfirmationField: UITextField!
+  
   // MARK: - Actions
   @IBAction func revealSignUpForm() {
     self.signInForm.isHidden = true
@@ -24,7 +37,73 @@ class TCPAuthenticationController: UIViewController, UIGestureRecognizerDelegate
     self.signUpForm.isHidden = true
     self.signInForm.isHidden = false
   }
-  
+
+  @IBAction func signIn() {
+    // Make sure we have an email address
+    // and password to give the server
+    guard
+      let emailAddress = self.signInEmailField.text,
+      self.signInEmailField.text?.isEmpty == false,
+      
+      let password = self.signInPasswordField.text,
+      self.signInPasswordField.text?.isEmpty == false
+    else {
+        print("Missing credentials. Tell the user?")
+        return
+    }
+    
+    // We've got data for all the fields
+    print("— Signing in With These Credentials: —")
+    print("Email: ", emailAddress)
+    print("Password: ", password)
+  }
+
+  @IBAction func signUp() {
+//    @IBOutlet var signUpFirstNameField: UITextField!
+//    @IBOutlet var signUpLastNameField: UITextField!
+//    @IBOutlet var signUpTravelerFirstNameField: UITextField!
+//    @IBOutlet var signUpParentEmailField: UITextField!
+//    @IBOutlet var signUpParentPINCodeField: UITextField!
+//    @IBOutlet var signUpPasswordField: UITextField!
+//    @IBOutlet var signUpPasswordConfirmationField: UITextField!
+
+    // Make sure we have an email address
+    // and password to give the server
+    guard
+      let parentFirstName = self.signUpFirstNameField.text,
+      self.signUpFirstNameField.text?.isEmpty == false,
+      
+      let parentLastName = self.signUpLastNameField.text,
+      self.signUpLastNameField.text?.isEmpty == false,
+
+      let travelerFirstName = self.signUpTravelerFirstNameField.text,
+      self.signUpTravelerFirstNameField.text?.isEmpty == false,
+
+      let parentEmail = self.signUpParentEmailField.text,
+      self.signUpParentEmailField.text?.isEmpty == false,
+    
+      let parentPINCode = self.signUpParentPINCodeField.text,
+      self.signUpParentPINCodeField.text?.isEmpty == false,
+    
+      let password = self.signUpPasswordField.text,
+      self.signUpPasswordField.text?.isEmpty == false,
+
+      let passwordConfirmation = self.signUpPasswordConfirmationField.text,
+      self.signUpPasswordConfirmationField.text?.isEmpty == false
+    else {
+        print("Missing data. Tell the user?")
+        return
+    }
+    
+    // We've got data for all the fields
+    print("— Signing up With This Data: —")
+    print("Parent First Name: ", parentFirstName)
+    print("Parent Last Name: ", parentLastName)
+    print("Traveler First Name: ", travelerFirstName)
+    print("Parent Email: ", parentEmail)
+    print("Parent PIN Code: ", parentPINCode)
+  }
+    
   // MARK: - Methods
   override func viewWillAppear(_ animated: Bool) {
     // Give the form view rounded corners

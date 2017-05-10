@@ -59,14 +59,6 @@ class TCPAuthenticationController: UIViewController, UIGestureRecognizerDelegate
   }
 
   @IBAction func signUp() {
-//    @IBOutlet var signUpFirstNameField: UITextField!
-//    @IBOutlet var signUpLastNameField: UITextField!
-//    @IBOutlet var signUpTravelerFirstNameField: UITextField!
-//    @IBOutlet var signUpParentEmailField: UITextField!
-//    @IBOutlet var signUpParentPINCodeField: UITextField!
-//    @IBOutlet var signUpPasswordField: UITextField!
-//    @IBOutlet var signUpPasswordConfirmationField: UITextField!
-
     // Make sure we have an email address
     // and password to give the server
     guard

@@ -5,6 +5,7 @@
 //  Copyright © 2017 Traveling Children Project. All rights reserved.
 //
 import UIKit
+import Alamofire
 
 class TCPAuthenticationController: UIViewController, UIGestureRecognizerDelegate, UITextFieldDelegate {
   // MARK: - Outlets
@@ -88,12 +89,49 @@ class TCPAuthenticationController: UIViewController, UIGestureRecognizerDelegate
     }
     
     // We've got data for all the fields
-    print("— Signing up With This Data: —")
-    print("Parent First Name: ", parentFirstName)
-    print("Parent Last Name: ", parentLastName)
-    print("Traveler First Name: ", travelerFirstName)
-    print("Parent Email: ", parentEmail)
-    print("Parent PIN Code: ", parentPINCode)
+//    print("— Signing up With This Data: —")
+//    print("Parent First Name: ", parentFirstName)
+//    print("Parent Last Name: ", parentLastName)
+//    print("Traveler First Name: ", travelerFirstName)
+//    print("Parent Email: ", parentEmail)
+//    print("Parent PIN Code: ", parentPINCode)
+    
+    // Send the data to the server for validation
+    Alamofire.request(
+      "http://10.0.0.8:3000/auth/iOS/signup",
+      method: .post,
+      parameters: [
+        "first_name": parentFirstName,
+        "last_name": parentLastName,
+        "traveler_name": travelerFirstName,
+        "username": parentEmail,
+        "password": password,
+        "confirm_password": passwordConfirmation
+      ]
+    ).responseJSON {
+      responseData in
+      
+      guard
+        let responseData = responseData.result.value as? [String: Any],
+        let success = responseData["success"] as? Bool,
+        let user = responseData["user"]
+      else {
+        return
+      }
+      
+      print("Success:", success)
+      if success {
+        print("Successfully matched the credentials")
+      } else {
+        print("Credentials don't match")
+      }
+      
+      if let error = responseData["error"] as? String {
+        print("Error:", error)
+      }
+      
+      print("User:", user)
+    }
   }
     
   // MARK: - Methods

@@ -89,7 +89,7 @@
                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="JOURNEY BLOG" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="o2O-zO-m9S">
-                                                    <rect key="frame" x="20" y="26" width="154.33333333333334" height="35"/>
+                                                    <rect key="frame" x="20" y="26" width="150" height="35"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="35" id="3B7-Fz-6Jo"/>
                                                     </constraints>
@@ -109,7 +109,7 @@
                                                     </connections>
                                                 </button>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CmS-mM-puO">
-                                                    <rect key="frame" x="182.33333333333334" y="26" width="35" height="34"/>
+                                                    <rect key="frame" x="178" y="26" width="35" height="34"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="35" id="3x9-Ir-rs1"/>
                                                         <constraint firstAttribute="height" constant="34" id="5A4-ni-V7M"/>
@@ -184,7 +184,7 @@
                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="MY JOURNEYS" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CbU-rH-0Ui">
-                                                    <rect key="frame" x="20" y="26" width="142.33333333333334" height="35"/>
+                                                    <rect key="frame" x="20" y="26" width="138.66666666666666" height="35"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="35" id="djT-O5-l8Y"/>
                                                     </constraints>
@@ -193,7 +193,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jae-wK-lI7">
-                                                    <rect key="frame" x="169.66666666666666" y="26" width="35" height="34"/>
+                                                    <rect key="frame" x="166" y="26" width="35" height="34"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="34" id="goq-qm-cKG"/>
                                                         <constraint firstAttribute="width" constant="35" id="zu9-hc-w4X"/>
@@ -257,7 +257,7 @@
                             <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lGo-pk-aGE">
                                 <rect key="frame" x="8" y="166" width="398" height="154"/>
                                 <subviews>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Email" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="EwP-TY-XoQ">
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Alexander2475914@gmail.com" placeholder="Email" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="EwP-TY-XoQ">
                                         <rect key="frame" x="10" y="8" width="378" height="40"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <constraints>
@@ -270,7 +270,7 @@
                                             <outlet property="delegate" destination="TlB-a3-xut" id="rLE-Ef-e4Y"/>
                                         </connections>
                                     </textField>
-                                    <textField opaque="NO" clipsSubviews="YES" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Password" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="JLL-BL-rjS">
+                                    <textField opaque="NO" clipsSubviews="YES" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="123superSECRET" placeholder="Password" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="JLL-BL-rjS">
                                         <rect key="frame" x="10" y="56" width="378" height="40"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <constraints>
@@ -648,7 +648,7 @@
                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="LIKED JOURNEYS" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vho-x7-7Uh">
-                                                    <rect key="frame" x="20" y="26" width="168" height="35"/>
+                                                    <rect key="frame" x="20" y="26" width="163.33333333333334" height="35"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="35" id="fOD-I6-swU"/>
                                                     </constraints>
@@ -657,7 +657,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nVx-CK-j1M">
-                                                    <rect key="frame" x="196" y="26" width="35" height="34"/>
+                                                    <rect key="frame" x="191.33333333333334" y="26" width="35" height="34"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="34" id="oCv-mg-jKU"/>
                                                         <constraint firstAttribute="width" constant="35" id="ocD-5c-YLK"/>
@@ -728,7 +728,7 @@
                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="NAVIGATOR" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kD0-vG-ybN">
-                                                    <rect key="frame" x="20" y="26" width="110.66666666666666" height="35"/>
+                                                    <rect key="frame" x="20" y="26" width="112.66666666666666" height="35"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="35" id="uBd-xQ-7mb"/>
                                                     </constraints>
@@ -737,7 +737,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CIb-US-G9G">
-                                                    <rect key="frame" x="138" y="26" width="35" height="35"/>
+                                                    <rect key="frame" x="140" y="26" width="35" height="35"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="35" id="eSB-Fd-eAT"/>
                                                         <constraint firstAttribute="height" constant="35" id="iOh-At-e7k"/>

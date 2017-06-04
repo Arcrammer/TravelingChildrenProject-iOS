@@ -19,7 +19,6 @@
 		119D568B1EB6340400F77A4F /* ProximaNova-Semibold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 119D568A1EB6340400F77A4F /* ProximaNova-Semibold.ttf */; };
 		11EDC0971EACEE0D003A0ADD /* TCPTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11EDC0961EACEE0D003A0ADD /* TCPTabBarController.swift */; };
 		11F615701EB6B3D0000FC422 /* ProximaNova-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 11F6156F1EB6B3D0000FC422 /* ProximaNova-Bold.ttf */; };
-		11F625E91EBFB36A00E3DDF6 /* TCPAuthenticator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11F625E81EBFB36A00E3DDF6 /* TCPAuthenticator.swift */; };
 		11FD85A51EB50CFD00FBDE55 /* TCPJourneyPost.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11FD85A41EB50CFD00FBDE55 /* TCPJourneyPost.swift */; };
 		11FD85A81EB55FEA00FBDE55 /* Journey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11FD85A71EB55FEA00FBDE55 /* Journey.swift */; };
 		994E0B2C02D51B764D9F0A19 /* Pods_Traveling_Children_Project.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8687EB342DE5C63457F43643 /* Pods_Traveling_Children_Project.framework */; };
@@ -40,7 +39,6 @@
 		119D568A1EB6340400F77A4F /* ProximaNova-Semibold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "ProximaNova-Semibold.ttf"; sourceTree = "<group>"; };
 		11EDC0961EACEE0D003A0ADD /* TCPTabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TCPTabBarController.swift; sourceTree = "<group>"; };
 		11F6156F1EB6B3D0000FC422 /* ProximaNova-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "ProximaNova-Bold.ttf"; sourceTree = "<group>"; };
-		11F625E81EBFB36A00E3DDF6 /* TCPAuthenticator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TCPAuthenticator.swift; sourceTree = "<group>"; };
 		11FD85A41EB50CFD00FBDE55 /* TCPJourneyPost.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TCPJourneyPost.swift; sourceTree = "<group>"; };
 		11FD85A71EB55FEA00FBDE55 /* Journey.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Journey.swift; sourceTree = "<group>"; };
 		362A35C5C5B646F5CA1B420F /* Pods-Traveling Children Project.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Traveling Children Project.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Traveling Children Project/Pods-Traveling Children Project.debug.xcconfig"; sourceTree = "<group>"; };
@@ -82,7 +80,6 @@
 			isa = PBXGroup;
 			children = (
 				11296B8D1EA44AB500DFFE3A /* AppDelegate.swift */,
-				11F625E81EBFB36A00E3DDF6 /* TCPAuthenticator.swift */,
 				11FD85A91EB55FEE00FBDE55 /* Models */,
 				11FD85A61EB50D0400FBDE55 /* Views */,
 				11EDC0941EACEDBB003A0ADD /* Controllers */,
@@ -289,7 +286,6 @@
 				11FD85A81EB55FEA00FBDE55 /* Journey.swift in Sources */,
 				1174A34F1EB60D5C00E3BD35 /* TCPNavigatorController.swift in Sources */,
 				11EDC0971EACEE0D003A0ADD /* TCPTabBarController.swift in Sources */,
-				11F625E91EBFB36A00E3DDF6 /* TCPAuthenticator.swift in Sources */,
 				11FD85A51EB50CFD00FBDE55 /* TCPJourneyPost.swift in Sources */,
 				11296B8E1EA44AB500DFFE3A /* AppDelegate.swift in Sources */,
 				11296B901EA44AB500DFFE3A /* TCPJourneyPostController.swift in Sources */,
@@ -422,6 +418,7 @@
 				DEVELOPMENT_TEAM = 63B57N68Z8;
 				INFOPLIST_FILE = "Traveling Children Project/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.tcp.Traveling-Children-Project";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
@@ -436,6 +433,7 @@
 				DEVELOPMENT_TEAM = 63B57N68Z8;
 				INFOPLIST_FILE = "Traveling Children Project/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				ONLY_ACTIVE_ARCH = NO;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.tcp.Traveling-Children-Project";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;

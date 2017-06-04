@@ -6,6 +6,17 @@
 //
 import UIKit
 
+// Runtime adjustments
+var kServerDomain: String {
+  get {
+    #if DEBUG
+      return "127.0.0.1:9000"
+    #else
+      return "beta-express.travelingchildrenproject.com"
+    #endif
+  }
+}
+
 // Official TCP colors
 extension UIColor {
   static let TCPBrown = UIColor(red: 58/255, green: 36/255, blue: 23/255, alpha: 1)
@@ -29,7 +40,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CAAnimationDelegate {
     
     // Set the first view controller
     let firstViewController: UIViewController
-    if (false) {
+    if (true) {
       firstViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "mainAuthenticationView")
     } else {
       firstViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "mainTabBarView")

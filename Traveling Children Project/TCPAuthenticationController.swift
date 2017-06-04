@@ -49,14 +49,65 @@ class TCPAuthenticationController: UIViewController, UIGestureRecognizerDelegate
       let password = self.signInPasswordField.text,
       self.signInPasswordField.text?.isEmpty == false
     else {
-        print("Missing credentials. Tell the user?")
-        return
+      // Tell the user they missed a field
+      var missingCredentialsMessage: String?
+      if self.signInEmailField.text?.isEmpty == true {
+        missingCredentialsMessage = "Please provide an email address"
+      }
+      
+      if self.signInPasswordField.text?.isEmpty == true {
+        missingCredentialsMessage = "Please provide a password"
+      }
+      
+      if self.signInEmailField.text?.isEmpty == true && self.signInPasswordField.text?.isEmpty == true {
+        missingCredentialsMessage = "Please provide an email address and a password"
+      }
+      
+      let missingCredentialsAlert = UIAlertController(title: "Missing Credentials", message: missingCredentialsMessage, preferredStyle: .actionSheet)
+      missingCredentialsAlert.addAction(UIAlertAction(title: "Okay", style: .default, handler: nil))
+      present(missingCredentialsAlert, animated: true, completion: nil)
+      
+      return
     }
     
-    // We've got data for all the fields
-    print("— Signing in With These Credentials: —")
-    print("Email: ", emailAddress)
-    print("Password: ", password)
+    // Send the data to the server for validation
+    Alamofire.request(
+      "http://" + kServerDomain + "/auth/iOS/signin",
+      method: .post,
+      parameters: [
+        "username": emailAddress,
+        "password": password
+      ]
+    ).responseJSON {
+      responseData in
+      
+      guard let statusCode = responseData.response?.statusCode else {
+        let connectionIssueAlert = UIAlertController(title: "Connection Problem", message: "There was a problem getting a response from the server. Please make sure you're connected to the Internet.", preferredStyle: .actionSheet)
+        connectionIssueAlert.addAction(UIAlertAction(title: "Okay", style: .default, handler: nil))
+        self.present(connectionIssueAlert, animated: true, completion: nil)
+        
+        return
+      }
+      
+      // If the credentials matched save the traveler to the user defaults and send them to the tab bar view
+      if statusCode == 200 {
+        // Save the user object to the user defaults
+        do {
+          let userDictionary = try JSONSerialization.data(withJSONObject: responseData.result.value!, options: [])
+          UserDefaults.standard.set(userDictionary, forKey: "Traveler")
+
+          // Send the user to the tab bar view
+          self.present(UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "mainTabBarView"), animated: true, completion: nil)
+        } catch {
+          print("Something happened parsing the user JSON from the server")
+        }
+      } else if statusCode == 401 {
+        // The credentials were wrong
+        let wrongCredentialsAlert = UIAlertController(title: "Wrong Credentials", message: "Those credentials didn't work.", preferredStyle: .actionSheet)
+        wrongCredentialsAlert.addAction(UIAlertAction(title: "Okay", style: .default, handler: nil))
+        self.present(wrongCredentialsAlert, animated: true, completion: nil)
+      }
+    }
   }
 
   @IBAction func signUp() {
@@ -98,7 +149,7 @@ class TCPAuthenticationController: UIViewController, UIGestureRecognizerDelegate
     
     // Send the data to the server for validation
     Alamofire.request(
-      "http://10.0.0.8:3000/auth/iOS/signup",
+      "http://" + kServerDomain + "/auth/iOS/signup",
       method: .post,
       parameters: [
         "first_name": parentFirstName,
@@ -111,26 +162,7 @@ class TCPAuthenticationController: UIViewController, UIGestureRecognizerDelegate
     ).responseJSON {
       responseData in
       
-      guard
-        let responseData = responseData.result.value as? [String: Any],
-        let success = responseData["success"] as? Bool,
-        let user = responseData["user"]
-      else {
-        return
-      }
-      
-      print("Success:", success)
-      if success {
-        print("Successfully matched the credentials")
-      } else {
-        print("Credentials don't match")
-      }
-      
-      if let error = responseData["error"] as? String {
-        print("Error:", error)
-      }
-      
-      print("User:", user)
+      //
     }
   }
     
@@ -182,6 +214,10 @@ class TCPAuthenticationController: UIViewController, UIGestureRecognizerDelegate
     
     // Move the scroll view back to the bottom
     signUpViewBottom.constant = 0
+  }
+
+  override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
+    return false
   }
   
   // MARK: - UIGestureRecognizerDelegate Methods

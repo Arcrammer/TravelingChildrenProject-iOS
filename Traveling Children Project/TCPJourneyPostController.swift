@@ -77,11 +77,7 @@ class TCPJourneyPostController: UIViewController, UITableViewDelegate, UITableVi
    * Grabs journeys from the server
    */
   private func loadJourneys() {
-    #if DEBUG
-      var journeyRequest = URLRequest(url: URL(string: "http://10.0.0.8:3000/api/journeys")!)
-    #else
-      var journeyRequest = URLRequest(url: URL(string: "http://travelingchildrenproject.com/api/journeys")!)
-    #endif
+    var journeyRequest = URLRequest(url: URL(string: "http://" + kServerDomain + "/api/journeys")!)
     journeyRequest.httpMethod = "POST"
     
     let journeyTask = URLSession.shared.dataTask(with: journeyRequest) {

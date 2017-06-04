@@ -192,13 +192,15 @@ class TCPAuthenticationController: UIViewController, UIGestureRecognizerDelegate
   }
   
   override func viewDidAppear(_ animated: Bool) {
-    // Sign the user in if they're already authenticated
-    if UserDefaults.standard.object(forKey: "Traveler") != nil {
-      // Send the user to the tab bar view
-      let mainTabBarViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "mainTabBarView")
-      mainTabBarViewController.modalTransitionStyle = .crossDissolve
-      self.present(mainTabBarViewController, animated: true, completion: nil)
-    }
+    DispatchQueue.main.asyncAfter(deadline: .now() + 1.5, execute: {
+      // Sign the user in if they're already authenticated
+      if UserDefaults.standard.object(forKey: "Traveler") != nil {
+        // Send the user to the tab bar view
+        let mainTabBarViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "mainTabBarView")
+        mainTabBarViewController.modalTransitionStyle = .crossDissolve
+        self.present(mainTabBarViewController, animated: true, completion: nil)
+      }
+    })
   }
   
   override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {

@@ -137,17 +137,23 @@ class TCPAuthenticationController: UIViewController, UIGestureRecognizerDelegate
       let passwordConfirmation = self.signUpPasswordConfirmationField.text,
       self.signUpPasswordConfirmationField.text?.isEmpty == false
     else {
-        print("Missing data. Tell the user?")
+        let missingDataAlert = UIAlertController(title: "Missing Data", message: "Looks like there's something missing.", preferredStyle: .actionSheet)
+        missingDataAlert.addAction(UIAlertAction(title: "Okay", style: .default, handler: nil))
+        present(missingDataAlert, animated: true, completion: nil)
+      
         return
     }
     
-    // We've got data for all the fields
-//    print("— Signing up With This Data: —")
-//    print("Parent First Name: ", parentFirstName)
-//    print("Parent Last Name: ", parentLastName)
-//    print("Traveler First Name: ", travelerFirstName)
-//    print("Parent Email: ", parentEmail)
-//    print("Parent PIN Code: ", parentPINCode)
+    // Make sure the passwords match
+    if password != passwordConfirmation {
+      // Tell the user
+      let passwordMismatchAlert = UIAlertController(title: "Mismatched Passwords", message: "Those passwords don't match.", preferredStyle: .actionSheet)
+      passwordMismatchAlert.addAction(UIAlertAction(title: "Okay", style: .default, handler: nil))
+      present(passwordMismatchAlert, animated: true, completion: nil)
+      
+      // Focus on the first password field
+      self.signUpPasswordField.becomeFirstResponder()
+    }
     
     // Send the data to the server for validation
     Alamofire.request(
@@ -163,7 +169,40 @@ class TCPAuthenticationController: UIViewController, UIGestureRecognizerDelegate
       ]
     ).responseJSON {
       responseData in
-      //
+
+      guard let statusCode = responseData.response?.statusCode else {
+        let connectionIssueAlert = UIAlertController(title: "Connection Problem", message: "There was a problem getting a response from the server. Please make sure you're connected to the Internet.", preferredStyle: .actionSheet)
+        connectionIssueAlert.addAction(UIAlertAction(title: "Okay", style: .default, handler: nil))
+        self.present(connectionIssueAlert, animated: true, completion: nil)
+        
+        return
+      }
+
+      print("statusCode:", statusCode)
+      print("response:", responseData.result.value!)
+      
+      if statusCode == 200 {
+        // Save the user object to the user defaults
+        do {
+          let userDictionary = try JSONSerialization.data(withJSONObject: responseData.result.value!, options: [])
+          UserDefaults.standard.set(userDictionary, forKey: "Traveler")
+          
+          // Send the user to the tab bar view
+          let mainTabBarViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "mainTabBarView")
+          mainTabBarViewController.modalTransitionStyle = .crossDissolve
+          self.present(mainTabBarViewController, animated: true, completion: nil)
+        } catch {
+          print("Something happened parsing the user JSON from the server")
+        }
+      } else if statusCode == 409 {
+        let unavailableUsernameAlert = UIAlertController(title: "Email Already in Use", message: "That email address is already associated with an account. Please use a different one or sign in.", preferredStyle: .actionSheet)
+        unavailableUsernameAlert.addAction(UIAlertAction(title: "Okay", style: .default, handler: nil))
+        self.present(unavailableUsernameAlert, animated: true, completion: nil)
+      } else if statusCode == 500 {
+        let unknownErrorAlert = UIAlertController(title: "Something Broke", message: "The server is a little confused at the moment.", preferredStyle: .actionSheet)
+        unknownErrorAlert.addAction(UIAlertAction(title: "Okay", style: .default, handler: nil))
+        self.present(unknownErrorAlert, animated: true, completion: nil)
+      }
     }
   }
     
@@ -209,8 +248,10 @@ class TCPAuthenticationController: UIViewController, UIGestureRecognizerDelegate
   
   func keyboardDidShow(notification: NSNotification) {
     // Make sure we have the keyboard frame and the bottom scroll view constraint
-    guard let keyboardFrame = (notification.userInfo?[UIKeyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue,
-          let signUpViewBottom = self.signUpViewBottom else {
+    guard
+      let keyboardFrame = (notification.userInfo?[UIKeyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue,
+      let signUpViewBottom = self.signUpViewBottom
+    else {
       return
     }
     

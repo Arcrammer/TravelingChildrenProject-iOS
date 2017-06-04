@@ -97,7 +97,9 @@ class TCPAuthenticationController: UIViewController, UIGestureRecognizerDelegate
           UserDefaults.standard.set(userDictionary, forKey: "Traveler")
 
           // Send the user to the tab bar view
-          self.present(UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "mainTabBarView"), animated: true, completion: nil)
+          let mainTabBarViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "mainTabBarView")
+          mainTabBarViewController.modalTransitionStyle = .crossDissolve
+          self.present(mainTabBarViewController, animated: true, completion: nil)
         } catch {
           print("Something happened parsing the user JSON from the server")
         }
@@ -161,7 +163,6 @@ class TCPAuthenticationController: UIViewController, UIGestureRecognizerDelegate
       ]
     ).responseJSON {
       responseData in
-      
       //
     }
   }
@@ -188,6 +189,16 @@ class TCPAuthenticationController: UIViewController, UIGestureRecognizerDelegate
     // Watch the keyboard so we can adjust the bottom position of the scroll view when it shows and hides
     NotificationCenter.default.addObserver(self, selector: #selector(keyboardDidShow), name: .UIKeyboardDidShow, object: nil)
     NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name: .UIKeyboardWillHide, object: nil)
+  }
+  
+  override func viewDidAppear(_ animated: Bool) {
+    // Sign the user in if they're already authenticated
+    if UserDefaults.standard.object(forKey: "Traveler") != nil {
+      // Send the user to the tab bar view
+      let mainTabBarViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "mainTabBarView")
+      mainTabBarViewController.modalTransitionStyle = .crossDissolve
+      self.present(mainTabBarViewController, animated: true, completion: nil)
+    }
   }
   
   override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {

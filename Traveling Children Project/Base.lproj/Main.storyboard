@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16F43c" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="TlB-a3-xut">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="TlB-a3-xut">
     <device id="retina5_5" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -34,7 +34,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" keyboardDismissMode="onDrag" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="171" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="nE4-nT-rp5">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="657"/>
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="687"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" tag="1" contentMode="scaleToFill" selectionStyle="none" indentationWidth="0.0" shouldIndentWhileEditing="NO" reuseIdentifier="journeyPostCell" rowHeight="171" id="Rd3-jQ-48D" customClass="TCPJourneyPost" customModule="Traveling_Children_Project" customModuleProvider="target">
@@ -156,7 +156,7 @@
                             <constraint firstAttribute="trailing" secondItem="nE4-nT-rp5" secondAttribute="trailing" id="Jgq-on-ZzV"/>
                             <constraint firstAttribute="trailing" secondItem="eGs-va-946" secondAttribute="trailing" id="LjA-IC-5h8"/>
                             <constraint firstItem="eGs-va-946" firstAttribute="top" secondItem="tsR-hK-woN" secondAttribute="top" id="OfJ-Pm-16U"/>
-                            <constraint firstItem="4ug-Mw-9AY" firstAttribute="top" secondItem="nE4-nT-rp5" secondAttribute="bottom" constant="30" id="sTh-bV-ium"/>
+                            <constraint firstItem="4ug-Mw-9AY" firstAttribute="top" secondItem="nE4-nT-rp5" secondAttribute="bottom" id="sTh-bV-ium"/>
                             <constraint firstItem="nE4-nT-rp5" firstAttribute="leading" secondItem="tsR-hK-woN" secondAttribute="leading" id="tl5-wZ-3WE"/>
                             <constraint firstItem="4ug-Mw-9AY" firstAttribute="top" secondItem="rTg-rl-9eR" secondAttribute="bottom" constant="8" id="tpm-6L-7q1"/>
                         </constraints>

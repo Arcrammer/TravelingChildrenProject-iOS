@@ -87,6 +87,8 @@ class TCPJourneyPostController: UIViewController, UITableViewDelegate, UITableVi
    * Grabs journeys from the server
    */
   private func loadJourneys() {
+    print("Requesting journeys from \(kServerDomain)...")
+    
     var journeyRequest = URLRequest(url: URL(string: "http://" + kServerDomain + "/api/journeys")!)
     journeyRequest.httpMethod = "POST"
     
@@ -95,7 +97,14 @@ class TCPJourneyPostController: UIViewController, UITableViewDelegate, UITableVi
       
       // Make sure there aren't any errors
       guard error == nil else {
-        print(error!)
+        let errorAlertController = UIAlertController(title: "Something Happened", message: error!.localizedDescription, preferredStyle: .actionSheet)
+        errorAlertController.addAction(UIAlertAction(title: "Try Again", style: .default, handler: {
+          (action: UIAlertAction) in
+          self.loadJourneys()
+        }))
+        errorAlertController.addAction(UIAlertAction(title: "Close", style: .cancel, handler: nil))
+        self.present(errorAlertController, animated: true, completion: nil)
+        
         return
       }
       

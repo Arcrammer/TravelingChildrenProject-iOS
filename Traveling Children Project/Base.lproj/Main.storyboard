@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16F43c" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="TlB-a3-xut">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16F2073" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="TlB-a3-xut">
     <device id="retina5_5" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -34,7 +34,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" keyboardDismissMode="onDrag" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="171" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="nE4-nT-rp5">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="657"/>
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="687"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" tag="1" contentMode="scaleToFill" selectionStyle="none" indentationWidth="0.0" shouldIndentWhileEditing="NO" reuseIdentifier="journeyPostCell" rowHeight="171" id="Rd3-jQ-48D" customClass="TCPJourneyPost" customModule="Traveling_Children_Project" customModuleProvider="target">
@@ -53,17 +53,20 @@
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" bounces="NO" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" bouncesZoom="NO" keyboardDismissMode="onDrag" editable="NO" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ty8-S3-a1L">
-                                                    <rect key="frame" x="8" y="37" width="398" height="128"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" bouncesZoom="NO" keyboardDismissMode="onDrag" editable="NO" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ty8-S3-a1L">
+                                                    <rect key="frame" x="8" y="37" width="398" height="126"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                                 </textView>
                                             </subviews>
                                             <color key="backgroundColor" red="0.99607843139999996" green="0.88235294119999996" blue="0.53333333329999999" alpha="1" colorSpace="calibratedRGB"/>
                                             <constraints>
+                                                <constraint firstAttribute="trailing" secondItem="ty8-S3-a1L" secondAttribute="trailing" constant="8" id="1Ct-2F-kGa"/>
+                                                <constraint firstItem="ty8-S3-a1L" firstAttribute="top" secondItem="NV0-Ev-gqS" secondAttribute="bottom" constant="8" id="30r-q2-d2g"/>
                                                 <constraint firstItem="NV0-Ev-gqS" firstAttribute="top" secondItem="DW4-au-c5g" secondAttribute="topMargin" id="GsU-zu-64c"/>
+                                                <constraint firstItem="ty8-S3-a1L" firstAttribute="leading" secondItem="DW4-au-c5g" secondAttribute="leading" constant="8" id="Oh3-3x-WDo"/>
                                                 <constraint firstItem="NV0-Ev-gqS" firstAttribute="trailing" secondItem="DW4-au-c5g" secondAttribute="trailingMargin" id="XQo-PF-J4t"/>
+                                                <constraint firstAttribute="bottom" secondItem="ty8-S3-a1L" secondAttribute="bottom" constant="8" id="oD3-eV-Prh"/>
                                                 <constraint firstItem="NV0-Ev-gqS" firstAttribute="leading" secondItem="DW4-au-c5g" secondAttribute="leadingMargin" id="swH-Lb-HnN"/>
                                             </constraints>
                                         </tableViewCellContentView>
@@ -156,7 +159,7 @@
                             <constraint firstAttribute="trailing" secondItem="nE4-nT-rp5" secondAttribute="trailing" id="Jgq-on-ZzV"/>
                             <constraint firstAttribute="trailing" secondItem="eGs-va-946" secondAttribute="trailing" id="LjA-IC-5h8"/>
                             <constraint firstItem="eGs-va-946" firstAttribute="top" secondItem="tsR-hK-woN" secondAttribute="top" id="OfJ-Pm-16U"/>
-                            <constraint firstItem="4ug-Mw-9AY" firstAttribute="top" secondItem="nE4-nT-rp5" secondAttribute="bottom" constant="30" id="sTh-bV-ium"/>
+                            <constraint firstItem="4ug-Mw-9AY" firstAttribute="top" secondItem="nE4-nT-rp5" secondAttribute="bottom" id="sTh-bV-ium"/>
                             <constraint firstItem="nE4-nT-rp5" firstAttribute="leading" secondItem="tsR-hK-woN" secondAttribute="leading" id="tl5-wZ-3WE"/>
                             <constraint firstItem="4ug-Mw-9AY" firstAttribute="top" secondItem="rTg-rl-9eR" secondAttribute="bottom" constant="8" id="tpm-6L-7q1"/>
                         </constraints>
@@ -279,7 +282,7 @@
                                             <outlet property="delegate" destination="TlB-a3-xut" id="rLE-Ef-e4Y"/>
                                         </connections>
                                     </textField>
-                                    <textField opaque="NO" clipsSubviews="YES" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="123superSECRET" placeholder="Password" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="JLL-BL-rjS">
+                                    <textField opaque="NO" clipsSubviews="YES" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="secret" placeholder="Password" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="JLL-BL-rjS">
                                         <rect key="frame" x="10" y="56" width="378" height="40"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <constraints>

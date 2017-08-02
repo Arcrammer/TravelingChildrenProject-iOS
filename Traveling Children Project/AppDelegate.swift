@@ -38,14 +38,23 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CAAnimationDelegate {
     self.window!.backgroundColor = UIColor(red: 157/255, green: 220/255, blue: 249/255, alpha: 1)
     self.window!.makeKeyAndVisible()
     
-    // Set the first view controller
+    // Grab the users credentials from the last time they logged in
     let firstViewController: UIViewController
-    if (true) {
-      firstViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "mainAuthenticationView")
-    } else {
+    if let travelerCredentials = UserDefaults.standard.dictionary(forKey: "Traveler") {
       firstViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "mainTabBarView")
+    } else {
+      firstViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "mainAuthenticationView")
     }
+    print(UserDefaults.standard.dictionary(forKey: "Traveler"))
     self.window!.rootViewController = firstViewController
+
+    // Set the first view controller
+//    let firstViewController: UIViewController
+//    if (true) {
+//      firstViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "mainAuthenticationView")
+//    } else {
+//      firstViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "mainTabBarView")
+//    }
 
     // Logo mask background view
     let flyingLogoBackgroundView = UIView(frame: firstViewController.view.frame)
@@ -147,7 +156,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CAAnimationDelegate {
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
   }
   
-  // MARK: CAAnimationDelegate Methods
+  // MARK: - CAAnimationDelegate Methods
   func animationDidStop(_ anim: CAAnimation, finished flag: Bool) {
     // Remove mask when animation completes
     for layer in self.window!.rootViewController!.view.layer.sublayers! {

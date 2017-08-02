@@ -93,15 +93,19 @@ class TCPAuthenticationController: UIViewController, UIGestureRecognizerDelegate
       if statusCode == 200 {
         // Save the user object to the user defaults
         do {
-          let userDictionary = try JSONSerialization.data(withJSONObject: responseData.result.value!, options: [])
-          UserDefaults.standard.set(userDictionary, forKey: "Traveler")
+          var userData = try JSONSerialization.jsonObject(with: responseData.data!, options: []) as! [String: [String: Any]]
+          UserDefaults.standard.set([
+            "email": userData["user"]!["email"] as! String,
+            "password": userData["user"]!["password"] as! String
+          ], forKey: "Traveler")
 
           // Send the user to the tab bar view
           let mainTabBarViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "mainTabBarView")
           mainTabBarViewController.modalTransitionStyle = .crossDissolve
           self.present(mainTabBarViewController, animated: true, completion: nil)
-        } catch {
+        } catch let err as NSError {
           print("Something happened parsing the user JSON from the server")
+          print(err.localizedDescription)
         }
       } else if statusCode == 401 {
         // The credentials were wrong
@@ -163,6 +167,7 @@ class TCPAuthenticationController: UIViewController, UIGestureRecognizerDelegate
         "first_name": parentFirstName,
         "last_name": parentLastName,
         "traveler_name": travelerFirstName,
+        "pin_code": parentPINCode,
         "username": parentEmail,
         "password": password,
         "confirm_password": passwordConfirmation
@@ -184,8 +189,13 @@ class TCPAuthenticationController: UIViewController, UIGestureRecognizerDelegate
       if statusCode == 200 {
         // Save the user object to the user defaults
         do {
-          let userDictionary = try JSONSerialization.data(withJSONObject: responseData.result.value!, options: [])
-          UserDefaults.standard.set(userDictionary, forKey: "Traveler")
+          let userDictionary = try JSONSerialization.jsonObject(with: responseData.data!, options: []) as! [String: [String: Any]]
+          print("userDictionary:", userDictionary)
+          
+          UserDefaults.standard.set([
+            "email": userDictionary["user"]!["email"] as! String,
+            "password": userDictionary["user"]!["password"] as! String
+          ], forKey: "Traveler")
           
           // Send the user to the tab bar view
           let mainTabBarViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "mainTabBarView")
@@ -199,7 +209,7 @@ class TCPAuthenticationController: UIViewController, UIGestureRecognizerDelegate
         unavailableUsernameAlert.addAction(UIAlertAction(title: "Okay", style: .default, handler: nil))
         self.present(unavailableUsernameAlert, animated: true, completion: nil)
       } else if statusCode == 500 {
-        let unknownErrorAlert = UIAlertController(title: "Something Broke", message: "The server is a little confused at the moment.", preferredStyle: .actionSheet)
+        let unknownErrorAlert = UIAlertController(title: "Something Broke", message: "The server is a little confused at the moment. 🤔", preferredStyle: .actionSheet)
         unknownErrorAlert.addAction(UIAlertAction(title: "Okay", style: .default, handler: nil))
         self.present(unknownErrorAlert, animated: true, completion: nil)
       }

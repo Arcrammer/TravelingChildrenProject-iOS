@@ -8,6 +8,7 @@ import UIKit
 
 class TCPJourneyPostController: UIViewController, UITableViewDelegate, UITableViewDataSource {
   // MARK: - Outlets
+  @IBOutlet weak var backgroundView: UIView!
   @IBOutlet var journeyTable: UITableView?
   @IBOutlet var iconLabel: UILabel!
   
@@ -52,8 +53,8 @@ class TCPJourneyPostController: UIViewController, UITableViewDelegate, UITableVi
       return
     }
 
-    // Move the journeys down past the top bar
-    journeyTable.contentInset = UIEdgeInsets(top: 75, left: 0, bottom: 0, right: 0)
+    // Move the journeys down past the top bar and up past the tab bar
+    journeyTable.contentInset = UIEdgeInsets(top: 75, left: 0, bottom: 12, right: 0)
   }
   
   override func viewDidAppear(_ animated: Bool) {
@@ -130,7 +131,7 @@ class TCPJourneyPostController: UIViewController, UITableViewDelegate, UITableVi
 
         let journeyPost = Journey(
           title: title,
-          travelerName: travelerName,
+          travelerName: "Traveling " + travelerName,
           body: body
         )
         
@@ -150,12 +151,24 @@ class TCPJourneyPostController: UIViewController, UITableViewDelegate, UITableVi
   func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
     let journeyPost = tableView.dequeueReusableCell(withIdentifier: "journeyPostCell") as! TCPJourneyPost
     let journey = self.journeyPosts[indexPath.row]
-
+    
     // Set the view properties
     journeyPost.titleLabel.text = "TC Journey to " + journey.title
     journeyPost.bodyCopy.text = journey.body
+    journeyPost.travelerName.text = journey.travelerName
     
     return journeyPost
+  }
+    
+  func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+    let background = UIView(frame: CGRect(
+      x: cell.frame.minX + 10,
+      y: cell.frame.maxX + 10,
+      width: cell.frame.width - 10,
+      height: cell.frame.height - 10
+    ))
+    background.backgroundColor = UIColor.TCPYellow
+    cell.addSubview(background)
   }
   
   func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

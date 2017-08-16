@@ -8,8 +8,12 @@ import UIKit
 
 class TCPJourneyPost: UITableViewCell {
   // MARK: - Outlets
+  @IBOutlet weak var cellBackgroundView: UIView!
   @IBOutlet var titleLabel: UILabel!
   @IBOutlet var bodyCopy: UITextView!
+  @IBOutlet weak var travelerName: UILabel!
+  @IBOutlet weak var travelerPortrait: UIImageView!
+  @IBOutlet weak var likeIcon: UILabel!
   
   // MARK: - Methods
   required init?(coder: NSCoder) {
@@ -21,12 +25,19 @@ class TCPJourneyPost: UITableViewCell {
   }
   
   override func layoutSubviews() {
-    self.contentView.frame = UIEdgeInsetsInsetRect(self.contentView.frame, UIEdgeInsets(
-      top: 10,
-      left: 10,
-      bottom: 10,
-      right: 10
-    ))
-    self.contentView.layer.cornerRadius = 10
+    super.layoutSubviews()
+    
+    // Background radius
+    self.cellBackgroundView.layer.cornerRadius = 10
+    self.cellBackgroundView.layer.masksToBounds = true
+    
+    // Traveler icon radius
+    self.travelerPortrait.layer.cornerRadius = self.travelerPortrait.bounds.size.width / 2
+    self.travelerPortrait.layer.masksToBounds = true
+    
+
+    // Like icon
+    self.likeIcon.font = UIFont(name: "FontAwesome", size: 26)!
+    self.likeIcon.text = "\u{f004}"
   }
 }

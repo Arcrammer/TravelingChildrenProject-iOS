@@ -5,8 +5,9 @@
 //  Copyright © 2017 Traveling Children Project. All rights reserved.
 //
 import UIKit
+import FoldingCell
 
-class TCPJourneyPost: UITableViewCell {
+class TCPJourneyPost: FoldingCell {
   // MARK: - Outlets
   @IBOutlet weak var cellBackgroundView: UIView!
   @IBOutlet var titleLabel: UILabel!
@@ -34,10 +35,14 @@ class TCPJourneyPost: UITableViewCell {
     // Traveler icon radius
     self.travelerPortrait.layer.cornerRadius = self.travelerPortrait.bounds.size.width / 2
     self.travelerPortrait.layer.masksToBounds = true
-    
 
     // Like icon
     self.likeIcon.font = UIFont(name: "FontAwesome", size: 26)!
     self.likeIcon.text = "\u{f004}"
+  }
+  
+  override func animationDuration(_ itemIndex:NSInteger, type:AnimationType)-> TimeInterval {
+    let durations = [0.33, 0.26, 0.26]
+    return durations[itemIndex]
   }
 }

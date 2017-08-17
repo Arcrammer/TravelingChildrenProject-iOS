@@ -9,4 +9,5 @@ target 'Traveling Children Project' do
 
   # Pods for Traveling Children Project
   pod 'Alamofire', '~> 4.4'
+  pod 'FoldingCell', '~> 2.0.3'
 end

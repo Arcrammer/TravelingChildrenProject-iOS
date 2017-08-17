@@ -5,6 +5,14 @@
 //  Copyright © 2017 Traveling Children Project. All rights reserved.
 //
 import UIKit
+import FoldingCell
+
+fileprivate struct C {
+  struct CellHeight {
+    static let close: CGFloat = 250 // equal or greater foregroundView height
+    static let open: CGFloat = 350 // equal or greater containerView height
+  }
+}
 
 class TCPJourneyPostController: UIViewController, UITableViewDelegate, UITableViewDataSource {
   // MARK: - Outlets
@@ -29,11 +37,12 @@ class TCPJourneyPostController: UIViewController, UITableViewDelegate, UITableVi
   
   // MARK: - Properties
   var journeyPosts: [Journey] = []
-  
+  var cellHeights: [CGFloat] = []
+
   // MARK: - Methods
   override func viewDidLoad() {
     super.viewDidLoad()
-    
+
     // TODO: TODO: Make sure we always have a journey table
     guard let journeyTable = journeyTable else {
       print("No journey table view in this view controller")
@@ -138,6 +147,8 @@ class TCPJourneyPostController: UIViewController, UITableViewDelegate, UITableVi
         self.journeyPosts.insert(journeyPost, at: self.journeyPosts.count)
       }
       
+      self.cellHeights = (0..<self.journeyPosts.count).map {_ in 350}
+      
       // Reload table view data
       DispatchQueue.main.async(execute: {
         self.journeyTable!.reloadData()
@@ -173,5 +184,41 @@ class TCPJourneyPostController: UIViewController, UITableViewDelegate, UITableVi
   
   func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
     return self.journeyPosts.count
+  }
+  
+  func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+    return cellHeights[indexPath.row]
+  }
+  
+  func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+    guard case let cell as FoldingCell = tableView.cellForRow(at: indexPath) else {
+      return
+    }
+    
+    var duration = 0.0
+    if cellHeights[indexPath.row] == 350 { // open cell
+      cellHeights[indexPath.row] = 250
+      cell.selectedAnimation(true, animated: true, completion: nil)
+      duration = 0.5
+    } else {// close cell
+      cellHeights[indexPath.row] = 350
+      cell.selectedAnimation(false, animated: true, completion: nil)
+      duration = 1.1
+    }
+    
+    UIView.animate(withDuration: duration, delay: 0, options: .curveEaseOut, animations: { _ in
+      tableView.beginUpdates()
+      tableView.endUpdates()
+    }, completion: nil)
+  }
+  
+  @nonobjc func tableView(tableView: UITableView, willDisplayCell cell: UITableViewCell, forRowAtIndexPath indexPath: NSIndexPath) {
+    if case let foldingCell as FoldingCell = cell {
+      if cellHeights[indexPath.row] == 350 {
+        foldingCell.selectedAnimation(false, animated: false, completion:nil)
+      } else {
+        foldingCell.selectedAnimation(true, animated: false, completion: nil)
+      }
+    }
   }
 }

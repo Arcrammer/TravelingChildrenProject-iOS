@@ -38,11 +38,15 @@ class TCPJourneyPostController: UIViewController, UITableViewDelegate, UITableVi
   // MARK: - Properties
   var journeyPosts: [Journey] = []
   var cellHeights: [CGFloat] = []
+  let kCloseCellHeight: CGFloat = 100
+  let kOpenCellHeight: CGFloat = 500
 
   // MARK: - Methods
   override func viewDidLoad() {
     super.viewDidLoad()
-
+    
+    cellHeights = Array(repeating: kCloseCellHeight, count: self.journeyPosts.count)
+    
     // TODO: TODO: Make sure we always have a journey table
     guard let journeyTable = journeyTable else {
       print("No journey table view in this view controller")
@@ -196,16 +200,17 @@ class TCPJourneyPostController: UIViewController, UITableViewDelegate, UITableVi
     }
     
     var duration = 0.0
-    if cellHeights[indexPath.row] == 350 { // open cell
-      cellHeights[indexPath.row] = 250
+    let cellIsCollapsed = cellHeights[indexPath.row] == kCloseCellHeight
+    if cellIsCollapsed {
+      cellHeights[indexPath.row] = kOpenCellHeight
       cell.selectedAnimation(true, animated: true, completion: nil)
       duration = 0.5
-    } else {// close cell
-      cellHeights[indexPath.row] = 350
+    } else {
+      cellHeights[indexPath.row] = kCloseCellHeight
       cell.selectedAnimation(false, animated: true, completion: nil)
-      duration = 1.1
+      duration = 0.8
     }
-    
+
     UIView.animate(withDuration: duration, delay: 0, options: .curveEaseOut, animations: { _ in
       tableView.beginUpdates()
       tableView.endUpdates()
@@ -214,6 +219,8 @@ class TCPJourneyPostController: UIViewController, UITableViewDelegate, UITableVi
   
   @nonobjc func tableView(tableView: UITableView, willDisplayCell cell: UITableViewCell, forRowAtIndexPath indexPath: NSIndexPath) {
     if case let foldingCell as FoldingCell = cell {
+      cell.backgroundColor = UIColor.blue
+      
       if cellHeights[indexPath.row] == 350 {
         foldingCell.selectedAnimation(false, animated: false, completion:nil)
       } else {

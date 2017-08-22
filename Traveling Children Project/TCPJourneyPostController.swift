@@ -9,8 +9,8 @@ import FoldingCell
 
 fileprivate struct C {
   struct CellHeight {
-    static let close: CGFloat = 250 // equal or greater foregroundView height
-    static let open: CGFloat = 350 // equal or greater containerView height
+    static let close: CGFloat = 185 // equal or greater foregroundView height
+    static let open: CGFloat = 250 // equal or greater containerView height
   }
 }
 
@@ -38,8 +38,8 @@ class TCPJourneyPostController: UIViewController, UITableViewDelegate, UITableVi
   // MARK: - Properties
   var journeyPosts: [Journey] = []
   var cellHeights: [CGFloat] = []
-  let kCloseCellHeight: CGFloat = 100
-  let kOpenCellHeight: CGFloat = 500
+  let kCloseCellHeight: CGFloat = 185
+  let kOpenCellHeight: CGFloat = 250
 
   // MARK: - Methods
   override func viewDidLoad() {
@@ -168,13 +168,21 @@ class TCPJourneyPostController: UIViewController, UITableViewDelegate, UITableVi
     let journey = self.journeyPosts[indexPath.row]
     
     // Set the view properties
-    journeyPost.titleLabel.text = "TC Journey to " + journey.title
-    journeyPost.bodyCopy.text = journey.body
-    journeyPost.travelerName.text = journey.travelerName
+    for titleLabel in journeyPost.titleLabels {
+      titleLabel.text = "TC Journey to " + journey.title
+    }
+    
+    for body in journeyPost.bodies {
+      body.text = journey.body
+    }
+    
+    for travelerName in journeyPost.travelerNames {
+      travelerName.text = journey.travelerName
+    }
     
     return journeyPost
   }
-    
+  
   func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
     let background = UIView(frame: CGRect(
       x: cell.frame.minX + 10,
@@ -199,6 +207,11 @@ class TCPJourneyPostController: UIViewController, UITableViewDelegate, UITableVi
       return
     }
     
+    if cell.isAnimating() {
+      return
+    }
+    
+    
     var duration = 0.0
     let cellIsCollapsed = cellHeights[indexPath.row] == kCloseCellHeight
     if cellIsCollapsed {
@@ -211,7 +224,7 @@ class TCPJourneyPostController: UIViewController, UITableViewDelegate, UITableVi
       duration = 0.8
     }
 
-    UIView.animate(withDuration: duration, delay: 0, options: .curveEaseOut, animations: { _ in
+    UIView.animate(withDuration: duration, delay: 0, options: .curveEaseOut, animations: {_ in
       tableView.beginUpdates()
       tableView.endUpdates()
     }, completion: nil)

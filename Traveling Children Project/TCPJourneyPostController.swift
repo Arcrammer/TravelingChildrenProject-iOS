@@ -150,8 +150,9 @@ class TCPJourneyPostController: UIViewController, UITableViewDelegate, UITableVi
         
         self.journeyPosts.insert(journeyPost, at: self.journeyPosts.count)
       }
-      
-      self.cellHeights = (0..<self.journeyPosts.count).map {_ in 350}
+
+      // Set the initial cell height for each cell
+      self.cellHeights = (0..<self.journeyPosts.count).map {_ in C.CellHeight.close}
       
       // Reload table view data
       DispatchQueue.main.async(execute: {
@@ -211,7 +212,6 @@ class TCPJourneyPostController: UIViewController, UITableViewDelegate, UITableVi
       return
     }
     
-    
     var duration = 0.0
     let cellIsCollapsed = cellHeights[indexPath.row] == kCloseCellHeight
     if cellIsCollapsed {
@@ -232,9 +232,7 @@ class TCPJourneyPostController: UIViewController, UITableViewDelegate, UITableVi
   
   @nonobjc func tableView(tableView: UITableView, willDisplayCell cell: UITableViewCell, forRowAtIndexPath indexPath: NSIndexPath) {
     if case let foldingCell as FoldingCell = cell {
-      cell.backgroundColor = UIColor.blue
-      
-      if cellHeights[indexPath.row] == 350 {
+      if cellHeights[indexPath.row] == kOpenCellHeight {
         foldingCell.selectedAnimation(false, animated: false, completion:nil)
       } else {
         foldingCell.selectedAnimation(true, animated: false, completion: nil)

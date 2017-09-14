@@ -93,12 +93,24 @@ class TCPAuthenticationController: UIViewController, UIGestureRecognizerDelegate
       if statusCode == 200 {
         // Save the user object to the user defaults
         do {
-          var userData = try JSONSerialization.jsonObject(with: responseData.data!, options: []) as! [String: [String: Any]]
-          UserDefaults.standard.set([
-            "email": userData["user"]!["email"] as! String,
-            "password": userData["user"]!["password"] as! String
-          ], forKey: "Traveler")
+          var userDictionary = try JSONSerialization.jsonObject(with: responseData.data!, options: []) as! [String: [String: Any]]
+          
+          // Save the email address and password in UserDefaults
+          var travelerDefaults: Dictionary<String, Any> = [
+            "email": userDictionary["user"]!["email"] as! String,
+            "password": userDictionary["user"]!["password"] as! String
+          ]
 
+          // Save the portrait Data if we find a photo for the traveler on the server
+          var travelerPortrait: Data?
+          if let portraitFilename = userDictionary["user"]!["photo"] as? String {
+            travelerPortrait = try Data(contentsOf: URL(string: "http://" + kServerDomain + "/images/profile-images/" + portraitFilename)!, options: [])
+            travelerDefaults["travelerPortrait"] = travelerPortrait
+          }
+          
+          // Persist the defaults we grabbed from the server
+          UserDefaults.standard.set(travelerDefaults, forKey: "Traveler")
+          
           // Send the user to the tab bar view
           let mainTabBarViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "mainTabBarView")
           mainTabBarViewController.modalTransitionStyle = .crossDissolve
@@ -182,15 +194,11 @@ class TCPAuthenticationController: UIViewController, UIGestureRecognizerDelegate
         
         return
       }
-
-      print("statusCode:", statusCode)
-      print("response:", responseData.result.value!)
       
       if statusCode == 200 {
         // Save the user object to the user defaults
         do {
           let userDictionary = try JSONSerialization.jsonObject(with: responseData.data!, options: []) as! [String: [String: Any]]
-          print("userDictionary:", userDictionary)
           
           UserDefaults.standard.set([
             "email": userDictionary["user"]!["email"] as! String,

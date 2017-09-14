@@ -40,21 +40,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CAAnimationDelegate {
     
     // Grab the users credentials from the last time they logged in
     let firstViewController: UIViewController
-    if let travelerCredentials = UserDefaults.standard.dictionary(forKey: "Traveler") {
+    if UserDefaults.standard.dictionary(forKey: "Traveler") != nil {
       firstViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "mainTabBarView")
     } else {
       firstViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "mainAuthenticationView")
     }
-    print(UserDefaults.standard.dictionary(forKey: "Traveler"))
     self.window!.rootViewController = firstViewController
-
-    // Set the first view controller
-//    let firstViewController: UIViewController
-//    if (true) {
-//      firstViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "mainAuthenticationView")
-//    } else {
-//      firstViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "mainTabBarView")
-//    }
 
     // Logo mask background view
     let flyingLogoBackgroundView = UIView(frame: firstViewController.view.frame)

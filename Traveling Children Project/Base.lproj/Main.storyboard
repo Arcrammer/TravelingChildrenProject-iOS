@@ -30,7 +30,7 @@
                         <viewControllerLayoutGuide type="bottom" id="RK7-7P-uFH"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="Hca-fn-RBH">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="687"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BEt-87-c0i" customClass="TCPTopBar" customModule="Traveling_Children_Project" customModuleProvider="target">
@@ -115,7 +115,7 @@
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yiM-HB-p9M">
-                                <rect key="frame" x="8" y="78" width="398" height="650"/>
+                                <rect key="frame" x="8" y="78" width="398" height="601"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Parent / Guardian / Educator:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5CT-An-iJG">
                                         <rect key="frame" x="20" y="8" width="227" height="21"/>
@@ -134,14 +134,14 @@
                                         </constraints>
                                     </imageView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yHC-sO-IbV">
-                                        <rect key="frame" x="175" y="612" width="48" height="30"/>
+                                        <rect key="frame" x="175" y="563" width="48" height="30"/>
                                         <state key="normal" title="Logout"/>
                                         <connections>
                                             <action selector="logOut:" destination="SOt-WO-mgS" eventType="touchUpInside" id="cQE-Y6-2KH"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pPX-2A-ZoP">
-                                        <rect key="frame" x="25" y="612" width="39" height="30"/>
+                                        <rect key="frame" x="25" y="563" width="39" height="30"/>
                                         <state key="normal" title="Close"/>
                                         <connections>
                                             <action selector="dismissPassportProfile:" destination="SOt-WO-mgS" eventType="touchUpInside" id="1JJ-c8-GXl"/>
@@ -175,6 +175,7 @@
                     </view>
                     <connections>
                         <outlet property="formContainer" destination="yiM-HB-p9M" id="8dg-5D-z94"/>
+                        <outlet property="ownerPortrait" destination="RJe-7M-6pJ" id="psn-2K-zh9"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iP8-zm-Phj" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -472,22 +473,13 @@
                                     <constraint firstAttribute="trailing" secondItem="A44-rk-OYs" secondAttribute="trailing" id="ma5-6E-qkN"/>
                                 </constraints>
                             </view>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rTg-rl-9eR">
-                                <rect key="frame" x="339" y="649" width="55" height="30"/>
-                                <state key="normal" title="Log Out"/>
-                                <connections>
-                                    <action selector="logOut:" destination="9pv-A4-QxB" eventType="touchUpInside" id="Pd5-gA-nAs"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.61568627450980395" green="0.86274509803921573" blue="0.97647058823529409" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstItem="rTg-rl-9eR" firstAttribute="trailing" secondItem="tsR-hK-woN" secondAttribute="trailingMargin" id="C3J-a0-7th"/>
                             <constraint firstItem="eGs-va-946" firstAttribute="top" secondItem="tsR-hK-woN" secondAttribute="top" id="Gdh-xa-fbF"/>
                             <constraint firstItem="nE4-nT-rp5" firstAttribute="leading" secondItem="tsR-hK-woN" secondAttribute="leading" id="HV3-tT-yCO"/>
                             <constraint firstItem="nE4-nT-rp5" firstAttribute="top" secondItem="tsR-hK-woN" secondAttribute="top" id="Hcg-Go-iGQ"/>
                             <constraint firstAttribute="trailing" secondItem="nE4-nT-rp5" secondAttribute="trailing" id="QUp-XO-bAN"/>
-                            <constraint firstItem="4ug-Mw-9AY" firstAttribute="top" secondItem="rTg-rl-9eR" secondAttribute="bottom" constant="8" id="a0U-t5-WJd"/>
                             <constraint firstAttribute="trailing" secondItem="eGs-va-946" secondAttribute="trailing" id="bgY-ah-eQs"/>
                             <constraint firstItem="eGs-va-946" firstAttribute="leading" secondItem="tsR-hK-woN" secondAttribute="leading" id="hWs-mB-fM1"/>
                             <constraint firstItem="4ug-Mw-9AY" firstAttribute="top" secondItem="nE4-nT-rp5" secondAttribute="bottom" id="jLl-TB-Xyz"/>
@@ -1235,6 +1227,7 @@
                     <connections>
                         <outlet property="iconLabel" destination="Mke-a9-S8T" id="dNv-ae-amT"/>
                         <outlet property="menuTable" destination="xE3-cT-T5E" id="JZU-ub-KLc"/>
+                        <segue destination="SOt-WO-mgS" kind="show" identifier="passportProfileSegue" id="FA5-iA-xzx"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xa6-V7-lSY" sceneMemberID="firstResponder"/>

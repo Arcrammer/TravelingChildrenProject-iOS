@@ -63,6 +63,16 @@ class TCPNavigatorController: UIViewController, UITableViewDelegate, UITableView
   
   // MARK: - UITableViewDelegate Methods
   func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+    // Deselect the row
     tableView.deselectRow(at: indexPath, animated: false)
+    
+    switch indexPath.row {
+    case 0:
+      // 'Passport Profile'
+      print("Should present the passport profile controoler")
+      performSegue(withIdentifier: "passportProfileSegue", sender: self)
+    default:
+      break
+    }
   }
 }

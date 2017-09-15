@@ -9,6 +9,7 @@ import UIKit
 class TCPPassportProfileController: UIViewController {
   // MARK: - Outlets
   @IBOutlet weak var formContainer: UIView!
+  @IBOutlet weak var ownerPortrait: UIImageView!
   
   // MARK: - Actions
   @IBAction func dismissPassportProfile(_ sender: UIButton) {
@@ -27,8 +28,20 @@ class TCPPassportProfileController: UIViewController {
   
   // MARK: - Methods
   override func viewDidLoad() {
+    // Grab the user data from UserDefaults
+    let userData = UserDefaults.standard.object(forKey: "Traveler") as! Dictionary<String, Any>
+
     // Make spiffy
     self.formContainer.layer.cornerRadius = 10
     self.formContainer.layer.masksToBounds = true
+    
+    // Set the portraits
+    if let travelerPortrait = userData["travelerPortrait"] as? Data {
+      self.ownerPortrait.image = UIImage(data: travelerPortrait)!
+      
+      // Round the edges
+      self.ownerPortrait.layer.cornerRadius = self.ownerPortrait.bounds.size.width / 2
+      self.ownerPortrait.layer.masksToBounds = true
+    }
   }
 }

@@ -95,6 +95,14 @@
 			path = "Traveling Children Project";
 			sourceTree = "<group>";
 		};
+		11A2EDE11F6C5F7D00F1AAF0 /* Navigator Views */ = {
+			isa = PBXGroup;
+			children = (
+				118728AF1F6C3D15009DC4E7 /* TCPPassportController.swift */,
+			);
+			name = "Navigator Views";
+			sourceTree = "<group>";
+		};
 		11B73D5B1EB4DDE800E83D89 /* Fonts */ = {
 			isa = PBXGroup;
 			children = (
@@ -113,7 +121,7 @@
 				11EDC0961EACEE0D003A0ADD /* TCPTabBarController.swift */,
 				11296B8F1EA44AB500DFFE3A /* TCPJourneyPostController.swift */,
 				1174A34E1EB60D5C00E3BD35 /* TCPNavigatorController.swift */,
-				118728AF1F6C3D15009DC4E7 /* TCPPassportController.swift */,
+				11A2EDE11F6C5F7D00F1AAF0 /* Navigator Views */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";

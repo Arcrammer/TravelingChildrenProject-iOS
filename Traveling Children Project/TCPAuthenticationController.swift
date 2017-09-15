@@ -97,8 +97,10 @@ class TCPAuthenticationController: UIViewController, UIGestureRecognizerDelegate
           
           // Save the email address and password in UserDefaults
           var travelerDefaults: Dictionary<String, Any> = [
-            "email": userDictionary["user"]!["email"] as! String,
-            "password": userDictionary["user"]!["password"] as! String
+            "first_name": userDictionary["user"]!["first_name"] as Any,
+            "last_name": userDictionary["user"]!["last_name"] as Any,
+            "email": userDictionary["user"]!["email"] as Any,
+            "password": userDictionary["user"]!["password"] as Any
           ]
 
           // Save the portrait Data if we find a photo for the traveler on the server
@@ -201,8 +203,10 @@ class TCPAuthenticationController: UIViewController, UIGestureRecognizerDelegate
           let userDictionary = try JSONSerialization.jsonObject(with: responseData.data!, options: []) as! [String: [String: Any]]
           
           UserDefaults.standard.set([
-            "email": userDictionary["user"]!["email"] as! String,
-            "password": userDictionary["user"]!["password"] as! String
+            "first_name": userDictionary["user"]!["first_name"] as Any,
+            "last_name": userDictionary["user"]!["last_name"] as Any,
+            "email": userDictionary["user"]!["email"] as Any,
+            "password": userDictionary["user"]!["password"] as Any
           ], forKey: "Traveler")
           
           // Send the user to the tab bar view

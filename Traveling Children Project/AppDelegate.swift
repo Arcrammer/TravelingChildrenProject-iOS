@@ -24,6 +24,7 @@ extension UIColor {
   static let TCPOrange = UIColor(red: 238/255, green: 103/255, blue: 48/255, alpha: 1)
   static let TCPYellow = UIColor(red: 254/255, green: 224/255, blue: 136/255, alpha: 1)
   static let TCPDarkYellow = UIColor(red: 255/255, green: 194/255, blue: 35/255, alpha: 1)
+  static let TCPGreen = UIColor(red: 149/255, green: 205/255, blue: 139/255, alpha: 1)
 }
 
 @UIApplicationMain

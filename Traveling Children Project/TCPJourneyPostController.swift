@@ -16,8 +16,6 @@ fileprivate struct C {
 
 class TCPJourneyPostController: UIViewController, UITableViewDelegate, UITableViewDataSource {
   // MARK: - Outlets
-  @IBOutlet weak var backgroundView: UIView!
-  @IBOutlet weak var travelerPortrait: UIImageView!
   @IBOutlet var journeyTable: UITableView?
   @IBOutlet var iconLabel: UILabel!
   
@@ -65,16 +63,6 @@ class TCPJourneyPostController: UIViewController, UITableViewDelegate, UITableVi
 
     // Move the journeys down past the top bar and up past the tab bar
     journeyTable.contentInset = UIEdgeInsets(top: 75, left: 0, bottom: 12, right: 0)
-    
-    // Replace the traveler portrait in the navigation bar
-    let userData = UserDefaults.standard.object(forKey: "Traveler") as! Dictionary<String, Any>
-    if let travelerPortrait = userData["travelerPortrait"] as? Data {
-      self.travelerPortrait.image = UIImage(data: travelerPortrait)!
-      
-      // Round the edges
-      self.travelerPortrait.layer.cornerRadius = self.travelerPortrait.bounds.size.width / 2
-      self.travelerPortrait.layer.masksToBounds = true
-    }
   }
   
   override func viewDidAppear(_ animated: Bool) {

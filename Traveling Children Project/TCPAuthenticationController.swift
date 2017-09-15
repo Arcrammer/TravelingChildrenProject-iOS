@@ -296,6 +296,12 @@ class TCPAuthenticationController: UIViewController, UIGestureRecognizerDelegate
     return false
   }
   
+  // MARK: - Class Methods
+  class func logOut() {
+    // Forget the user
+    UserDefaults.standard.removeObject(forKey: "Traveler")
+  }
+  
   // MARK: - UIGestureRecognizerDelegate Methods
   func gestureRecognizer(_ gestureRecognizer: UIGestureRecognizer, shouldReceive touch: UITouch) -> Bool {
     // Dismiss the keyboard if you tap the 'Sign Up' scroll view

@@ -63,14 +63,24 @@ class TCPNavigatorController: UIViewController, UITableViewDelegate, UITableView
   
   // MARK: - UITableViewDelegate Methods
   func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+    let selectedCell = tableView.cellForRow(at: indexPath)
+    
     // Deselect the row
     tableView.deselectRow(at: indexPath, animated: false)
     
-    switch indexPath.row {
-    case 0:
-      // 'Passport Profile'
-      print("Should present the passport profile controoler")
+    switch selectedCell!.textLabel!.text! {
+    case "PASSPORT PROFILE":
       performSegue(withIdentifier: "passportProfileSegue", sender: self)
+    
+    case "SIGN OUT":
+      // Deauth the user
+      TCPAuthenticationController.logOut()
+      
+      // Send the user to the auth view
+      let authenticationView = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "mainAuthenticationView")
+      authenticationView.modalTransitionStyle = .crossDissolve
+      present(authenticationView, animated: true, completion: nil)
+
     default:
       break
     }

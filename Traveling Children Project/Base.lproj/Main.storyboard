@@ -127,10 +127,10 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="RJe-7M-6pJ">
-                                        <rect key="frame" x="20" y="37" width="75" height="75"/>
+                                        <rect key="frame" x="20" y="37" width="70" height="70"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" constant="75" id="Luv-Sn-KT7"/>
-                                            <constraint firstAttribute="height" constant="75" id="kfd-Ip-0L5"/>
+                                            <constraint firstAttribute="width" constant="70" id="Luv-Sn-KT7"/>
+                                            <constraint firstAttribute="height" constant="70" id="kfd-Ip-0L5"/>
                                         </constraints>
                                     </imageView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yHC-sO-IbV">
@@ -147,14 +147,32 @@
                                             <action selector="dismissPassportProfile:" destination="SOt-WO-mgS" eventType="touchUpInside" id="1JJ-c8-GXl"/>
                                         </connections>
                                     </button>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="First Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="QXm-4a-mfd">
+                                        <rect key="frame" x="98" y="37" width="292" height="30"/>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Last Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="bim-Bi-rbY">
+                                        <rect key="frame" x="98" y="75" width="292" height="30"/>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
                                 </subviews>
                                 <color key="backgroundColor" red="0.99607843139999996" green="0.87843137250000003" blue="0.53333333329999999" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstItem="5CT-An-iJG" firstAttribute="top" secondItem="yiM-HB-p9M" secondAttribute="top" constant="8" id="0tm-DK-nUa"/>
                                     <constraint firstAttribute="bottom" secondItem="yHC-sO-IbV" secondAttribute="bottom" constant="8" id="2U0-q2-0wF"/>
+                                    <constraint firstAttribute="trailing" secondItem="bim-Bi-rbY" secondAttribute="trailing" constant="8" id="7Xx-dp-K22"/>
+                                    <constraint firstItem="QXm-4a-mfd" firstAttribute="top" secondItem="5CT-An-iJG" secondAttribute="bottom" constant="8" id="B4A-TS-agA"/>
+                                    <constraint firstItem="bim-Bi-rbY" firstAttribute="leading" secondItem="RJe-7M-6pJ" secondAttribute="trailing" constant="8" id="EZx-ZH-QnC"/>
                                     <constraint firstItem="5CT-An-iJG" firstAttribute="leading" secondItem="yiM-HB-p9M" secondAttribute="leading" constant="20" id="HLU-al-OPc"/>
                                     <constraint firstAttribute="bottom" secondItem="pPX-2A-ZoP" secondAttribute="bottom" constant="8" id="K5V-Eq-i5e"/>
+                                    <constraint firstItem="bim-Bi-rbY" firstAttribute="top" secondItem="QXm-4a-mfd" secondAttribute="bottom" constant="8" id="Ms3-oH-eY5"/>
+                                    <constraint firstItem="QXm-4a-mfd" firstAttribute="leading" secondItem="RJe-7M-6pJ" secondAttribute="trailing" constant="8" id="VJI-0o-4Kg"/>
                                     <constraint firstItem="RJe-7M-6pJ" firstAttribute="leading" secondItem="yiM-HB-p9M" secondAttribute="leading" constant="20" id="cMw-21-RKb"/>
+                                    <constraint firstAttribute="trailing" secondItem="QXm-4a-mfd" secondAttribute="trailing" constant="8" id="oTH-CS-SW3"/>
                                     <constraint firstItem="pPX-2A-ZoP" firstAttribute="leading" secondItem="yiM-HB-p9M" secondAttribute="leading" constant="25" id="qN6-iE-gjn"/>
                                     <constraint firstItem="yHC-sO-IbV" firstAttribute="centerX" secondItem="yiM-HB-p9M" secondAttribute="centerX" id="uTD-ta-WIg"/>
                                     <constraint firstItem="RJe-7M-6pJ" firstAttribute="top" secondItem="5CT-An-iJG" secondAttribute="bottom" constant="8" id="wkU-4A-ncj"/>
@@ -175,12 +193,14 @@
                     </view>
                     <connections>
                         <outlet property="formContainer" destination="yiM-HB-p9M" id="8dg-5D-z94"/>
+                        <outlet property="ownerFirstNameField" destination="QXm-4a-mfd" id="E9k-62-mcK"/>
+                        <outlet property="ownerLastNameField" destination="bim-Bi-rbY" id="B5i-m3-Abe"/>
                         <outlet property="ownerPortrait" destination="RJe-7M-6pJ" id="psn-2K-zh9"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iP8-zm-Phj" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2845" y="359"/>
+            <point key="canvasLocation" x="2844.9275362318845" y="358.69565217391306"/>
         </scene>
         <!--Journey Post Controller-->
         <scene sceneID="hNz-n2-bh7">

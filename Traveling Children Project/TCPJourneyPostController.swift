@@ -19,17 +19,6 @@ class TCPJourneyPostController: UIViewController, UITableViewDelegate, UITableVi
   @IBOutlet var journeyTable: UITableView?
   @IBOutlet var iconLabel: UILabel!
   
-  // MARK: - Actions
-  @IBAction func logOut(_ sender: Any) {
-    // Forget the user
-    UserDefaults.standard.removeObject(forKey: "Traveler")
-
-    // Send the user to the tab bar view
-    let authenticationViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "mainAuthenticationView")
-    authenticationViewController.modalTransitionStyle = .crossDissolve
-    self.present(authenticationViewController, animated: true, completion: nil)
-  }
-  
   // MARK: - Properties
   var journeyPosts: [Journey] = []
   var cellHeights: [CGFloat] = []

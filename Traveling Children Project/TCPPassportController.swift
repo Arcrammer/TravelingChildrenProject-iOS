@@ -10,6 +10,8 @@ class TCPPassportProfileController: UIViewController {
   // MARK: - Outlets
   @IBOutlet weak var formContainer: UIView!
   @IBOutlet weak var ownerPortrait: UIImageView!
+  @IBOutlet weak var ownerFirstNameField: UITextField!
+  @IBOutlet weak var ownerLastNameField: UITextField!
   
   // MARK: - Actions
   @IBAction func dismissPassportProfile(_ sender: UIButton) {
@@ -17,13 +19,13 @@ class TCPPassportProfileController: UIViewController {
   }
   
   @IBAction func logOut(_ sender: Any) {
-    // Forget the user
-    UserDefaults.standard.removeObject(forKey: "Traveler")
+    // Deauth the user
+    TCPAuthenticationController.logOut()
     
-    // Send the user to the tab bar view
-    let authenticationViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "mainAuthenticationView")
-    authenticationViewController.modalTransitionStyle = .crossDissolve
-    self.present(authenticationViewController, animated: true, completion: nil)
+    // Send the user to the auth view
+    let authenticationView = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "mainAuthenticationView")
+    authenticationView.modalTransitionStyle = .crossDissolve
+    present(authenticationView, animated: true, completion: nil)
   }
   
   // MARK: - Methods
@@ -35,13 +37,22 @@ class TCPPassportProfileController: UIViewController {
     self.formContainer.layer.cornerRadius = 10
     self.formContainer.layer.masksToBounds = true
     
-    // Set the portraits
-    if let travelerPortrait = userData["travelerPortrait"] as? Data {
-      self.ownerPortrait.image = UIImage(data: travelerPortrait)!
+    // Set the owner portrait
+    if let ownerPortrait = userData["travelerPortrait"] as? Data {
+      self.ownerPortrait.image = UIImage(data: ownerPortrait)!
       
       // Round the edges
       self.ownerPortrait.layer.cornerRadius = self.ownerPortrait.bounds.size.width / 2
       self.ownerPortrait.layer.masksToBounds = true
+    }
+    
+    // Set the owner data
+    if let ownerFirstName = userData["first_name"] as? String {
+      self.ownerFirstNameField.text = ownerFirstName
+    }
+
+    if let ownerLastName = userData["last_name"] as? String {
+      self.ownerLastNameField.text = ownerLastName
     }
   }
 }

@@ -107,7 +107,8 @@ class TCPAuthenticationController: UIViewController, UIGestureRecognizerDelegate
             "address_street": userDictionary["user"]!["address"]!["street"] as Any,
             "address_city": userDictionary["user"]!["address"]!["city"] as Any,
             "address_state": userDictionary["user"]!["address"]!["state"] as Any,
-            "address_ZIP": userDictionary["user"]!["address"]!["zip"] as Any
+            "address_ZIP": userDictionary["user"]!["address"]!["zip"] as Any,
+            "travelers": userDictionary["user"]!["travelers"] as Any
           ]
           
           // Save the portrait Data if we find a photo for the traveler on the server

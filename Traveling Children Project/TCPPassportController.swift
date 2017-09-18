@@ -6,7 +6,7 @@
 //
 import UIKit
 
-class TCPPassportProfileController: UIViewController {
+class TCPPassportProfileController: UIViewController, UITableViewDelegate, UITableViewDataSource {
   // MARK: - Outlets
   @IBOutlet weak var formContainer: UIView!
   @IBOutlet weak var ownerPortrait: UIImageView!
@@ -20,6 +20,8 @@ class TCPPassportProfileController: UIViewController {
   @IBOutlet weak var ownerAddressCityField: UITextField!
   @IBOutlet weak var ownerAddressStateField: UITextField!
   @IBOutlet weak var ownerAddressZIPField: UITextField!
+  @IBOutlet weak var travelersTableView: UITableView!
+  @IBOutlet weak var travelersView: UIView!
   
   // MARK: - Actions
   @IBAction func dismissPassportProfile(_ sender: UIButton) {
@@ -36,11 +38,15 @@ class TCPPassportProfileController: UIViewController {
     present(authenticationView, animated: true, completion: nil)
   }
   
+  // MARK: - Properties
+  var travelers: Array<Dictionary<String, String>> = []
+  var travelerCount = 0
+  
   // MARK: - Methods
   override func viewDidLoad() {
     // Grab the user data from UserDefaults
     let userData = UserDefaults.standard.object(forKey: "Traveler") as! Dictionary<String, AnyObject>
-
+    
     // Make spiffy
     self.formContainer.layer.cornerRadius = 10
     self.formContainer.layer.masksToBounds = true
@@ -122,5 +128,68 @@ class TCPPassportProfileController: UIViewController {
     if let ownerZIP = userData["address_ZIP"] as? String {
       self.ownerAddressZIPField.text = ownerZIP
     }
+    
+    // Remove 'Travelers' list item separators
+    self.travelersTableView.separatorStyle = .none
+    
+    // Travelers
+    dump(userData["travelers"])
+    if let travelers = userData["travelers"] as? Array<Dictionary<String, Any>> {
+      // Hide the list of travelers if there aren't any travelers
+      if travelers.count == 0 {
+        self.travelersView.isHidden = true
+      } else {
+        // Save the travelers for use elsewhere
+        self.travelers = travelers as! Array<Dictionary<String, String>>
+        self.travelerCount = travelers.count
+      }
+    }
+  }
+  
+  // MARK: - UITableViewDataSource Methods
+  func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    let cell = tableView.dequeueReusableCell(withIdentifier: "travelerCell")!
+    
+    // Traveler portrait
+    if let travelerPortraitView = cell.viewWithTag(1) as? UIImageView {
+      // Cut to a circle
+      travelerPortraitView.layer.cornerRadius = travelerPortraitView.bounds.size.width / 2
+      travelerPortraitView.layer.masksToBounds = true
+    }
+    
+    // Traveler name
+    if let travelerName = self.travelers[indexPath.row]["name"],
+       let travelerNameField = cell.viewWithTag(2) as? UITextField {
+      travelerNameField.text = travelerName
+    }
+
+    // Traveler birthday
+    if let travelerBirthday = self.travelers[indexPath.row]["birthday"],
+       let travelerBirthdayField = cell.viewWithTag(3) as? UITextField {
+      travelerBirthdayField.text = travelerBirthday
+    }
+
+    // Traveler gender
+    if let travelerGender = self.travelers[indexPath.row]["gender"],
+       let travelerGenderField = cell.viewWithTag(4) as? UITextField {
+      switch travelerGender {
+      case "Male":
+        travelerGenderField.text = "M"
+      case "Female":
+        travelerGenderField.text = "F"
+      default:
+        travelerGenderField.text = "U"
+      }
+    }
+
+    return cell
+  }
+  
+  func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    return self.travelerCount
+  }
+  
+  func numberOfSections(in tableView: UITableView) -> Int {
+    return 1
   }
 }

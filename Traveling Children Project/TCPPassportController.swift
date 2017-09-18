@@ -8,6 +8,7 @@ import UIKit
 
 class TCPPassportProfileController: UIViewController, UITableViewDelegate, UITableViewDataSource {
   // MARK: - Outlets
+  @IBOutlet weak var iconLabel: UILabel!
   @IBOutlet weak var formContainer: UIView!
   @IBOutlet weak var ownerPortrait: UIImageView!
   @IBOutlet weak var ownerFirstNameField: UITextField!
@@ -44,6 +45,10 @@ class TCPPassportProfileController: UIViewController, UITableViewDelegate, UITab
   
   // MARK: - Methods
   override func viewDidLoad() {
+    // Set the icon label
+    self.iconLabel.font = UIFont(name: "FontAwesome", size: 20)!
+    self.iconLabel.text = "\u{f02d}"
+    
     // Grab the user data from UserDefaults
     let userData = UserDefaults.standard.object(forKey: "Traveler") as! Dictionary<String, AnyObject>
     
@@ -133,7 +138,6 @@ class TCPPassportProfileController: UIViewController, UITableViewDelegate, UITab
     self.travelersTableView.separatorStyle = .none
     
     // Travelers
-    dump(userData["travelers"])
     if let travelers = userData["travelers"] as? Array<Dictionary<String, Any>> {
       // Hide the list of travelers if there aren't any travelers
       if travelers.count == 0 {

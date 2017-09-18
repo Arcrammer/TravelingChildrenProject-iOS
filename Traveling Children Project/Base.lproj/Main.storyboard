@@ -84,7 +84,7 @@
                                                         <constraint firstAttribute="height" constant="34" id="DU1-so-NgM"/>
                                                         <constraint firstAttribute="width" constant="35" id="GwU-F8-9JQ"/>
                                                     </constraints>
-                                                    <fontDescription key="fontDescription" name="ProximaNova-Bold" family="Proxima Nova" pointSize="20"/>
+                                                    <fontDescription key="fontDescription" name="ProximaNova-Regular" family="Proxima Nova" pointSize="20"/>
                                                     <color key="textColor" red="0.23137254900000001" green="0.14117647059999999" blue="0.086274509799999996" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
@@ -397,6 +397,7 @@
                     </view>
                     <connections>
                         <outlet property="formContainer" destination="yiM-HB-p9M" id="8dg-5D-z94"/>
+                        <outlet property="iconLabel" destination="zHU-15-CNL" id="9Ey-Ad-woN"/>
                         <outlet property="ownerAddressCityField" destination="UIu-ps-nay" id="G1S-Gh-DI6"/>
                         <outlet property="ownerAddressStateField" destination="0Zx-Ah-8lL" id="Xbl-5k-th3"/>
                         <outlet property="ownerAddressStreetField" destination="CpX-3W-mym" id="oMl-7L-Br1"/>

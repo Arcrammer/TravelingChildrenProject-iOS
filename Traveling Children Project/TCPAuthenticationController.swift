@@ -93,16 +93,23 @@ class TCPAuthenticationController: UIViewController, UIGestureRecognizerDelegate
       if statusCode == 200 {
         // Save the user object to the user defaults
         do {
-          var userDictionary = try JSONSerialization.jsonObject(with: responseData.data!, options: []) as! [String: [String: Any]]
+          var userDictionary = try JSONSerialization.jsonObject(with: responseData.data!, options: []) as! [String: [String: AnyObject]]
           
           // Save the email address and password in UserDefaults
           var travelerDefaults: Dictionary<String, Any> = [
             "first_name": userDictionary["user"]!["first_name"] as Any,
             "last_name": userDictionary["user"]!["last_name"] as Any,
             "email": userDictionary["user"]!["email"] as Any,
-            "password": userDictionary["user"]!["password"] as Any
+            "password": userDictionary["user"]!["password"] as Any,
+            "gender": userDictionary["user"]!["parent_gender"] as Any,
+            "birthday": userDictionary["user"]!["parent_birthday"] as Any,
+            "phone": userDictionary["user"]!["address"]!["phone"] as Any,
+            "address_street": userDictionary["user"]!["address"]!["street"] as Any,
+            "address_city": userDictionary["user"]!["address"]!["city"] as Any,
+            "address_state": userDictionary["user"]!["address"]!["state"] as Any,
+            "address_ZIP": userDictionary["user"]!["address"]!["zip"] as Any
           ]
-
+          
           // Save the portrait Data if we find a photo for the traveler on the server
           var travelerPortrait: Data?
           if let portraitFilename = userDictionary["user"]!["photo"] as? String {
@@ -200,13 +207,19 @@ class TCPAuthenticationController: UIViewController, UIGestureRecognizerDelegate
       if statusCode == 200 {
         // Save the user object to the user defaults
         do {
-          let userDictionary = try JSONSerialization.jsonObject(with: responseData.data!, options: []) as! [String: [String: Any]]
+          let userDictionary = try JSONSerialization.jsonObject(with: responseData.data!, options: []) as! [String: [String: AnyObject]]
           
           UserDefaults.standard.set([
             "first_name": userDictionary["user"]!["first_name"] as Any,
             "last_name": userDictionary["user"]!["last_name"] as Any,
             "email": userDictionary["user"]!["email"] as Any,
-            "password": userDictionary["user"]!["password"] as Any
+            "password": userDictionary["user"]!["password"] as Any,
+            "gender": userDictionary["user"]!["parent_gender"] as Any,
+            "phone": userDictionary["user"]!["address"]!["phone"] as Any,
+            "address_street": userDictionary["user"]!["address"]!["street"] as Any,
+            "address_city": userDictionary["user"]!["address"]!["city"] as Any,
+            "address_state": userDictionary["user"]!["address"]!["state"] as Any,
+            "address_ZIP": userDictionary["user"]!["address"]!["zip"] as Any
           ], forKey: "Traveler")
           
           // Send the user to the tab bar view

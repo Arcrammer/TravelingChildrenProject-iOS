@@ -158,8 +158,6 @@ class TCPPassportProfileController: UIViewController, UITableViewDelegate, UITab
       // Cut the traveler portrait to a circle
       travelerPortraitView.layer.cornerRadius = travelerPortraitView.bounds.size.width / 2
       travelerPortraitView.layer.masksToBounds = true
-
-      dump(self.travelers[indexPath.row]["portrait"])
       
       // Traveler portrait
       if let travelerPortrait = self.travelers[indexPath.row]["portrait"] as? Data {

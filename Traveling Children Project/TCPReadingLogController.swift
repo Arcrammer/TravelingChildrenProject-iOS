@@ -29,7 +29,11 @@ class TCPReadingLogController: UIViewController, UITableViewDataSource {
     
     let userData = UserDefaults.standard.object(forKey: "Traveler") as! Dictionary<String, AnyObject>
     if let travelers = userData["travelers"] as? Array<Dictionary<String, Any>> {
-      self.travelers = travelers
+      for traveler in travelers {
+        if traveler["currently_reading"] != nil {
+          self.travelers.append(traveler)
+        }
+      }
     }
   }
   
@@ -50,28 +54,42 @@ class TCPReadingLogController: UIViewController, UITableViewDataSource {
       travelerNameField.text = travelerName
     }
     
-    // Book title
-    if let travelerBookTitleField = cell.viewWithTag(2) as? UILabel,
-      let currentBookTitle = traveler["currentBookTitle"] as? String {
-      travelerBookTitleField.text = currentBookTitle
-    }
+    if let currentBook = traveler["currently_reading"] as? [String: Any] {
+      // Book title
+      if let travelerBookTitleField = cell.viewWithTag(2) as? UILabel,
+         let currentBookTitle = currentBook["title"] as? String {
+        travelerBookTitleField.text = currentBookTitle
+      }
+      
+      // Author name
+      if let travelerBookAuthorField = cell.viewWithTag(3) as? UILabel,
+         let currentBookAuthorName = currentBook["author"] as? String {
+        travelerBookAuthorField.text = currentBookAuthorName
+      }
+      
+      // Date
+      if let travelerBookDateField = cell.viewWithTag(4) as? UILabel,
+         var currentBookDate = currentBook["began_reading"] as? String {
+        
+        // Remove the milliseconds since 'ISO8601DateFormatter' doesn't support those
+        currentBookDate = currentBookDate.replacingOccurrences(of: "\\.\\d+", with: "", options: .regularExpression)
+        
+        // Try to make a 'Date' out of the ISO 8601 string
+        if let formattedDate = ISO8601DateFormatter().date(from: currentBookDate) {
+          // Set a format for the date
+          let dateFormatter = DateFormatter()
+          dateFormatter.dateFormat = "MM/dd/yyyy"
 
-    // Author name
-    if let travelerBookAuthorField = cell.viewWithTag(3) as? UILabel,
-       let currentBookAuthorName = traveler["currentBookAuthorName"] as? String {
-      travelerBookAuthorField.text = currentBookAuthorName
-    }
- 
-    // Date
-    if let travelerBookDateField = cell.viewWithTag(4) as? UILabel,
-       let currentBookDate = traveler["currentBookDate"] as? String {
-      travelerBookDateField.text = currentBookDate
-    }
-    
-    // Minutes
-    if let travelerBookMinutes = cell.viewWithTag(5) as? UILabel,
-       let currentBookMinutes = traveler["currentBookMinutes"] as? String {
-      travelerBookMinutes.text = currentBookMinutes
+          // Set the label
+          travelerBookDateField.text = dateFormatter.string(from: formattedDate)
+        }
+      }
+      
+      // Minutes
+      if let travelerBookMinutes = cell.viewWithTag(5) as? UILabel,
+         let currentBookMinutes = currentBook["minutes"] as? NSNumber {
+        travelerBookMinutes.text = currentBookMinutes.stringValue
+      }
     }
     
     return cell

@@ -143,9 +143,6 @@ class TCPAuthenticationController: UIViewController, UIGestureRecognizerDelegate
           // Persist the defaults we grabbed from the server
           UserDefaults.standard.set(travelerDefaults, forKey: "Traveler")
           
-          UserDefaults.standard.synchronize()
-
-          
           // Send the user to the tab bar view
           let mainTabBarViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "mainTabBarView")
           mainTabBarViewController.modalTransitionStyle = .crossDissolve

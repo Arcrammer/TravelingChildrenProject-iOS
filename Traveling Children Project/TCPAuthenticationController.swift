@@ -111,15 +111,40 @@ class TCPAuthenticationController: UIViewController, UIGestureRecognizerDelegate
             "travelers": userDictionary["user"]!["travelers"] as Any
           ]
           
-          // Save the portrait Data if we find a photo for the traveler on the server
-          var travelerPortrait: Data?
+          // Save the portrait Data if we find a photo for the account owner on the server
+          var ownerPortrait: Data?
           if let portraitFilename = userDictionary["user"]!["photo"] as? String {
-            travelerPortrait = try Data(contentsOf: URL(string: "http://" + kServerDomain + "/images/profile-images/" + portraitFilename)!, options: [])
-            travelerDefaults["travelerPortrait"] = travelerPortrait
+            do {
+              ownerPortrait = try Data(contentsOf: URL(string: "http://" + kServerDomain + "/images/profile-images/" + portraitFilename)!, options: [])
+              travelerDefaults["travelerPortrait"] = ownerPortrait
+            } catch let prob {
+              // Log the error
+              print(prob.localizedDescription)
+            }
+          }
+          
+          // Also grab all the traveler portraits
+          if let travelers = travelerDefaults["travelers"] as? Array<Dictionary<String, Any>> {
+            for var traveler in travelers {
+              do {
+                if let travelerPortraitFilename = traveler["photo"] as? String {
+                  traveler["portrait"] = try Data(contentsOf: URL(string: "http://" + kServerDomain + "/images/traveler-images/" + travelerPortraitFilename)!, options: [])
+                }
+              } catch let prob {
+                // Log the error
+                print(prob.localizedDescription)
+                
+                // Don't block the user from getting in
+                continue
+              }
+            }
           }
           
           // Persist the defaults we grabbed from the server
           UserDefaults.standard.set(travelerDefaults, forKey: "Traveler")
+          
+          UserDefaults.standard.synchronize()
+
           
           // Send the user to the tab bar view
           let mainTabBarViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "mainTabBarView")

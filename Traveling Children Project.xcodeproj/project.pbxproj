@@ -18,6 +18,7 @@
 		118728B01F6C3D15009DC4E7 /* TCPPassportController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 118728AF1F6C3D15009DC4E7 /* TCPPassportController.swift */; };
 		119D56891EB6280A00F77A4F /* ProximaNova-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 119D56881EB6280A00F77A4F /* ProximaNova-Regular.ttf */; };
 		119D568B1EB6340400F77A4F /* ProximaNova-Semibold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 119D568A1EB6340400F77A4F /* ProximaNova-Semibold.ttf */; };
+		11A10E841F7157E00096738C /* TCPReadingLogController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11A10E831F7157E00096738C /* TCPReadingLogController.swift */; };
 		11A2EDDF1F6C4F5B00F1AAF0 /* TCPTopBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11A2EDDE1F6C4F5B00F1AAF0 /* TCPTopBar.swift */; };
 		11EDC0971EACEE0D003A0ADD /* TCPTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11EDC0961EACEE0D003A0ADD /* TCPTabBarController.swift */; };
 		11F615701EB6B3D0000FC422 /* ProximaNova-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 11F6156F1EB6B3D0000FC422 /* ProximaNova-Bold.ttf */; };
@@ -40,6 +41,7 @@
 		118728AF1F6C3D15009DC4E7 /* TCPPassportController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TCPPassportController.swift; sourceTree = "<group>"; };
 		119D56881EB6280A00F77A4F /* ProximaNova-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "ProximaNova-Regular.ttf"; sourceTree = "<group>"; };
 		119D568A1EB6340400F77A4F /* ProximaNova-Semibold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "ProximaNova-Semibold.ttf"; sourceTree = "<group>"; };
+		11A10E831F7157E00096738C /* TCPReadingLogController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TCPReadingLogController.swift; sourceTree = "<group>"; };
 		11A2EDDE1F6C4F5B00F1AAF0 /* TCPTopBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TCPTopBar.swift; sourceTree = "<group>"; };
 		11EDC0961EACEE0D003A0ADD /* TCPTabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TCPTabBarController.swift; sourceTree = "<group>"; };
 		11F6156F1EB6B3D0000FC422 /* ProximaNova-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "ProximaNova-Bold.ttf"; sourceTree = "<group>"; };
@@ -99,6 +101,7 @@
 			isa = PBXGroup;
 			children = (
 				118728AF1F6C3D15009DC4E7 /* TCPPassportController.swift */,
+				11A10E831F7157E00096738C /* TCPReadingLogController.swift */,
 			);
 			name = "Navigator Views";
 			sourceTree = "<group>";
@@ -300,6 +303,7 @@
 				11FD85A81EB55FEA00FBDE55 /* Journey.swift in Sources */,
 				1174A34F1EB60D5C00E3BD35 /* TCPNavigatorController.swift in Sources */,
 				11EDC0971EACEE0D003A0ADD /* TCPTabBarController.swift in Sources */,
+				11A10E841F7157E00096738C /* TCPReadingLogController.swift in Sources */,
 				11FD85A51EB50CFD00FBDE55 /* TCPJourneyPost.swift in Sources */,
 				11296B8E1EA44AB500DFFE3A /* AppDelegate.swift in Sources */,
 				118728B01F6C3D15009DC4E7 /* TCPPassportController.swift in Sources */,

@@ -21,14 +21,15 @@ class TCPTopBar: UIView {
       travelerNameLabel.text = "Traveling " + travelerName
     }
     
-    // Set the traveler portrait image from UserDefaults
-    if let travelerPortraitImageView = self.viewWithTag(3) as? UIImageView,
-      let travelerPortrait = userData["travelerPortrait"] as? Data {
-      travelerPortraitImageView.image = UIImage(data: travelerPortrait)!
-      
-      // Round the edges
+    // Round the edges of the traveler portrait image
+    if let travelerPortraitImageView = self.viewWithTag(3) as? UIImageView {
       travelerPortraitImageView.layer.cornerRadius = travelerPortraitImageView.bounds.size.width / 2
       travelerPortraitImageView.layer.masksToBounds = true
+      
+      // Set the traveler portrait image from UserDefaults
+      if let travelerPortrait = userData["travelerPortrait"] as? Data {
+        travelerPortraitImageView.image = UIImage(data: travelerPortrait)!
+      }
     }
   }
 }

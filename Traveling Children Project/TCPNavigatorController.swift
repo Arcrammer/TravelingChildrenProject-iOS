@@ -72,6 +72,9 @@ class TCPNavigatorController: UIViewController, UITableViewDelegate, UITableView
     case "PASSPORT PROFILE":
       performSegue(withIdentifier: "passportProfileSegue", sender: self)
     
+    case "READING LOG":
+      performSegue(withIdentifier: "readingLogSegue", sender: self)
+      
     case "SIGN OUT":
       // Deauth the user
       TCPAuthenticationController.logOut()

@@ -40,7 +40,7 @@ class TCPPassportProfileController: UIViewController, UITableViewDelegate, UITab
   }
   
   // MARK: - Properties
-  var travelers: Array<Dictionary<String, String>> = []
+  var travelers: Array<Dictionary<String, Any>> = []
   var travelerCount = 0
   
   // MARK: - Methods
@@ -56,13 +56,13 @@ class TCPPassportProfileController: UIViewController, UITableViewDelegate, UITab
     self.formContainer.layer.cornerRadius = 10
     self.formContainer.layer.masksToBounds = true
     
+    // Round the edges of the owner portrait
+    self.ownerPortrait.layer.cornerRadius = self.ownerPortrait.bounds.size.width / 2
+    self.ownerPortrait.layer.masksToBounds = true
+
     // Set the owner portrait
     if let ownerPortrait = userData["travelerPortrait"] as? Data {
       self.ownerPortrait.image = UIImage(data: ownerPortrait)!
-      
-      // Round the edges
-      self.ownerPortrait.layer.cornerRadius = self.ownerPortrait.bounds.size.width / 2
-      self.ownerPortrait.layer.masksToBounds = true
     }
     
     // Set the owner data beginning with the first name
@@ -154,27 +154,34 @@ class TCPPassportProfileController: UIViewController, UITableViewDelegate, UITab
   func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
     let cell = tableView.dequeueReusableCell(withIdentifier: "travelerCell")!
     
-    // Traveler portrait
     if let travelerPortraitView = cell.viewWithTag(1) as? UIImageView {
-      // Cut to a circle
+      // Cut the traveler portrait to a circle
       travelerPortraitView.layer.cornerRadius = travelerPortraitView.bounds.size.width / 2
       travelerPortraitView.layer.masksToBounds = true
+
+      dump(self.travelers[indexPath.row]["portrait"])
+      
+      // Traveler portrait
+      if let travelerPortrait = self.travelers[indexPath.row]["portrait"] as? Data {
+        // Set the travelers' portrait
+        travelerPortraitView.image = UIImage(data: travelerPortrait)!
+      }
     }
     
     // Traveler name
-    if let travelerName = self.travelers[indexPath.row]["name"],
+    if let travelerName = self.travelers[indexPath.row]["name"] as? String,
        let travelerNameField = cell.viewWithTag(2) as? UITextField {
       travelerNameField.text = travelerName
     }
 
     // Traveler birthday
-    if let travelerBirthday = self.travelers[indexPath.row]["birthday"],
+    if let travelerBirthday = self.travelers[indexPath.row]["birthday"] as? String,
        let travelerBirthdayField = cell.viewWithTag(3) as? UITextField {
       travelerBirthdayField.text = travelerBirthday
     }
 
     // Traveler gender
-    if let travelerGender = self.travelers[indexPath.row]["gender"],
+    if let travelerGender = self.travelers[indexPath.row]["gender"] as? String,
        let travelerGenderField = cell.viewWithTag(4) as? UITextField {
       switch travelerGender {
       case "Male":

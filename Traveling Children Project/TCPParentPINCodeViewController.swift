@@ -47,6 +47,7 @@ class TCPParentPINCodeViewController: UIViewController, UITextFieldDelegate {
   
   // MARK: - UITextFieldDelegate Methods
   func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+    print("shouldChangeCharactersIn range")
     // If the user hit the back button, the current passcode field is
     // empty, and there's a previous passcode field send the user to it
     if strcmp(string.cString(using: String.Encoding.utf8)!, "\\b") == -92,

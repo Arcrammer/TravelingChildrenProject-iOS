@@ -27,7 +27,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Enter 4-digit Parent PIN Code:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UUB-7X-Oqr">
-                                <rect key="frame" x="57" y="155" width="261.5" height="24.5"/>
+                                <rect key="frame" x="57.5" y="155" width="261.5" height="24.5"/>
                                 <fontDescription key="fontDescription" name="ProximaNova-Regular" family="Proxima Nova" pointSize="20"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -55,7 +55,6 @@
                                         <fontDescription key="fontDescription" name="ProximaNova-Bold" family="Proxima Nova" pointSize="18"/>
                                         <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="numberPad" returnKeyType="next" enablesReturnKeyAutomatically="YES" secureTextEntry="YES" smartDashesType="no" smartInsertDeleteType="no" smartQuotesType="no" textContentType="password"/>
                                         <connections>
-                                            <action selector="passcodeFieldValueChanged:" destination="VB0-21-PrX" eventType="editingChanged" id="EV0-qh-dcW"/>
                                             <outlet property="delegate" destination="VB0-21-PrX" id="S5d-d2-Eme"/>
                                         </connections>
                                     </textField>
@@ -65,7 +64,6 @@
                                         <fontDescription key="fontDescription" name="ProximaNova-Bold" family="Proxima Nova" pointSize="18"/>
                                         <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="numberPad" returnKeyType="next" enablesReturnKeyAutomatically="YES" secureTextEntry="YES" smartDashesType="no" smartInsertDeleteType="no" smartQuotesType="no" textContentType="password"/>
                                         <connections>
-                                            <action selector="passcodeFieldValueChanged:" destination="VB0-21-PrX" eventType="editingChanged" id="Z9y-eA-K9Q"/>
                                             <outlet property="delegate" destination="VB0-21-PrX" id="nui-5F-zwM"/>
                                         </connections>
                                     </textField>
@@ -75,7 +73,6 @@
                                         <fontDescription key="fontDescription" name="ProximaNova-Bold" family="Proxima Nova" pointSize="18"/>
                                         <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="numberPad" returnKeyType="next" enablesReturnKeyAutomatically="YES" secureTextEntry="YES" smartDashesType="no" smartInsertDeleteType="no" smartQuotesType="no" textContentType="password"/>
                                         <connections>
-                                            <action selector="passcodeFieldValueChanged:" destination="VB0-21-PrX" eventType="editingChanged" id="PUB-0S-m0L"/>
                                             <outlet property="delegate" destination="VB0-21-PrX" id="Qzm-xi-s5E"/>
                                         </connections>
                                     </textField>
@@ -85,7 +82,7 @@
                                         <fontDescription key="fontDescription" name="ProximaNova-Bold" family="Proxima Nova" pointSize="18"/>
                                         <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="numberPad" returnKeyType="done" enablesReturnKeyAutomatically="YES" secureTextEntry="YES" smartDashesType="no" smartInsertDeleteType="no" smartQuotesType="no" textContentType="password"/>
                                         <connections>
-                                            <action selector="passcodeFieldValueChanged:" destination="VB0-21-PrX" eventType="editingChanged" id="K4w-Q3-wmx"/>
+                                            <action selector="bleghhhhh:" destination="VB0-21-PrX" eventType="editingChanged" id="KAr-jI-gv0"/>
                                             <outlet property="delegate" destination="VB0-21-PrX" id="pB7-t2-Uge"/>
                                         </connections>
                                     </textField>

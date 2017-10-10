@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="ProximaNova-Bold.ttf">
+            <string>ProximaNova-Bold</string>
+        </array>
+        <array key="ProximaNova-Regular.ttf">
+            <string>ProximaNova-Regular</string>
+        </array>
+    </customFonts>
+    <scenes>
+        <!--ParentPIN Code View Controller-->
+        <scene sceneID="XDf-AI-4pd">
+            <objects>
+                <viewController storyboardIdentifier="TCPParentPINCodeView" id="VB0-21-PrX" customClass="TCPParentPINCodeViewController" customModule="Traveling_Children_Project" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="tK9-hL-JH4">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Enter 4-digit Parent PIN Code:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UUB-7X-Oqr">
+                                <rect key="frame" x="57" y="155" width="261.5" height="24.5"/>
+                                <fontDescription key="fontDescription" name="ProximaNova-Regular" family="Proxima Nova" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" reversesTitleShadowWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="T2c-gM-F2L">
+                                <rect key="frame" x="0.0" y="617" width="375" height="50"/>
+                                <color key="backgroundColor" red="0.94509803920000002" green="0.40000000000000002" blue="0.13725490200000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="rHl-j1-Ahh"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="ProximaNova-Bold" family="Proxima Nova" pointSize="18"/>
+                                <state key="normal" title="CLOSE">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="dismiss:" destination="VB0-21-PrX" eventType="touchUpInside" id="098-qf-4Zm"/>
+                                </connections>
+                            </button>
+                            <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="kse-bp-ySY">
+                                <rect key="frame" x="87.5" y="229.5" width="200" height="50"/>
+                                <subviews>
+                                    <textField opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="AGT-SM-MRU">
+                                        <rect key="frame" x="0.0" y="0.0" width="44" height="50"/>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" name="ProximaNova-Bold" family="Proxima Nova" pointSize="18"/>
+                                        <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="numberPad" returnKeyType="next" enablesReturnKeyAutomatically="YES" secureTextEntry="YES" smartDashesType="no" smartInsertDeleteType="no" smartQuotesType="no" textContentType="password"/>
+                                        <connections>
+                                            <action selector="passcodeFieldValueChanged:" destination="VB0-21-PrX" eventType="editingChanged" id="EV0-qh-dcW"/>
+                                            <outlet property="delegate" destination="VB0-21-PrX" id="S5d-d2-Eme"/>
+                                        </connections>
+                                    </textField>
+                                    <textField opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="IW3-hK-tV3">
+                                        <rect key="frame" x="52" y="0.0" width="44" height="50"/>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" name="ProximaNova-Bold" family="Proxima Nova" pointSize="18"/>
+                                        <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="numberPad" returnKeyType="next" enablesReturnKeyAutomatically="YES" secureTextEntry="YES" smartDashesType="no" smartInsertDeleteType="no" smartQuotesType="no" textContentType="password"/>
+                                        <connections>
+                                            <action selector="passcodeFieldValueChanged:" destination="VB0-21-PrX" eventType="editingChanged" id="Z9y-eA-K9Q"/>
+                                            <outlet property="delegate" destination="VB0-21-PrX" id="nui-5F-zwM"/>
+                                        </connections>
+                                    </textField>
+                                    <textField opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="fyO-bI-l4k">
+                                        <rect key="frame" x="104" y="0.0" width="44" height="50"/>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" name="ProximaNova-Bold" family="Proxima Nova" pointSize="18"/>
+                                        <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="numberPad" returnKeyType="next" enablesReturnKeyAutomatically="YES" secureTextEntry="YES" smartDashesType="no" smartInsertDeleteType="no" smartQuotesType="no" textContentType="password"/>
+                                        <connections>
+                                            <action selector="passcodeFieldValueChanged:" destination="VB0-21-PrX" eventType="editingChanged" id="PUB-0S-m0L"/>
+                                            <outlet property="delegate" destination="VB0-21-PrX" id="Qzm-xi-s5E"/>
+                                        </connections>
+                                    </textField>
+                                    <textField opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="yZG-hg-5wN">
+                                        <rect key="frame" x="156" y="0.0" width="44" height="50"/>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" name="ProximaNova-Bold" family="Proxima Nova" pointSize="18"/>
+                                        <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="numberPad" returnKeyType="done" enablesReturnKeyAutomatically="YES" secureTextEntry="YES" smartDashesType="no" smartInsertDeleteType="no" smartQuotesType="no" textContentType="password"/>
+                                        <connections>
+                                            <action selector="passcodeFieldValueChanged:" destination="VB0-21-PrX" eventType="editingChanged" id="K4w-Q3-wmx"/>
+                                            <outlet property="delegate" destination="VB0-21-PrX" id="pB7-t2-Uge"/>
+                                        </connections>
+                                    </textField>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="5Rp-AC-cUE"/>
+                                    <constraint firstItem="IW3-hK-tV3" firstAttribute="width" secondItem="fyO-bI-l4k" secondAttribute="width" id="Bfm-4K-t5u"/>
+                                    <constraint firstAttribute="width" constant="200" id="Hzx-SK-lDn"/>
+                                    <constraint firstItem="AGT-SM-MRU" firstAttribute="width" secondItem="IW3-hK-tV3" secondAttribute="width" id="Z4T-JQ-SzE"/>
+                                    <constraint firstItem="fyO-bI-l4k" firstAttribute="width" secondItem="yZG-hg-5wN" secondAttribute="width" id="xcS-SY-lSO"/>
+                                </constraints>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" red="0.61568627450000002" green="0.86274509799999999" blue="0.97647058819999999" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="T2c-gM-F2L" firstAttribute="bottom" secondItem="dqv-Kl-GIg" secondAttribute="bottom" id="7rT-gO-WUR"/>
+                            <constraint firstItem="UUB-7X-Oqr" firstAttribute="centerX" secondItem="tK9-hL-JH4" secondAttribute="centerX" id="Acb-o3-fbL"/>
+                            <constraint firstItem="UUB-7X-Oqr" firstAttribute="top" secondItem="dqv-Kl-GIg" secondAttribute="top" constant="135" id="OZM-fZ-92B"/>
+                            <constraint firstItem="kse-bp-ySY" firstAttribute="top" secondItem="UUB-7X-Oqr" secondAttribute="bottom" constant="50" id="VW3-lF-h3j"/>
+                            <constraint firstItem="dqv-Kl-GIg" firstAttribute="trailing" secondItem="T2c-gM-F2L" secondAttribute="trailing" id="ZEl-3Z-bXe"/>
+                            <constraint firstItem="T2c-gM-F2L" firstAttribute="leading" secondItem="dqv-Kl-GIg" secondAttribute="leading" id="fDz-F6-cUd"/>
+                            <constraint firstItem="kse-bp-ySY" firstAttribute="centerX" secondItem="tK9-hL-JH4" secondAttribute="centerX" id="y1c-mx-2kx"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="dqv-Kl-GIg"/>
+                    </view>
+                    <connections>
+                        <outlet property="firstPasscodeField" destination="AGT-SM-MRU" id="8D6-6e-cof"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="37U-79-9Wp" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="125.59999999999999" y="144.3778110944528"/>
+        </scene>
+    </scenes>
+</document>

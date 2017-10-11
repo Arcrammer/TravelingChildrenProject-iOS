@@ -55,6 +55,7 @@
                                         <fontDescription key="fontDescription" name="ProximaNova-Bold" family="Proxima Nova" pointSize="18"/>
                                         <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="numberPad" returnKeyType="next" enablesReturnKeyAutomatically="YES" secureTextEntry="YES" smartDashesType="no" smartInsertDeleteType="no" smartQuotesType="no" textContentType="password"/>
                                         <connections>
+                                            <action selector="passcodeFieldValueChanged:" destination="VB0-21-PrX" eventType="editingChanged" id="I9N-if-O7x"/>
                                             <outlet property="delegate" destination="VB0-21-PrX" id="S5d-d2-Eme"/>
                                         </connections>
                                     </textField>
@@ -64,6 +65,7 @@
                                         <fontDescription key="fontDescription" name="ProximaNova-Bold" family="Proxima Nova" pointSize="18"/>
                                         <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="numberPad" returnKeyType="next" enablesReturnKeyAutomatically="YES" secureTextEntry="YES" smartDashesType="no" smartInsertDeleteType="no" smartQuotesType="no" textContentType="password"/>
                                         <connections>
+                                            <action selector="passcodeFieldValueChanged:" destination="VB0-21-PrX" eventType="editingChanged" id="BDr-fx-gp1"/>
                                             <outlet property="delegate" destination="VB0-21-PrX" id="nui-5F-zwM"/>
                                         </connections>
                                     </textField>
@@ -73,6 +75,7 @@
                                         <fontDescription key="fontDescription" name="ProximaNova-Bold" family="Proxima Nova" pointSize="18"/>
                                         <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="numberPad" returnKeyType="next" enablesReturnKeyAutomatically="YES" secureTextEntry="YES" smartDashesType="no" smartInsertDeleteType="no" smartQuotesType="no" textContentType="password"/>
                                         <connections>
+                                            <action selector="passcodeFieldValueChanged:" destination="VB0-21-PrX" eventType="editingChanged" id="KRQ-jF-t7O"/>
                                             <outlet property="delegate" destination="VB0-21-PrX" id="Qzm-xi-s5E"/>
                                         </connections>
                                     </textField>
@@ -82,7 +85,8 @@
                                         <fontDescription key="fontDescription" name="ProximaNova-Bold" family="Proxima Nova" pointSize="18"/>
                                         <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="numberPad" returnKeyType="done" enablesReturnKeyAutomatically="YES" secureTextEntry="YES" smartDashesType="no" smartInsertDeleteType="no" smartQuotesType="no" textContentType="password"/>
                                         <connections>
-                                            <action selector="bleghhhhh:" destination="VB0-21-PrX" eventType="editingChanged" id="KAr-jI-gv0"/>
+                                            <action selector="passcodeFieldValueChanged:" destination="VB0-21-PrX" eventType="editingChanged" id="Lv7-Ek-a6l"/>
+                                            <action selector="submitPasscode" destination="VB0-21-PrX" eventType="editingDidEnd" id="7tQ-p2-rx1"/>
                                             <outlet property="delegate" destination="VB0-21-PrX" id="pB7-t2-Uge"/>
                                         </connections>
                                     </textField>
@@ -110,11 +114,20 @@
                     </view>
                     <connections>
                         <outlet property="firstPasscodeField" destination="AGT-SM-MRU" id="8D6-6e-cof"/>
+                        <segue destination="lIQ-DI-gtG" kind="show" identifier="TCPEditReadingLogSegue" id="xjx-ru-m7M"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="37U-79-9Wp" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="125.59999999999999" y="144.3778110944528"/>
+        </scene>
+        <!--TCPEditReadingLog-->
+        <scene sceneID="O3C-FB-qLt">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Main" referencedIdentifier="TCPEditReadingLog" id="lIQ-DI-gtG" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="YIU-bg-nEX" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1039" y="144"/>
         </scene>
     </scenes>
 </document>

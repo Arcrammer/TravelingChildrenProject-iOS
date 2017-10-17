@@ -9,7 +9,10 @@ import UIKit
 class TCPTabBarController: UITabBarController {
   override func viewDidLoad() {
     super.viewDidLoad()
-    // Do any additional setup after loading the view, typically from a nib.
+
+    print("self.tabBar.frame.size.height:", self.tabBar.frame.size.height)
+    self.tabBar.frame.size.height -= 23
+    self.tabBar.frame.origin.y = self.view.frame.size.height - 60
   }
   
   override func viewWillAppear(_ animated: Bool) {
@@ -18,11 +21,6 @@ class TCPTabBarController: UITabBarController {
       tab.title = nil
       tab.imageInsets = UIEdgeInsets(top: 6, left: 0, bottom: -6, right: 0)
     }
-  }
-  
-  override func viewWillLayoutSubviews() {
-    self.tabBar.frame.size.height = 60
-    self.tabBar.frame.origin.y = self.view.frame.size.height - 60
   }
   
   override func didReceiveMemoryWarning() {

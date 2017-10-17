@@ -7,9 +7,12 @@
 import UIKit
 
 class TCPNavigatorController: UIViewController, UITableViewDelegate, UITableViewDataSource {
-  // MARK: - IBOutlets
+  // MARK: - Outlets
   @IBOutlet var menuTable: UITableView!
   @IBOutlet var iconLabel: UILabel!
+  
+  // MARK: - Actions
+  @IBAction func unwind(_ segue: UIStoryboardSegue) {}
   
   // MARK: - Properties
   let menuLabels = [

@@ -93,30 +93,14 @@ class TCPAuthenticationController: UIViewController, UIGestureRecognizerDelegate
       if statusCode == 200 {
         // Save the user object to the user defaults
         do {
-          var userDictionary = try JSONSerialization.jsonObject(with: responseData.data!, options: []) as! [String: [String: AnyObject]]
-          
-          // Save the email address and password in UserDefaults
-          var travelerDefaults: Dictionary<String, Any> = [
-            "first_name": userDictionary["user"]!["first_name"] as Any,
-            "last_name": userDictionary["user"]!["last_name"] as Any,
-            "email": userDictionary["user"]!["email"] as Any,
-            "password": userDictionary["user"]!["password"] as Any,
-            "gender": userDictionary["user"]!["parent_gender"] as Any,
-            "birthday": userDictionary["user"]!["parent_birthday"] as Any,
-            "phone": userDictionary["user"]!["address"]!["phone"] as Any,
-            "address_street": userDictionary["user"]!["address"]!["street"] as Any,
-            "address_city": userDictionary["user"]!["address"]!["city"] as Any,
-            "address_state": userDictionary["user"]!["address"]!["state"] as Any,
-            "address_ZIP": userDictionary["user"]!["address"]!["zip"] as Any,
-            "travelers": userDictionary["user"]!["travelers"] as Any
-          ]
+          var userDictionary = try JSONSerialization.jsonObject(with: responseData.data!, options: []) as! [String: [String: Any]]
           
           // Save the portrait Data if we find a photo for the account owner on the server
           var ownerPortrait: Data?
           if let portraitFilename = userDictionary["user"]!["photo"] as? String {
             do {
               ownerPortrait = try Data(contentsOf: URL(string: "http://" + kServerDomain + "/images/profile-images/" + portraitFilename)!, options: [])
-              travelerDefaults["travelerPortrait"] = ownerPortrait
+              userDictionary["user"]!["travelerPortrait"] = ownerPortrait
             } catch let prob {
               // Log the error
               print(prob.localizedDescription)
@@ -124,7 +108,7 @@ class TCPAuthenticationController: UIViewController, UIGestureRecognizerDelegate
           }
           
           // Also grab all the traveler portraits
-          if let travelers = travelerDefaults["travelers"] as? Array<Dictionary<String, Any>> {
+          if let travelers = userDictionary["user"]!["travelers"] as? Array<Dictionary<String, Any>> {
             for var traveler in travelers {
               do {
                 if let travelerPortraitFilename = traveler["photo"] as? String {
@@ -141,7 +125,7 @@ class TCPAuthenticationController: UIViewController, UIGestureRecognizerDelegate
           }
           
           // Persist the defaults we grabbed from the server
-          UserDefaults.standard.set(travelerDefaults, forKey: "Traveler")
+          UserDefaults.standard.set(NSKeyedArchiver.archivedData(withRootObject: userDictionary["user"]!), forKey: "Traveler")
           
           // Send the user to the tab bar view
           let mainTabBarViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "mainTabBarView")

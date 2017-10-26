@@ -12,7 +12,7 @@ class TCPTopBar: UIView {
     super.init(coder: aDecoder)
     
     // Grab the user data from UserDefaults
-    let userData = UserDefaults.standard.object(forKey: "Traveler") as! Dictionary<String, Any>
+    let userData =  UserDefaults.standard.object(forKey: "Traveler")! as AnyObject
     
     // Set the traveler name from UserDefaults
     if let travelerNameLabel = self.viewWithTag(2) as? UILabel,

@@ -27,11 +27,13 @@ class TCPReadingLogController: UIViewController, UITableViewDataSource {
     self.containerView.layer.cornerRadius = 10
     self.containerView.layer.masksToBounds = true
     
-    let userData = UserDefaults.standard.object(forKey: "Traveler") as! Dictionary<String, AnyObject>
-    if let travelers = userData["travelers"] as? Array<Dictionary<String, Any>> {
-      for traveler in travelers {
-        if traveler["currently_reading"] != nil {
-          self.travelers.append(traveler)
+    if UserDefaults.standard.dictionary(forKey: "Traveler") != nil {
+      let userData = UserDefaults.standard.object(forKey: "Traveler") as! Dictionary<String, AnyObject>
+      if let travelers = userData["travelers"] as? Array<Dictionary<String, Any>> {
+        for traveler in travelers {
+          if traveler["currently_reading"] != nil {
+            self.travelers.append(traveler)
+          }
         }
       }
     }

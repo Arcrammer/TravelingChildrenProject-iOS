@@ -50,8 +50,8 @@ class TCPPassportProfileController: UIViewController, UITableViewDelegate, UITab
     self.iconLabel.text = "\u{f02d}"
     
     // Grab the user data from UserDefaults
-    let userData = UserDefaults.standard.object(forKey: "Traveler") as! Dictionary<String, AnyObject>
-    
+    let userData = NSKeyedUnarchiver.unarchiveObject(with: UserDefaults.standard.object(forKey: "Traveler") as! Data) as! [String: AnyObject]
+
     // Make spiffy
     self.formContainer.layer.cornerRadius = 10
     self.formContainer.layer.masksToBounds = true

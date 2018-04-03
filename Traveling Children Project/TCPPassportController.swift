@@ -31,53 +31,36 @@ class TCPPassportProfileController: UIViewController, UITableViewDelegate, UITab
     // and password to give the server
     guard
       let firstNameField = self.ownerFirstNameField.text,
-      self.ownerFirstNameField.text?.isEmpty == false,
-      
       let lastNameField = self.ownerLastNameField.text,
-      self.ownerLastNameField.text?.isEmpty == false,
-      
       let emailField = self.ownerEmailField.text,
-      self.ownerEmailField.text?.isEmpty == false,
-      
       let gender = self.ownerGender.text,
-      self.ownerGender.text?.isEmpty == false,
-      
       let phoneNumber = self.ownerPhoneNumber.text,
-      self.ownerPhoneNumber.text?.isEmpty == false,
-      
       let birthdayField = self.ownerBirthdayField.text,
-      self.ownerBirthdayField.text?.isEmpty == false,
-      
       let addressStreetField = self.ownerAddressStreetField.text,
-      self.ownerAddressStreetField.text?.isEmpty == false,
-      
       let addressCityField = self.ownerAddressCityField.text,
-      self.ownerAddressCityField.text?.isEmpty == false,
-      
       let addressStateField = self.ownerAddressStateField.text,
-      self.ownerAddressStateField.text?.isEmpty == false,
-      
-      let addressZIPField = self.ownerAddressZIPField.text,
-      self.ownerAddressZIPField.text?.isEmpty == false
+      let addressZIPField = self.ownerAddressZIPField.text
     else {
-      print("Something bad happened idk what because I'm an idiot!")
       return
     }
     
+    let userData = NSKeyedUnarchiver.unarchiveObject(with: UserDefaults.standard.object(forKey: "Traveler") as! Data) as! [String: AnyObject]
+    
     Alamofire.request(
-      "http://" + kServerDomain + "/auth/iOS/signin",
+      "http://" + kServerDomain + "/passport/update",
       method: .post,
       parameters: [
-        "firstNameField": firstNameField,
-        "lastNameField": lastNameField,
-        "emailField": emailField,
-        "gender": gender,
-        "phoneNumber": phoneNumber,
-        "birthdayField": birthdayField,
-        "addressStreetField": addressStreetField,
-        "addressCityField": addressCityField,
-        "addressStateField": addressStateField,
-        "addressZIPField": addressZIPField
+        "_id": userData["_id"]!,
+        "first_name": firstNameField,
+        "last_name": lastNameField,
+        "email": emailField,
+        // "gender": gender,
+        "address_tel": phoneNumber,
+        "parent_birthday": birthdayField,
+        "address_street": addressStreetField,
+        "address_city": addressCityField,
+        "address_state": addressStateField,
+        "address_zip": addressZIPField
       ]
       ).responseJSON {
         responseData in

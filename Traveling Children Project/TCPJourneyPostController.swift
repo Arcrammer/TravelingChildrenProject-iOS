@@ -98,7 +98,7 @@ class TCPJourneyPostController: UIViewController, UITableViewDelegate, UITableVi
   private func loadJourneys() {
     print("Requesting journeys from \(kServerDomain)...")
     
-    var journeyRequest = URLRequest(url: URL(string: "http://" + kServerDomain + "/api/journeys")!)
+    var journeyRequest = URLRequest(url: URL(string: "http://" + kServerDomain + "/journeys")!)
     journeyRequest.httpMethod = "POST"
     
     let journeyTask = URLSession.shared.dataTask(with: journeyRequest) {

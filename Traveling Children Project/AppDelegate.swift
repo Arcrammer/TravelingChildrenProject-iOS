@@ -10,9 +10,9 @@ import UIKit
 var kServerDomain: String {
   get {
     #if DEBUG
-      return "127.0.0.1:9000"
+      return "127.0.0.1:9000/API/iOS"
     #else
-      return "beta-express.travelingchildrenproject.com"
+      return "beta-express.travelingchildrenproject.com/API/iOS"
     #endif
   }
 }

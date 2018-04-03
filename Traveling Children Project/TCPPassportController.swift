@@ -5,6 +5,7 @@
 //
 //
 import UIKit
+import Alamofire
 
 class TCPPassportProfileController: UIViewController, UITableViewDelegate, UITableViewDataSource {
   // MARK: - Outlets
@@ -25,6 +26,65 @@ class TCPPassportProfileController: UIViewController, UITableViewDelegate, UITab
   @IBOutlet weak var travelersView: UIView!
   
   // MARK: - Actions
+  @IBAction func persistPassportChanges(_ sender: Any) {
+    // Make sure we have an email address
+    // and password to give the server
+    guard
+      let firstNameField = self.ownerFirstNameField.text,
+      self.ownerFirstNameField.text?.isEmpty == false,
+      
+      let lastNameField = self.ownerLastNameField.text,
+      self.ownerLastNameField.text?.isEmpty == false,
+      
+      let emailField = self.ownerEmailField.text,
+      self.ownerEmailField.text?.isEmpty == false,
+      
+      let gender = self.ownerGender.text,
+      self.ownerGender.text?.isEmpty == false,
+      
+      let phoneNumber = self.ownerPhoneNumber.text,
+      self.ownerPhoneNumber.text?.isEmpty == false,
+      
+      let birthdayField = self.ownerBirthdayField.text,
+      self.ownerBirthdayField.text?.isEmpty == false,
+      
+      let addressStreetField = self.ownerAddressStreetField.text,
+      self.ownerAddressStreetField.text?.isEmpty == false,
+      
+      let addressCityField = self.ownerAddressCityField.text,
+      self.ownerAddressCityField.text?.isEmpty == false,
+      
+      let addressStateField = self.ownerAddressStateField.text,
+      self.ownerAddressStateField.text?.isEmpty == false,
+      
+      let addressZIPField = self.ownerAddressZIPField.text,
+      self.ownerAddressZIPField.text?.isEmpty == false
+    else {
+      print("Something bad happened idk what because I'm an idiot!")
+      return
+    }
+    
+    Alamofire.request(
+      "http://" + kServerDomain + "/auth/iOS/signin",
+      method: .post,
+      parameters: [
+        "firstNameField": firstNameField,
+        "lastNameField": lastNameField,
+        "emailField": emailField,
+        "gender": gender,
+        "phoneNumber": phoneNumber,
+        "birthdayField": birthdayField,
+        "addressStreetField": addressStreetField,
+        "addressCityField": addressCityField,
+        "addressStateField": addressStateField,
+        "addressZIPField": addressZIPField
+      ]
+      ).responseJSON {
+        responseData in
+        
+    }
+  }
+  
   @IBAction func dismissPassportProfile(_ sender: UIButton) {
     dismiss(animated: true, completion: nil)
   }

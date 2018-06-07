@@ -18,7 +18,7 @@ class TCPJourneyPostController: UIViewController, UITableViewDelegate, UITableVi
   @IBOutlet var journeyTable: UITableView?
   @IBOutlet var iconLabel: UILabel!
   
-  // MARK: - Actions
+  // MARK: - Actions  
   @IBAction func logOut(_ sender: Any) {
     // Deauth the user
     TCPAuthenticationController.logOut()
@@ -38,7 +38,8 @@ class TCPJourneyPostController: UIViewController, UITableViewDelegate, UITableVi
   // MARK: - Methods
   override func viewDidLoad() {
     super.viewDidLoad()
-    
+    self.setNeedsStatusBarAppearanceUpdate()
+
     cellHeights = Array(repeating: kCloseCellHeight, count: self.journeyPosts.count)
     
     // TODO: TODO: Make sure we always have a journey table
@@ -54,6 +55,9 @@ class TCPJourneyPostController: UIViewController, UITableViewDelegate, UITableVi
   }
 
   override func viewWillAppear(_ animated: Bool) {
+    self.title = "Journey Blog"
+    self.navigationController?.navigationBar.barTintColor = UIColor.TCPBrown
+
     // TODO: Make sure we always have a journey table
     guard let journeyTable = journeyTable else {
       print("No journey table view in this view controller")
@@ -66,9 +70,10 @@ class TCPJourneyPostController: UIViewController, UITableViewDelegate, UITableVi
   
   override func viewDidAppear(_ animated: Bool) {
     // Set the icon
-    self.iconLabel.font = UIFont(name: "FontAwesome", size: 20)!
-      
-    switch self.tabBarController!.selectedIndex {
+    if (self.iconLabel != nil) {
+      self.iconLabel.font = UIFont(name: "FontAwesome", size: 20)!
+
+      switch self.tabBarController!.selectedIndex {
       case 0:
         self.iconLabel.text = "\u{f124}"
       case 1:
@@ -77,6 +82,7 @@ class TCPJourneyPostController: UIViewController, UITableViewDelegate, UITableVi
         self.iconLabel.text = "\u{f004}"
       default:
         return
+      }
     }
 
     // Reset tab bar colors
@@ -195,5 +201,9 @@ class TCPJourneyPostController: UIViewController, UITableViewDelegate, UITableVi
   
   func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
     return cellHeights[indexPath.row]
+  }
+  
+  override var preferredStatusBarStyle: UIStatusBarStyle {
+    return .lightContent
   }
 }

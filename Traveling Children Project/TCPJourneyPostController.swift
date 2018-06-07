@@ -5,7 +5,6 @@
 //  Copyright © 2017 Traveling Children Project. All rights reserved.
 //
 import UIKit
-import FoldingCell
 
 fileprivate struct C {
   struct CellHeight {
@@ -196,42 +195,5 @@ class TCPJourneyPostController: UIViewController, UITableViewDelegate, UITableVi
   
   func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
     return cellHeights[indexPath.row]
-  }
-  
-  func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-    guard case let cell as FoldingCell = tableView.cellForRow(at: indexPath) else {
-      return
-    }
-    
-    if cell.isAnimating() {
-      return
-    }
-    
-    var duration = 0.0
-    let cellIsCollapsed = cellHeights[indexPath.row] == kCloseCellHeight
-    if cellIsCollapsed {
-      cellHeights[indexPath.row] = kOpenCellHeight
-      cell.selectedAnimation(true, animated: true, completion: nil)
-      duration = 0.5
-    } else {
-      cellHeights[indexPath.row] = kCloseCellHeight
-      cell.selectedAnimation(false, animated: true, completion: nil)
-      duration = 0.8
-    }
-
-    UIView.animate(withDuration: duration, delay: 0, options: .curveEaseOut, animations: {
-      tableView.beginUpdates()
-      tableView.endUpdates()
-    }, completion: nil)
-  }
-  
-  @nonobjc func tableView(tableView: UITableView, willDisplayCell cell: UITableViewCell, forRowAtIndexPath indexPath: NSIndexPath) {
-    if case let foldingCell as FoldingCell = cell {
-      if cellHeights[indexPath.row] == kOpenCellHeight {
-        foldingCell.selectedAnimation(false, animated: false, completion:nil)
-      } else {
-        foldingCell.selectedAnimation(true, animated: false, completion: nil)
-      }
-    }
   }
 }

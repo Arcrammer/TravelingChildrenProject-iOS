@@ -291,7 +291,7 @@ class TCPAuthenticationController: UIViewController, UIGestureRecognizerDelegate
     self.view.endEditing(true)
   }
   
-  func keyboardDidShow(notification: NSNotification) {
+  @objc func keyboardDidShow(notification: NSNotification) {
     // Make sure we have the keyboard frame and the bottom scroll view constraint
     guard
       let keyboardFrame = (notification.userInfo?[UIKeyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue,
@@ -305,7 +305,7 @@ class TCPAuthenticationController: UIViewController, UIGestureRecognizerDelegate
     signUpViewBottom.constant = keyboardFrame.size.height
   }
   
-  func keyboardWillHide(notification: NSNotification) {
+  @objc func keyboardWillHide(notification: NSNotification) {
     // Remove the extra space we added earlier when the keyboard is dismissed
     guard let signUpViewBottom = self.signUpViewBottom else {
       return

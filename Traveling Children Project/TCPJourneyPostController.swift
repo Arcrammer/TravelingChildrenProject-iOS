@@ -219,7 +219,7 @@ class TCPJourneyPostController: UIViewController, UITableViewDelegate, UITableVi
       duration = 0.8
     }
 
-    UIView.animate(withDuration: duration, delay: 0, options: .curveEaseOut, animations: {_ in
+    UIView.animate(withDuration: duration, delay: 0, options: .curveEaseOut, animations: {
       tableView.beginUpdates()
       tableView.endUpdates()
     }, completion: nil)

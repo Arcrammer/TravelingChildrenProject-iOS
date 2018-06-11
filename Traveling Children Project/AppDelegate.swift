@@ -47,82 +47,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CAAnimationDelegate {
       firstViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "mainAuthenticationView")
     }
     self.window!.rootViewController = firstViewController
-
-    // Logo mask background view
-    let flyingLogoBackgroundView = UIView(frame: firstViewController.view.frame)
-    flyingLogoBackgroundView.backgroundColor = self.window!.backgroundColor
-    firstViewController.view.addSubview(flyingLogoBackgroundView)
-    firstViewController.view.bringSubview(toFront: flyingLogoBackgroundView)
-
-    // Create the logo layer
-    let flyingLogo = CALayer()
-    flyingLogo.name = "flyingLogo"
-    flyingLogo.contents = UIImage(named: "LaunchLogo")!.cgImage
-    flyingLogo.bounds = CGRect(x: 0, y: 0, width: 200, height: 200)
-    flyingLogo.anchorPoint = CGPoint(x: 0.5, y: 0.5)
-    flyingLogo.position = CGPoint(x: firstViewController.view.frame.width / 2, y: firstViewController.view.frame.height / 2)
     
-    // Insert it above all the other sublayers
-    firstViewController.view.layer.insertSublayer(flyingLogo, at: UInt32(firstViewController.view.layer.sublayers!.count))
+    // Don't animate the logo in development
+    #if !DEBUG
+      animateLogo()
+    #endif
     
-    // Logo scaling animation
-    let logoScaleAnimation = CAKeyframeAnimation(keyPath: "bounds")
-    logoScaleAnimation.delegate = self
-    logoScaleAnimation.duration = 1
-    logoScaleAnimation.beginTime = CACurrentMediaTime() + 1 // Add 1 second delay
-    logoScaleAnimation.values = [
-      NSValue(cgRect: flyingLogo.bounds),
-      NSValue(cgRect: CGRect(x: 0, y: 0, width: 50, height: 50)),
-      NSValue(cgRect: CGRect(x: 0, y: 0, width: 2000, height: 2000))
-    ]
-    logoScaleAnimation.keyTimes = [0, 0.5, 1]
-    logoScaleAnimation.timingFunctions = [
-      CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseInEaseOut),
-      CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseOut)
-    ]
-    logoScaleAnimation.isRemovedOnCompletion = false
-    logoScaleAnimation.fillMode = kCAFillModeForwards
-    flyingLogo.add(logoScaleAnimation, forKey: "scaleAnimation")
-    
-    // Logo transparency animation
-    let logoOpacityAnimation = CAKeyframeAnimation(keyPath: "opacity")
-    logoOpacityAnimation.delegate = self
-    logoOpacityAnimation.duration = 1
-    logoOpacityAnimation.beginTime = CACurrentMediaTime() + 1 // Add 1 second delay
-    logoOpacityAnimation.values = [
-      NSNumber(floatLiteral: 1.0),
-      NSNumber(floatLiteral: 0.0)
-    ]
-    logoOpacityAnimation.keyTimes = [0.75, 1]
-    logoOpacityAnimation.timingFunctions = [
-      CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseInEaseOut),
-      CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseOut)
-    ]
-    logoOpacityAnimation.isRemovedOnCompletion = false
-    logoOpacityAnimation.fillMode = kCAFillModeForwards
-    flyingLogo.add(logoOpacityAnimation, forKey: "opacityAnimation")
-    flyingLogoBackgroundView.layer.add(logoOpacityAnimation, forKey: "opacityAnimation")
-    
-    // Root view animation
-    self.window!.rootViewController!.view.transform = CGAffineTransform(scaleX: 0.95, y: 0.95)
-    UIView.animate(withDuration: 0.25,
-      delay: 1.85,
-      options: [],
-      animations: {
-        self.window!.rootViewController!.view.transform = CGAffineTransform(scaleX: 1.0, y: 1.0)
-      }, completion: {
-        finished in
-        flyingLogoBackgroundView.removeFromSuperview()
-
-        UIView.animate(
-          withDuration: 0.3,
-          delay: 0.0,
-          options: UIViewAnimationOptions.curveEaseInOut,
-          animations: {},
-          completion: nil
-        )
-    })
-
     return true
   }
 
@@ -156,5 +86,84 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CAAnimationDelegate {
         layer.removeFromSuperlayer()
       }
     }
+  }
+  
+  func animateLogo() {
+    let viewController = self.window!.rootViewController!
+    
+    // Logo mask background view
+    let flyingLogoBackgroundView = UIView(frame: viewController.view.frame)
+    flyingLogoBackgroundView.backgroundColor = self.window!.backgroundColor
+    viewController.view.addSubview(flyingLogoBackgroundView)
+    viewController.view.bringSubview(toFront: flyingLogoBackgroundView)
+  
+    // Create the logo layer
+    let flyingLogo = CALayer()
+    flyingLogo.name = "flyingLogo"
+    flyingLogo.contents = UIImage(named: "LaunchLogo")!.cgImage
+    flyingLogo.bounds = CGRect(x: 0, y: 0, width: 200, height: 200)
+    flyingLogo.anchorPoint = CGPoint(x: 0.5, y: 0.5)
+    flyingLogo.position = CGPoint(x: viewController.view.frame.width / 2, y: viewController.view.frame.height / 2)
+  
+    // Insert it above all the other sublayers
+    viewController.view.layer.insertSublayer(flyingLogo, at: UInt32(viewController.view.layer.sublayers!.count))
+  
+    // Logo scaling animation
+    let logoScaleAnimation = CAKeyframeAnimation(keyPath: "bounds")
+    logoScaleAnimation.delegate = self
+    logoScaleAnimation.duration = 1
+    logoScaleAnimation.beginTime = CACurrentMediaTime() + 1 // Add 1 second delay
+    logoScaleAnimation.values = [
+    NSValue(cgRect: flyingLogo.bounds),
+    NSValue(cgRect: CGRect(x: 0, y: 0, width: 50, height: 50)),
+    NSValue(cgRect: CGRect(x: 0, y: 0, width: 2000, height: 2000))
+    ]
+    logoScaleAnimation.keyTimes = [0, 0.5, 1]
+    logoScaleAnimation.timingFunctions = [
+    CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseInEaseOut),
+    CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseOut)
+    ]
+    logoScaleAnimation.isRemovedOnCompletion = false
+    logoScaleAnimation.fillMode = kCAFillModeForwards
+    flyingLogo.add(logoScaleAnimation, forKey: "scaleAnimation")
+  
+    // Logo transparency animation
+    let logoOpacityAnimation = CAKeyframeAnimation(keyPath: "opacity")
+    logoOpacityAnimation.delegate = self
+    logoOpacityAnimation.duration = 1
+    logoOpacityAnimation.beginTime = CACurrentMediaTime() + 1 // Add 1 second delay
+    logoOpacityAnimation.values = [
+    NSNumber(floatLiteral: 1.0),
+    NSNumber(floatLiteral: 0.0)
+    ]
+    logoOpacityAnimation.keyTimes = [0.75, 1]
+    logoOpacityAnimation.timingFunctions = [
+    CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseInEaseOut),
+    CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseOut)
+    ]
+    logoOpacityAnimation.isRemovedOnCompletion = false
+    logoOpacityAnimation.fillMode = kCAFillModeForwards
+    flyingLogo.add(logoOpacityAnimation, forKey: "opacityAnimation")
+    flyingLogoBackgroundView.layer.add(logoOpacityAnimation, forKey: "opacityAnimation")
+  
+    // Root view animation
+    self.window!.rootViewController!.view.transform = CGAffineTransform(scaleX: 0.95, y: 0.95)
+    UIView.animate(withDuration: 0.25,
+    delay: 1.85,
+    options: [],
+    animations: {
+    self.window!.rootViewController!.view.transform = CGAffineTransform(scaleX: 1.0, y: 1.0)
+    }, completion: {
+    finished in
+    flyingLogoBackgroundView.removeFromSuperview()
+  
+    UIView.animate(
+    withDuration: 0.3,
+    delay: 0.0,
+    options: UIViewAnimationOptions.curveEaseInOut,
+    animations: {},
+    completion: nil
+    )
+    })
   }
 }

@@ -88,6 +88,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CAAnimationDelegate {
     }
   }
   
+  /**
+   * Animate the TCP logo to fly out
+   */
   func animateLogo() {
     let viewController = self.window!.rootViewController!
     

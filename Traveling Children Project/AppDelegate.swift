@@ -50,7 +50,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CAAnimationDelegate {
     
     // Don't animate the logo in development
     #if !DEBUG
-      animateLogo()
+      animateLogo(firstViewController)
     #endif
     
     return true
@@ -91,14 +91,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CAAnimationDelegate {
   /**
    * Animate the TCP logo to fly out
    */
-  func animateLogo() {
-    let viewController = self.window!.rootViewController!
-    
+  func animateLogo(toViewController: UIViewController) {
     // Logo mask background view
-    let flyingLogoBackgroundView = UIView(frame: viewController.view.frame)
+    let flyingLogoBackgroundView = UIView(frame: toViewController.view.frame)
     flyingLogoBackgroundView.backgroundColor = self.window!.backgroundColor
-    viewController.view.addSubview(flyingLogoBackgroundView)
-    viewController.view.bringSubview(toFront: flyingLogoBackgroundView)
+    toViewController.view.addSubview(flyingLogoBackgroundView)
+    toViewController.view.bringSubview(toFront: flyingLogoBackgroundView)
   
     // Create the logo layer
     let flyingLogo = CALayer()
@@ -106,10 +104,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CAAnimationDelegate {
     flyingLogo.contents = UIImage(named: "LaunchLogo")!.cgImage
     flyingLogo.bounds = CGRect(x: 0, y: 0, width: 200, height: 200)
     flyingLogo.anchorPoint = CGPoint(x: 0.5, y: 0.5)
-    flyingLogo.position = CGPoint(x: viewController.view.frame.width / 2, y: viewController.view.frame.height / 2)
+    flyingLogo.position = CGPoint(x: toViewController.view.frame.width / 2, y: toViewController.view.frame.height / 2)
   
     // Insert it above all the other sublayers
-    viewController.view.layer.insertSublayer(flyingLogo, at: UInt32(viewController.view.layer.sublayers!.count))
+    toViewController.view.layer.insertSublayer(flyingLogo, at: UInt32(toViewController.view.layer.sublayers!.count))
   
     // Logo scaling animation
     let logoScaleAnimation = CAKeyframeAnimation(keyPath: "bounds")
@@ -152,21 +150,21 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CAAnimationDelegate {
     // Root view animation
     self.window!.rootViewController!.view.transform = CGAffineTransform(scaleX: 0.95, y: 0.95)
     UIView.animate(withDuration: 0.25,
-    delay: 1.85,
-    options: [],
-    animations: {
-    self.window!.rootViewController!.view.transform = CGAffineTransform(scaleX: 1.0, y: 1.0)
+      delay: 1.85,
+      options: [],
+      animations: {
+      self.window!.rootViewController!.view.transform = CGAffineTransform(scaleX: 1.0, y: 1.0)
     }, completion: {
     finished in
-    flyingLogoBackgroundView.removeFromSuperview()
-  
-    UIView.animate(
-    withDuration: 0.3,
-    delay: 0.0,
-    options: UIViewAnimationOptions.curveEaseInOut,
-    animations: {},
-    completion: nil
-    )
+      flyingLogoBackgroundView.removeFromSuperview()
+    
+      UIView.animate(
+      withDuration: 0.3,
+      delay: 0.0,
+      options: UIViewAnimationOptions.curveEaseInOut,
+      animations: {},
+      completion: nil
+      )
     })
   }
 }

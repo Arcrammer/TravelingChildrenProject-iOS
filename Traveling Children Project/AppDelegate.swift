@@ -49,9 +49,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CAAnimationDelegate {
     self.window!.rootViewController = firstViewController
     
     // Don't animate the logo in development
-    #if !DEBUG
-      animateLogo(firstViewController)
-    #endif
+    animateLogo(toViewController: firstViewController)
     
     return true
   }

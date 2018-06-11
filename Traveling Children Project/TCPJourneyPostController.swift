@@ -6,13 +6,6 @@
 //
 import UIKit
 
-fileprivate struct C {
-  struct CellHeight {
-    static let close: CGFloat = 185 // equal or greater foregroundView height
-    static let open: CGFloat = 250 // equal or greater containerView height
-  }
-}
-
 class TCPJourneyPostController: UIViewController, UITableViewDelegate, UITableViewDataSource {
   // MARK: - Outlets
   @IBOutlet var journeyTable: UITableView?
@@ -31,24 +24,16 @@ class TCPJourneyPostController: UIViewController, UITableViewDelegate, UITableVi
   
   // MARK: - Properties
   var journeyPosts: [Journey] = []
-  var cellHeights: [CGFloat] = []
-  let kCloseCellHeight: CGFloat = 185
-  let kOpenCellHeight: CGFloat = 250
 
   // MARK: - Methods
   override func viewDidLoad() {
     super.viewDidLoad()
-    self.setNeedsStatusBarAppearanceUpdate()
-
-    cellHeights = Array(repeating: kCloseCellHeight, count: self.journeyPosts.count)
     
-    // TODO: TODO: Make sure we always have a journey table
-    guard let journeyTable = journeyTable else {
+    // TODO: Make sure we always have a journey table
+    guard journeyTable != nil else {
       print("No journey table view in this view controller")
       return
     }
-    
-    self.journeyTable = journeyTable
     
     // Ask the server for some journeys
     loadJourneys()
@@ -59,13 +44,10 @@ class TCPJourneyPostController: UIViewController, UITableViewDelegate, UITableVi
     self.navigationController?.navigationBar.barTintColor = UIColor.TCPBrown
 
     // TODO: Make sure we always have a journey table
-    guard let journeyTable = journeyTable else {
+    guard journeyTable != nil else {
       print("No journey table view in this view controller")
       return
     }
-
-    // Move the journeys down past the top bar and up past the tab bar
-    journeyTable.contentInset = UIEdgeInsets(top: 75, left: 0, bottom: 12, right: 0)
   }
   
   override func viewDidAppear(_ animated: Bool) {
@@ -93,6 +75,42 @@ class TCPJourneyPostController: UIViewController, UITableViewDelegate, UITableVi
   override func didReceiveMemoryWarning() {
     super.didReceiveMemoryWarning()
     // Dispose of any resources that can be recreated.
+  }
+  
+  // MARK: - UITableViewDataSource Methods
+  func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    let journeyPost = tableView.dequeueReusableCell(withIdentifier: "journeyPostCell") as! TCPJourneyPost
+    let journey = self.journeyPosts[indexPath.row]
+    
+    // Set the view properties
+    for titleLabel in journeyPost.titleLabels {
+      titleLabel.text = "TC Journey to " + journey.title
+    }
+    
+    for body in journeyPost.bodies {
+      body.text = journey.body
+    }
+    
+    for travelerName in journeyPost.travelerNames {
+      travelerName.text = journey.travelerName
+    }
+    
+    return journeyPost
+  }
+  
+  func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+    let background = UIView(frame: CGRect(
+      x: cell.frame.minX + 10,
+      y: cell.frame.maxX + 10,
+      width: cell.frame.width - 10,
+      height: cell.frame.height - 10
+    ))
+    background.backgroundColor = UIColor.TCPYellow
+    cell.addSubview(background)
+  }
+  
+  func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    return self.journeyPosts.count
   }
   
   /**
@@ -138,10 +156,10 @@ class TCPJourneyPostController: UIViewController, UITableViewDelegate, UITableVi
         guard let title = serializedJourney["title"] as? String,
           let travelerName = serializedJourney["traveler_name"] as? String,
           let body = serializedJourney["body"] as? String else {
-          print("Missing journey data for journey with _id:", serializedJourney["_id"]!)
-          return
+            print("Missing journey data for journey with _id:", serializedJourney["_id"]!)
+            return
         }
-
+        
         let journeyPost = Journey(
           title: title,
           travelerName: "Traveling " + travelerName,
@@ -150,9 +168,6 @@ class TCPJourneyPostController: UIViewController, UITableViewDelegate, UITableVi
         
         self.journeyPosts.insert(journeyPost, at: self.journeyPosts.count)
       }
-
-      // Set the initial cell height for each cell
-      self.cellHeights = (0..<self.journeyPosts.count).map {_ in C.CellHeight.close}
       
       // Reload table view data
       DispatchQueue.main.async(execute: {
@@ -161,49 +176,5 @@ class TCPJourneyPostController: UIViewController, UITableViewDelegate, UITableVi
     }
     
     journeyTask.resume()
-  }
-  
-  // MARK: - UITableViewDataSource Methods
-  func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-    let journeyPost = tableView.dequeueReusableCell(withIdentifier: "journeyPostCell") as! TCPJourneyPost
-    let journey = self.journeyPosts[indexPath.row]
-    
-    // Set the view properties
-    for titleLabel in journeyPost.titleLabels {
-      titleLabel.text = "TC Journey to " + journey.title
-    }
-    
-    for body in journeyPost.bodies {
-      body.text = journey.body
-    }
-    
-    for travelerName in journeyPost.travelerNames {
-      travelerName.text = journey.travelerName
-    }
-    
-    return journeyPost
-  }
-  
-  func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
-    let background = UIView(frame: CGRect(
-      x: cell.frame.minX + 10,
-      y: cell.frame.maxX + 10,
-      width: cell.frame.width - 10,
-      height: cell.frame.height - 10
-    ))
-    background.backgroundColor = UIColor.TCPYellow
-    cell.addSubview(background)
-  }
-  
-  func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-    return self.journeyPosts.count
-  }
-  
-  func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-    return cellHeights[indexPath.row]
-  }
-  
-  override var preferredStatusBarStyle: UIStatusBarStyle {
-    return .lightContent
   }
 }

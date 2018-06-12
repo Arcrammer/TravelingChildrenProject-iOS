@@ -68,20 +68,6 @@ class TCPPassportProfileController: UIViewController, UITableViewDelegate, UITab
     }
   }
   
-  @IBAction func dismissPassportProfile(_ sender: UIButton) {
-    dismiss(animated: true, completion: nil)
-  }
-  
-  @IBAction func logOut(_ sender: Any) {
-    // Deauth the user
-    TCPAuthenticationController.logOut()
-    
-    // Send the user to the auth view
-    let authenticationView = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "mainAuthenticationView")
-    authenticationView.modalTransitionStyle = .crossDissolve
-    present(authenticationView, animated: true, completion: nil)
-  }
-  
   // MARK: - Properties
   var travelers: Array<Dictionary<String, Any>> = []
   var travelerCount = 0

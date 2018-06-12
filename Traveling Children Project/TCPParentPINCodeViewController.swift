@@ -12,7 +12,7 @@ class TCPParentPINCodeViewController: UIViewController, UITextFieldDelegate {
   
   // MARK: - Actions
   @IBAction func dismiss(_ sender: UIButton) {
-    dismiss(animated: true, completion: nil)
+    self.navigationController?.popViewController(animated: true)
   }
   
   @IBAction func passcodeFieldValueChanged(_ sender: UITextField) {

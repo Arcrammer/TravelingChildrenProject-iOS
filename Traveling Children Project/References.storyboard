@@ -43,7 +43,7 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="dismiss:" destination="VB0-21-PrX" eventType="touchUpInside" id="098-qf-4Zm"/>
+                                    <action selector="dismiss:" destination="VB0-21-PrX" eventType="touchUpInside" id="dfH-Na-BcA"/>
                                 </connections>
                             </button>
                             <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="kse-bp-ySY">

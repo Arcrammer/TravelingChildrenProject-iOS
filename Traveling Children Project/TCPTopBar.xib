@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="ProximaNova-Bold.ttf">
+            <string>ProximaNova-Bold</string>
+        </array>
+        <array key="ProximaNova-Semibold.ttf">
+            <string>ProximaNova-Semibold</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="TCPTabBar"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zHj-Zq-I6x" customClass="TCPTopBar" customModule="Traveling_Children_Project" customModuleProvider="target">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="70"/>
+                    <subviews>
+                        <visualEffectView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qo3-RS-QHm">
+                            <rect key="frame" x="0.0" y="0.0" width="375" height="70"/>
+                            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="Tip-Nr-M6T">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="70"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fOp-eo-Byd">
+                                        <rect key="frame" x="225" y="0.0" width="150" height="70"/>
+                                        <subviews>
+                                            <imageView userInteractionEnabled="NO" tag="3" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Avatar" translatesAutoresizingMaskIntoConstraints="NO" id="Beo-d1-Rhx">
+                                                <rect key="frame" x="116" y="18" width="34" height="34"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="34" id="cYL-ep-oaQ"/>
+                                                    <constraint firstAttribute="height" constant="34" id="cuG-1y-dNR"/>
+                                                </constraints>
+                                            </imageView>
+                                            <label opaque="NO" userInteractionEnabled="NO" tag="2" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Traveling Traveler" textAlignment="right" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsLetterSpacingToFitWidth="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fc5-ny-fDW">
+                                                <rect key="frame" x="28" y="0.0" width="80" height="70"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="80" id="In6-La-nrZ"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" name="ProximaNova-Semibold" family="Proxima Nova" pointSize="14"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                        <gestureRecognizers/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="150" id="BZ8-oY-U7h"/>
+                                            <constraint firstItem="Fc5-ny-fDW" firstAttribute="top" secondItem="fOp-eo-Byd" secondAttribute="top" id="BrN-fx-Uh7"/>
+                                            <constraint firstItem="Beo-d1-Rhx" firstAttribute="centerY" secondItem="fOp-eo-Byd" secondAttribute="centerY" id="DyV-J8-O6q"/>
+                                            <constraint firstItem="Beo-d1-Rhx" firstAttribute="leading" secondItem="Fc5-ny-fDW" secondAttribute="trailing" constant="8" id="fbF-Ng-OCe"/>
+                                            <constraint firstAttribute="trailing" secondItem="Beo-d1-Rhx" secondAttribute="trailing" id="mmb-oc-8zd"/>
+                                            <constraint firstAttribute="bottom" secondItem="Fc5-ny-fDW" secondAttribute="bottom" id="pcO-M0-dZQ"/>
+                                        </constraints>
+                                    </view>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="JOURNEY BLOG" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aGh-zF-dzv">
+                                        <rect key="frame" x="8" y="0.0" width="150" height="70"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="150" id="qY4-TR-Mhj"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="ProximaNova-Bold" family="Proxima Nova" pointSize="20"/>
+                                        <color key="textColor" red="0.23137254900000001" green="0.14117647059999999" blue="0.086274509799999996" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" tag="1" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EZu-EI-c7G">
+                                        <rect key="frame" x="178" y="18" width="34" height="34"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="34" id="IS6-mU-P6G"/>
+                                            <constraint firstAttribute="width" constant="34" id="hLN-FN-1lS"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="ProximaNova-Bold" family="Proxima Nova" pointSize="20"/>
+                                        <color key="textColor" red="0.23137254900000001" green="0.14117647059999999" blue="0.086274509799999996" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vhq-fN-AJf">
+                                        <rect key="frame" x="155" y="32" width="64" height="30"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <state key="normal" title="Log Out"/>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="fOp-eo-Byd" firstAttribute="top" secondItem="Tip-Nr-M6T" secondAttribute="top" id="BZa-CJ-VLh"/>
+                                    <constraint firstAttribute="bottom" secondItem="fOp-eo-Byd" secondAttribute="bottom" id="Y1T-1U-kXp"/>
+                                    <constraint firstItem="EZu-EI-c7G" firstAttribute="leading" secondItem="aGh-zF-dzv" secondAttribute="trailing" constant="20" id="lll-Sk-A5i"/>
+                                    <constraint firstItem="aGh-zF-dzv" firstAttribute="leading" secondItem="Tip-Nr-M6T" secondAttribute="leading" constant="8" id="nAj-zh-0W8"/>
+                                    <constraint firstAttribute="bottom" secondItem="aGh-zF-dzv" secondAttribute="bottom" id="oFF-lY-Ycu"/>
+                                    <constraint firstItem="EZu-EI-c7G" firstAttribute="centerY" secondItem="Tip-Nr-M6T" secondAttribute="centerY" id="sAh-qT-Uz1"/>
+                                    <constraint firstAttribute="trailing" secondItem="fOp-eo-Byd" secondAttribute="trailing" id="tTA-tu-9xW"/>
+                                    <constraint firstItem="aGh-zF-dzv" firstAttribute="top" secondItem="Tip-Nr-M6T" secondAttribute="top" id="zxe-dh-96n"/>
+                                </constraints>
+                            </view>
+                            <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.40000000000000002" colorSpace="calibratedRGB"/>
+                            <blurEffect style="light"/>
+                        </visualEffectView>
+                    </subviews>
+                    <constraints>
+                        <constraint firstAttribute="trailing" secondItem="qo3-RS-QHm" secondAttribute="trailing" id="GN4-ig-c1w"/>
+                        <constraint firstAttribute="height" constant="70" id="L5X-TN-jLg"/>
+                        <constraint firstItem="qo3-RS-QHm" firstAttribute="top" secondItem="zHj-Zq-I6x" secondAttribute="top" id="MXX-4C-T1s"/>
+                        <constraint firstAttribute="bottom" secondItem="qo3-RS-QHm" secondAttribute="bottom" id="WA6-EA-Xpe"/>
+                        <constraint firstItem="qo3-RS-QHm" firstAttribute="leading" secondItem="zHj-Zq-I6x" secondAttribute="leading" id="e4O-hs-SS7"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="zHj-Zq-I6x" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="7vU-uZ-qCh"/>
+                <constraint firstItem="zHj-Zq-I6x" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="Kbi-FC-TVf"/>
+                <constraint firstItem="zHj-Zq-I6x" firstAttribute="trailing" secondItem="vUN-kp-3ea" secondAttribute="trailing" id="Kzu-fz-xqG"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <point key="canvasLocation" x="33.5" y="53.5"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="Avatar" width="400" height="400"/>
+    </resources>
+</document>

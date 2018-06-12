@@ -1,4 +1,4 @@
-//  TCPJourneyPostController.swift
+//  TCPJourneyBlogController.swift
 //  Traveling Children Project
 //
 //  Created by Alexander Rhett Crammer on 4/16/17.
@@ -6,7 +6,7 @@
 //
 import UIKit
 
-class TCPJourneyPostController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class TCPJourneyBlogController: UIViewController, UITableViewDelegate, UITableViewDataSource {
   // MARK: - Outlets
   @IBOutlet var journeyTable: UITableView?
   @IBOutlet var iconLabel: UILabel!

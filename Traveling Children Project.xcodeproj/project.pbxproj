@@ -7,11 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		110E347220D048CC002E78B5 /* TCPJourneyPostController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 110E347120D048CC002E78B5 /* TCPJourneyPostController.swift */; };
 		111178F61EB637FB002D0905 /* TCPAuthenticationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 111178F51EB637FB002D0905 /* TCPAuthenticationController.swift */; };
 		1120673D1F8D4DAC00A93DF4 /* References.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1120673C1F8D4DAC00A93DF4 /* References.storyboard */; };
 		1120673F1F8D4E1400A93DF4 /* TCPParentPINCodeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1120673E1F8D4E1400A93DF4 /* TCPParentPINCodeViewController.swift */; };
 		11296B8E1EA44AB500DFFE3A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11296B8D1EA44AB500DFFE3A /* AppDelegate.swift */; };
-		11296B901EA44AB500DFFE3A /* TCPJourneyPostController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11296B8F1EA44AB500DFFE3A /* TCPJourneyPostController.swift */; };
 		11296B951EA44AB500DFFE3A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 11296B931EA44AB500DFFE3A /* Main.storyboard */; };
 		11296B971EA44AB500DFFE3A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 11296B961EA44AB500DFFE3A /* Assets.xcassets */; };
 		11296B9A1EA44AB500DFFE3A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 11296B981EA44AB500DFFE3A /* LaunchScreen.storyboard */; };
@@ -31,12 +31,12 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		110E347120D048CC002E78B5 /* TCPJourneyPostController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TCPJourneyPostController.swift; sourceTree = "<group>"; };
 		111178F51EB637FB002D0905 /* TCPAuthenticationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TCPAuthenticationController.swift; sourceTree = "<group>"; };
 		1120673C1F8D4DAC00A93DF4 /* References.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = References.storyboard; sourceTree = "<group>"; };
 		1120673E1F8D4E1400A93DF4 /* TCPParentPINCodeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TCPParentPINCodeViewController.swift; sourceTree = "<group>"; };
 		11296B8A1EA44AB500DFFE3A /* Traveling Children Project.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Traveling Children Project.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		11296B8D1EA44AB500DFFE3A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		11296B8F1EA44AB500DFFE3A /* TCPJourneyPostController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TCPJourneyPostController.swift; sourceTree = "<group>"; };
 		11296B941EA44AB500DFFE3A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		11296B961EA44AB500DFFE3A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		11296B991EA44AB500DFFE3A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -137,7 +137,7 @@
 				111178F51EB637FB002D0905 /* TCPAuthenticationController.swift */,
 				11EDC0961EACEE0D003A0ADD /* TCPTabBarController.swift */,
 				11829ACA20CF0671003E94CC /* TCPJourneyBlogController.swift */,
-				11296B8F1EA44AB500DFFE3A /* TCPJourneyPostController.swift */,
+				110E347120D048CC002E78B5 /* TCPJourneyPostController.swift */,
 				1174A34E1EB60D5C00E3BD35 /* TCPNavigatorController.swift */,
 				11A2EDE11F6C5F7D00F1AAF0 /* Navigator Views */,
 				112067401F8D4E1C00A93DF4 /* References */,
@@ -319,7 +319,7 @@
 				11296B8E1EA44AB500DFFE3A /* AppDelegate.swift in Sources */,
 				118728B01F6C3D15009DC4E7 /* TCPPassportController.swift in Sources */,
 				11A2EDDF1F6C4F5B00F1AAF0 /* TCPTopBar.swift in Sources */,
-				11296B901EA44AB500DFFE3A /* TCPJourneyPostController.swift in Sources */,
+				110E347220D048CC002E78B5 /* TCPJourneyPostController.swift in Sources */,
 				111178F61EB637FB002D0905 /* TCPAuthenticationController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

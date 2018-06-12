@@ -9,11 +9,6 @@ import UIKit
 class TCPTabBarController: UITabBarController {
   override func viewDidLoad() {
     super.viewDidLoad()
-
-    // Make the tab bar taller (not sure if this still works 6/12)
-//    print("self.tabBar.frame.size.height:", self.tabBar.frame.size.height)
-//    self.tabBar.frame.size.height -= 23
-//    self.tabBar.frame.origin.y = self.view.frame.size.height - 60
   }
   
   override func didReceiveMemoryWarning() {

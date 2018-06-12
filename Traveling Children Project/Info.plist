@@ -24,6 +24,7 @@
 	<array>
 		<string>ProximaNova-Regular.ttf</string>
 		<string>ProximaNova-Semibold.ttf</string>
+		<string>ProximaNova-Bold.ttf</string>
 		<string>FontAwesome.ttf</string>
 	</array>
 	<key>UILaunchStoryboardName</key>

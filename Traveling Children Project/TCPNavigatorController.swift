@@ -11,9 +11,6 @@ class TCPNavigatorController: UIViewController, UITableViewDelegate, UITableView
   @IBOutlet var menuTable: UITableView!
   @IBOutlet var iconLabel: UILabel!
   
-  // MARK: - Actions
-  @IBAction func unwind(_ segue: UIStoryboardSegue) {}
-  
   // MARK: - Properties
   let menuLabels = [
     "Passport Profile",

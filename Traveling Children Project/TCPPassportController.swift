@@ -23,7 +23,7 @@ class TCPPassportProfileController: UIViewController, UITableViewDelegate, UITab
   @IBOutlet weak var ownerAddressStateField: UITextField!
   @IBOutlet weak var ownerAddressZIPField: UITextField!
   @IBOutlet weak var travelersTableView: UITableView!
-  @IBOutlet weak var travelersView: UIView!
+  @IBOutlet weak var travelersTable: UITableView!
   
   // MARK: - Actions
   @IBAction func persistPassportChanges(_ sender: Any) {
@@ -184,7 +184,7 @@ class TCPPassportProfileController: UIViewController, UITableViewDelegate, UITab
     if let travelers = userData["travelers"] as? Array<Dictionary<String, Any>> {
       // Hide the list of travelers if there aren't any travelers
       if travelers.count == 0 {
-        self.travelersView.isHidden = true
+        self.travelersTable.isHidden = true
       } else {
         // Save the travelers for use elsewhere
         self.travelers = travelers as! Array<Dictionary<String, String>>

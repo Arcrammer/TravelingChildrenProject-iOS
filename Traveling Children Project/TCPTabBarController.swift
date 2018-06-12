@@ -10,17 +10,10 @@ class TCPTabBarController: UITabBarController {
   override func viewDidLoad() {
     super.viewDidLoad()
 
-    print("self.tabBar.frame.size.height:", self.tabBar.frame.size.height)
-    self.tabBar.frame.size.height -= 23
-    self.tabBar.frame.origin.y = self.view.frame.size.height - 60
-  }
-  
-  override func viewWillAppear(_ animated: Bool) {
-    // Remove tab bar titles
-    for tab in tabBar.items! {
-      tab.title = nil
-      tab.imageInsets = UIEdgeInsets(top: 6, left: 0, bottom: -6, right: 0)
-    }
+    // Make the tab bar taller (not sure if this still works 6/12)
+//    print("self.tabBar.frame.size.height:", self.tabBar.frame.size.height)
+//    self.tabBar.frame.size.height -= 23
+//    self.tabBar.frame.origin.y = self.view.frame.size.height - 60
   }
   
   override func didReceiveMemoryWarning() {

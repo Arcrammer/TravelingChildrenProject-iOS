@@ -72,7 +72,7 @@ class TCPAuthenticationController: UIViewController, UIGestureRecognizerDelegate
     
     // Send the data to the server for validation
     Alamofire.request(
-      "http://127.0.0.1:9000/auth/iOS/signin",
+      "http://" + kServerDomain + "/auth/signin",
       method: .post,
       parameters: [
         "username": emailAddress,

@@ -47,13 +47,13 @@
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="PASSPORT PROFILE" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aH1-i8-VkQ">
-                                        <rect key="frame" x="0.0" y="13.333333333333337" width="185.66666666666666" height="24.666666666666671"/>
+                                        <rect key="frame" x="0.0" y="13.999999999999998" width="191" height="23.333333333333329"/>
                                         <fontDescription key="fontDescription" name="ProximaNova-Bold" family="Proxima Nova" pointSize="20"/>
                                         <color key="textColor" red="0.23137254900000001" green="0.14117647059999999" blue="0.086274509799999996" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" tag="1" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="A8f-2G-DOj">
-                                        <rect key="frame" x="193.66666666666666" y="8" width="35" height="35"/>
+                                        <rect key="frame" x="199" y="8" width="35" height="35"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="35" id="6NC-bC-0YJ"/>
                                             <constraint firstAttribute="height" constant="35" id="GWX-7d-51C"/>
@@ -416,7 +416,7 @@
                                         </constraints>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" tag="1" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UQL-Xf-6sJ">
-                                        <rect key="frame" x="149" y="8" width="35" height="35"/>
+                                        <rect key="frame" x="151" y="8" width="35" height="35"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="35" id="GVN-G9-ov5"/>
                                             <constraint firstAttribute="height" constant="35" id="vF2-cg-Y86"/>
@@ -426,7 +426,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" tag="2" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Traveling Traveler" textAlignment="right" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsLetterSpacingToFitWidth="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="os5-7X-3kJ">
-                                        <rect key="frame" x="236" y="8.6666666666666643" width="80" height="34.333333333333336"/>
+                                        <rect key="frame" x="236" y="9.6666666666666643" width="80" height="32.666666666666664"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="80" id="Pl6-t8-oav"/>
                                         </constraints>
@@ -435,7 +435,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="adH-Y7-12b">
-                                        <rect key="frame" x="8" y="8" width="133" height="34"/>
+                                        <rect key="frame" x="8" y="8.6666666666666643" width="135" height="33"/>
                                         <fontDescription key="fontDescription" name="ProximaNova-Bold" family="Proxima Nova" pointSize="18"/>
                                         <state key="normal" title="« READING LOG">
                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
@@ -577,7 +577,7 @@
                                         </constraints>
                                     </imageView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="F13-Oo-cPP">
-                                        <rect key="frame" x="8" y="8.3333333333333357" width="133" height="34"/>
+                                        <rect key="frame" x="8" y="9" width="135" height="33"/>
                                         <fontDescription key="fontDescription" name="ProximaNova-Bold" family="Proxima Nova" pointSize="18"/>
                                         <state key="normal" title="« READING LOG">
                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
@@ -587,7 +587,7 @@
                                         </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" tag="1" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SbK-SC-fvt">
-                                        <rect key="frame" x="149" y="8" width="35" height="35"/>
+                                        <rect key="frame" x="151" y="8" width="35" height="35"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="35" id="heH-X6-dpI"/>
                                             <constraint firstAttribute="height" constant="35" id="sjy-iK-ZCH"/>
@@ -597,7 +597,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" tag="2" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Traveling Traveler" textAlignment="right" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsLetterSpacingToFitWidth="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FAZ-Pn-k35">
-                                        <rect key="frame" x="236" y="8.6666666666666643" width="80" height="34.333333333333336"/>
+                                        <rect key="frame" x="236" y="9.6666666666666643" width="80" height="32.666666666666664"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="80" id="vfo-Ih-8dR"/>
                                         </constraints>
@@ -819,13 +819,13 @@
                                         </constraints>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="JOURNEY BLOG" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PIa-77-FUv">
-                                        <rect key="frame" x="0.0" y="13.000000000000002" width="150" height="24.666666666666671"/>
+                                        <rect key="frame" x="0.0" y="13.666666666666663" width="154.33333333333334" height="23.333333333333329"/>
                                         <fontDescription key="fontDescription" name="ProximaNova-Bold" family="Proxima Nova" pointSize="20"/>
                                         <color key="textColor" red="0.23137254900000001" green="0.14117647059999999" blue="0.086274509799999996" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" tag="1" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="h0a-A2-YuH">
-                                        <rect key="frame" x="158" y="7.6666666666666643" width="35" height="35"/>
+                                        <rect key="frame" x="162.33333333333334" y="7.6666666666666643" width="35" height="35"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="35" id="Gbg-06-Z7q"/>
                                             <constraint firstAttribute="width" constant="35" id="oCk-PN-mqq"/>
@@ -842,7 +842,7 @@
                                         </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" tag="2" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsLetterSpacingToFitWidth="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jjZ-NP-21T">
-                                        <rect key="frame" x="236" y="10.666666666666663" width="80" height="29.333333333333329"/>
+                                        <rect key="frame" x="236" y="11.333333333333336" width="80" height="28"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="80" id="Pim-xc-pzA"/>
                                         </constraints>
@@ -929,13 +929,13 @@
                                         </constraints>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="MY JOURNEYS" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WhH-Qj-Euk">
-                                        <rect key="frame" x="0.0" y="13.000000000000002" width="138.66666666666666" height="24.666666666666671"/>
+                                        <rect key="frame" x="0.0" y="13.666666666666663" width="142.33333333333334" height="23.333333333333329"/>
                                         <fontDescription key="fontDescription" name="ProximaNova-Bold" family="Proxima Nova" pointSize="20"/>
                                         <color key="textColor" red="0.23137254900000001" green="0.14117647059999999" blue="0.086274509799999996" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" tag="1" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pFz-gB-4Ln">
-                                        <rect key="frame" x="146.66666666666666" y="8" width="35" height="35"/>
+                                        <rect key="frame" x="150.33333333333334" y="8" width="35" height="35"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="35" id="eMB-tb-wlu"/>
                                             <constraint firstAttribute="width" constant="35" id="yTs-V3-LLt"/>
@@ -945,7 +945,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" tag="2" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Traveling Traveler" textAlignment="right" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsLetterSpacingToFitWidth="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WE7-ic-vIi">
-                                        <rect key="frame" x="236" y="8.6666666666666643" width="80" height="34.333333333333336"/>
+                                        <rect key="frame" x="236" y="9.6666666666666643" width="80" height="32.666666666666664"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="80" id="2g7-ER-DDh"/>
                                         </constraints>
@@ -1507,7 +1507,7 @@
                                         </constraints>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" tag="2" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsLetterSpacingToFitWidth="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pgE-mO-NWO">
-                                        <rect key="frame" x="236" y="10.666666666666663" width="80" height="29.333333333333329"/>
+                                        <rect key="frame" x="236" y="11.333333333333336" width="80" height="28"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="80" id="xwM-4P-9Kq"/>
                                         </constraints>
@@ -1522,7 +1522,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="C0C-qs-Yni">
-                                        <rect key="frame" x="0.0" y="8" width="149" height="34"/>
+                                        <rect key="frame" x="0.0" y="8.6666666666666643" width="153" height="33"/>
                                         <fontDescription key="fontDescription" name="ProximaNova-Bold" family="Proxima Nova" pointSize="18"/>
                                         <state key="normal" title="« JOURNEY BLOG">
                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
@@ -1654,13 +1654,13 @@
                                         </constraints>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="LIKED JOURNEYS" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5c4-fH-Vmg">
-                                        <rect key="frame" x="0.0" y="13.000000000000002" width="163.33333333333334" height="24.666666666666671"/>
+                                        <rect key="frame" x="0.0" y="13.666666666666663" width="168" height="23.333333333333329"/>
                                         <fontDescription key="fontDescription" name="ProximaNova-Bold" family="Proxima Nova" pointSize="20"/>
                                         <color key="textColor" red="0.23137254900000001" green="0.14117647059999999" blue="0.086274509799999996" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" tag="1" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qlZ-XU-W1Z">
-                                        <rect key="frame" x="171.33333333333334" y="7.6666666666666643" width="35" height="35"/>
+                                        <rect key="frame" x="176" y="7.6666666666666643" width="35" height="35"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="35" id="8dZ-Qh-5wE"/>
                                             <constraint firstAttribute="height" constant="35" id="8fe-tp-But"/>
@@ -1670,7 +1670,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" tag="2" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsLetterSpacingToFitWidth="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FqT-NH-yvz">
-                                        <rect key="frame" x="236" y="10.666666666666663" width="80" height="29.333333333333329"/>
+                                        <rect key="frame" x="236" y="11.333333333333336" width="80" height="28"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="80" id="gtF-aJ-Fs2"/>
                                         </constraints>
@@ -1877,13 +1877,13 @@
                                         </constraints>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="NAVIGATOR" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5s7-xt-G7O">
-                                        <rect key="frame" x="0.0" y="13.000000000000002" width="112.66666666666667" height="24.666666666666671"/>
+                                        <rect key="frame" x="0.0" y="13.666666666666663" width="110.66666666666667" height="23.333333333333329"/>
                                         <fontDescription key="fontDescription" name="ProximaNova-Bold" family="Proxima Nova" pointSize="20"/>
                                         <color key="textColor" red="0.23137254900000001" green="0.14117647059999999" blue="0.086274509799999996" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" tag="1" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="y3C-8d-1NI">
-                                        <rect key="frame" x="120.66666666666666" y="7.6666666666666643" width="35" height="35"/>
+                                        <rect key="frame" x="118.66666666666669" y="7.6666666666666643" width="35" height="35"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="35" id="4de-6Y-KC4"/>
                                             <constraint firstAttribute="width" constant="35" id="9Li-uz-Nat"/>
@@ -1893,7 +1893,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" tag="2" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsLetterSpacingToFitWidth="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ySR-Yc-Bq7">
-                                        <rect key="frame" x="236" y="10.666666666666663" width="80" height="29.333333333333329"/>
+                                        <rect key="frame" x="236" y="11.333333333333336" width="80" height="28"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="80" id="rw8-Tp-KXY"/>
                                         </constraints>

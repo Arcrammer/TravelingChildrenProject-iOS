@@ -95,9 +95,6 @@ class TCPAuthenticationController: UIViewController, UIGestureRecognizerDelegate
         do {
           var userDictionary = try JSONSerialization.jsonObject(with: responseData.data!, options: []) as! [String: [String: Any]]
           
-          print("userDictionary:")
-          print(userDictionary)
-          
           // Save the portrait Data if we find a photo for the account owner on the server
           var ownerPortrait: Data?
           if let portraitFilename = userDictionary["user"]!["photo"] as? String {

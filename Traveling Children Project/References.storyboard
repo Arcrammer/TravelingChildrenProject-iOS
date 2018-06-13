@@ -30,13 +30,13 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Enter 4-digit Parent PIN Code:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UUB-7X-Oqr">
-                                <rect key="frame" x="51.666666666666657" y="179" width="271.66666666666674" height="23.333333333333343"/>
+                                <rect key="frame" x="56.666666666666657" y="179" width="261.66666666666674" height="24.666666666666657"/>
                                 <fontDescription key="fontDescription" name="ProximaNova-Regular" family="Proxima Nova" pointSize="20"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="kse-bp-ySY">
-                                <rect key="frame" x="87" y="221.66666666666666" width="200" height="49.999999999999972"/>
+                                <rect key="frame" x="87" y="223" width="200" height="50"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="DY3-0q-jHG">
                                         <rect key="frame" x="0.0" y="0.0" width="200" height="50"/>
@@ -126,6 +126,9 @@
                     </view>
                     <connections>
                         <outlet property="firstPasscodeField" destination="AGT-SM-MRU" id="8D6-6e-cof"/>
+                        <outlet property="fourthPasscodeField" destination="yZG-hg-5wN" id="Z8D-TE-swG"/>
+                        <outlet property="secondPasscodeField" destination="IW3-hK-tV3" id="1qI-lK-8ay"/>
+                        <outlet property="thirdPasscodeField" destination="fyO-bI-l4k" id="ugx-dM-5qb"/>
                         <segue destination="lIQ-DI-gtG" kind="show" identifier="TCPEditReadingLogSegue" id="xjx-ru-m7M"/>
                     </connections>
                 </viewController>

@@ -13,6 +13,9 @@ protocol TCPParentPINCodeDelegate {
 class TCPParentPINCodeViewController: UIViewController, UITextFieldDelegate {
   // MARK: - Outlets
   @IBOutlet weak var firstPasscodeField: UITextField!
+  @IBOutlet weak var secondPasscodeField: UITextField!
+  @IBOutlet weak var thirdPasscodeField: UITextField!
+  @IBOutlet weak var fourthPasscodeField: UITextField!
   
   // MARK: - Actions
   @IBAction func dismiss(_ sender: UIButton) {
@@ -40,8 +43,20 @@ class TCPParentPINCodeViewController: UIViewController, UITextFieldDelegate {
       return
     }
     
+    // Make sure all 4 digits were provided
+    guard
+      self.firstPasscodeField.text!.count > 0,
+      self.secondPasscodeField.text!.count > 0,
+      self.thirdPasscodeField.text!.count > 0,
+      self.fourthPasscodeField.text!.count > 0
+    else {
+      return
+    }
+    
+    let providedPIN = self.firstPasscodeField.text! + self.secondPasscodeField.text! + self.thirdPasscodeField.text! + self.fourthPasscodeField.text!
+    
     // Tell the delgate the passcode was successful
-    print("Pretending the parent PIN was successful")
+    print("Pretending parent PIN " + providedPIN + " was successful")
     self.delegate!.parentPINWasSuccessful()
     
     // Dismiss the parent PIN view

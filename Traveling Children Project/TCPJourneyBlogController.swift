@@ -10,6 +10,7 @@ class TCPJourneyBlogController: UIViewController, UITableViewDelegate, UITableVi
   // MARK: - Outlets
   @IBOutlet var journeyTable: UITableView?
   @IBOutlet var iconLabel: UILabel!
+  @IBOutlet weak var topBar: UIView!
   
   // MARK: - Actions  
   @IBAction func logOut(_ sender: Any) {
@@ -28,6 +29,8 @@ class TCPJourneyBlogController: UIViewController, UITableViewDelegate, UITableVi
   // MARK: - Methods
   override func viewDidLoad() {
     super.viewDidLoad()
+    
+    self.journeyTable?.contentInset = UIEdgeInsetsMake(self.topBar.frame.size.height, 0, 0, 0)
     
     // TODO: Make sure we always have a journey table
     guard journeyTable != nil else {

@@ -81,11 +81,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CAAnimationDelegate {
   func animateLogo(toViewController: UIViewController) {
     // Logo mask background view
     let flyingLogoBackgroundView = UIView(frame: self.window!.frame)
-//    flyingLogoBackgroundView.backgroundColor = self.window!.backgroundColor
 
     // Add the plaid background to the logo mask
-    let signatureBackground = UIImageView(frame: flyingLogoBackgroundView.frame)
+    let signatureBackground = UIImageView(frame: self.window!.frame)
     signatureBackground.image = UIImage(named: "Background")
+    signatureBackground.contentMode = .scaleAspectFill
     flyingLogoBackgroundView.addSubview(signatureBackground)
 
     // Add the logo mask background view
@@ -96,7 +96,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CAAnimationDelegate {
     let flyingLogo = CALayer()
     flyingLogo.name = "flyingLogo"
     flyingLogo.contents = UIImage(named: "LaunchLogo")!.cgImage
-    flyingLogo.bounds = CGRect(x: 0, y: 0, width: 200, height: 200)
+    flyingLogo.bounds = CGRect(x: 0, y: 0, width: 240, height: 240)
     flyingLogo.anchorPoint = CGPoint(x: 0.5, y: 0.5)
     flyingLogo.position = CGPoint(x: toViewController.view.frame.width / 2, y: toViewController.view.frame.height / 2)
     
@@ -143,11 +143,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CAAnimationDelegate {
     
     // Root view animation
     self.window!.rootViewController!.view.transform = CGAffineTransform(scaleX: 0.95, y: 0.95)
-    UIView.animate(withDuration: 0.25,
-                   delay: 1.85,
-                   options: [],
-                   animations: {
-                    self.window!.rootViewController!.view.transform = CGAffineTransform(scaleX: 1.0, y: 1.0)
+    UIView.animate(
+      withDuration: 0.25,
+      delay: 1.85,
+      options: [],
+      animations: {
+      self.window!.rootViewController!.view.transform = CGAffineTransform(scaleX: 1.0, y: 1.0)
     }, completion: {
       finished in
       flyingLogoBackgroundView.removeFromSuperview()

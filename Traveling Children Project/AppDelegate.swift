@@ -48,7 +48,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CAAnimationDelegate {
     }
     self.window!.rootViewController = firstViewController
     
-    // Don't animate the logo in development
     animateLogo(toViewController: firstViewController)
     
     return true
@@ -81,8 +80,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CAAnimationDelegate {
    */
   func animateLogo(toViewController: UIViewController) {
     // Logo mask background view
-    let flyingLogoBackgroundView = UIView(frame: toViewController.view.frame)
-    flyingLogoBackgroundView.backgroundColor = self.window!.backgroundColor
+    let flyingLogoBackgroundView = UIView(frame: self.window!.frame)
+//    flyingLogoBackgroundView.backgroundColor = self.window!.backgroundColor
+
+    // Add the plaid background to the logo mask
+    let signatureBackground = UIImageView(frame: flyingLogoBackgroundView.frame)
+    signatureBackground.image = UIImage(named: "Background")
+    flyingLogoBackgroundView.addSubview(signatureBackground)
+
+    // Add the logo mask background view
     toViewController.view.addSubview(flyingLogoBackgroundView)
     toViewController.view.bringSubview(toFront: flyingLogoBackgroundView)
     

@@ -76,16 +76,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CAAnimationDelegate {
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
   }
   
-  // MARK: - CAAnimationDelegate Methods
-  func animationDidStop(_ anim: CAAnimation, finished flag: Bool) {
-    // Remove mask when animation completes
-    for layer in self.window!.rootViewController!.view.layer.sublayers! {
-      if let layerName = layer.name, layerName == "flyingLogo" {
-        layer.removeFromSuperlayer()
-      }
-    }
-  }
-  
   /**
    * Animate the TCP logo to fly out
    */
@@ -95,7 +85,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CAAnimationDelegate {
     flyingLogoBackgroundView.backgroundColor = self.window!.backgroundColor
     toViewController.view.addSubview(flyingLogoBackgroundView)
     toViewController.view.bringSubview(toFront: flyingLogoBackgroundView)
-  
+    
     // Create the logo layer
     let flyingLogo = CALayer()
     flyingLogo.name = "flyingLogo"
@@ -103,66 +93,76 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CAAnimationDelegate {
     flyingLogo.bounds = CGRect(x: 0, y: 0, width: 200, height: 200)
     flyingLogo.anchorPoint = CGPoint(x: 0.5, y: 0.5)
     flyingLogo.position = CGPoint(x: toViewController.view.frame.width / 2, y: toViewController.view.frame.height / 2)
-  
+    
     // Insert it above all the other sublayers
     toViewController.view.layer.insertSublayer(flyingLogo, at: UInt32(toViewController.view.layer.sublayers!.count))
-  
+    
     // Logo scaling animation
     let logoScaleAnimation = CAKeyframeAnimation(keyPath: "bounds")
     logoScaleAnimation.delegate = self
     logoScaleAnimation.duration = 1
     logoScaleAnimation.beginTime = CACurrentMediaTime() + 1 // Add 1 second delay
     logoScaleAnimation.values = [
-    NSValue(cgRect: flyingLogo.bounds),
-    NSValue(cgRect: CGRect(x: 0, y: 0, width: 50, height: 50)),
-    NSValue(cgRect: CGRect(x: 0, y: 0, width: 2000, height: 2000))
+      NSValue(cgRect: flyingLogo.bounds),
+      NSValue(cgRect: CGRect(x: 0, y: 0, width: 50, height: 50)),
+      NSValue(cgRect: CGRect(x: 0, y: 0, width: 2000, height: 2000))
     ]
     logoScaleAnimation.keyTimes = [0, 0.5, 1]
     logoScaleAnimation.timingFunctions = [
-    CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseInEaseOut),
-    CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseOut)
+      CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseInEaseOut),
+      CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseOut)
     ]
     logoScaleAnimation.isRemovedOnCompletion = false
     logoScaleAnimation.fillMode = kCAFillModeForwards
     flyingLogo.add(logoScaleAnimation, forKey: "scaleAnimation")
-  
+    
     // Logo transparency animation
     let logoOpacityAnimation = CAKeyframeAnimation(keyPath: "opacity")
     logoOpacityAnimation.delegate = self
     logoOpacityAnimation.duration = 1
     logoOpacityAnimation.beginTime = CACurrentMediaTime() + 1 // Add 1 second delay
     logoOpacityAnimation.values = [
-    NSNumber(floatLiteral: 1.0),
-    NSNumber(floatLiteral: 0.0)
+      NSNumber(floatLiteral: 1.0),
+      NSNumber(floatLiteral: 0.0)
     ]
     logoOpacityAnimation.keyTimes = [0.75, 1]
     logoOpacityAnimation.timingFunctions = [
-    CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseInEaseOut),
-    CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseOut)
+      CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseInEaseOut),
+      CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseOut)
     ]
     logoOpacityAnimation.isRemovedOnCompletion = false
     logoOpacityAnimation.fillMode = kCAFillModeForwards
     flyingLogo.add(logoOpacityAnimation, forKey: "opacityAnimation")
     flyingLogoBackgroundView.layer.add(logoOpacityAnimation, forKey: "opacityAnimation")
-  
+    
     // Root view animation
     self.window!.rootViewController!.view.transform = CGAffineTransform(scaleX: 0.95, y: 0.95)
     UIView.animate(withDuration: 0.25,
-      delay: 1.85,
-      options: [],
-      animations: {
-      self.window!.rootViewController!.view.transform = CGAffineTransform(scaleX: 1.0, y: 1.0)
+                   delay: 1.85,
+                   options: [],
+                   animations: {
+                    self.window!.rootViewController!.view.transform = CGAffineTransform(scaleX: 1.0, y: 1.0)
     }, completion: {
-    finished in
+      finished in
       flyingLogoBackgroundView.removeFromSuperview()
-    
+      
       UIView.animate(
-      withDuration: 0.3,
-      delay: 0.0,
-      options: UIViewAnimationOptions.curveEaseInOut,
-      animations: {},
-      completion: nil
+        withDuration: 0.3,
+        delay: 0.0,
+        options: UIViewAnimationOptions.curveEaseInOut,
+        animations: {},
+        completion: nil
       )
     })
+  }
+  
+  // MARK: - CAAnimationDelegate Methods
+  func animationDidStop(_ anim: CAAnimation, finished flag: Bool) {
+    // Remove mask when animation completes
+    for layer in self.window!.rootViewController!.view.layer.sublayers! {
+      if let layerName = layer.name, layerName == "flyingLogo" {
+        layer.removeFromSuperlayer()
+      }
+    }
   }
 }

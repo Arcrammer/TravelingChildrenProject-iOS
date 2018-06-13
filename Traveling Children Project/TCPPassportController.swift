@@ -26,7 +26,12 @@ class TCPPassportProfileController: UIViewController, UITableViewDelegate, UITab
   @IBOutlet weak var travelersTable: UITableView!
   
   // MARK: - Actions
-  @IBAction func persistPassportChanges(_ sender: Any) {
+  @IBAction func pop(_ sender: UIButton) {
+    self.navigationController!.popViewController(animated: true)
+  }
+  
+  @IBAction func persistPassportChanges(_ 
+    sender: Any) {
     // Make sure we have an email address
     // and password to give the server
     guard
@@ -54,7 +59,7 @@ class TCPPassportProfileController: UIViewController, UITableViewDelegate, UITab
         "first_name": firstNameField,
         "last_name": lastNameField,
         "email": emailField,
-        // "gender": gender,
+        "gender": gender,
         "address_tel": phoneNumber,
         "parent_birthday": birthdayField,
         "address_street": addressStreetField,

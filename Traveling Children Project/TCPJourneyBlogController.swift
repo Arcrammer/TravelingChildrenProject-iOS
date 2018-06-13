@@ -12,7 +12,7 @@ class TCPJourneyBlogController: UIViewController, UITableViewDelegate, UITableVi
   @IBOutlet var iconLabel: UILabel!
   @IBOutlet weak var topBar: UIView!
   
-  // MARK: - Actions  
+  // MARK: - Actions
   @IBAction func logOut(_ sender: Any) {
     // Deauth the user
     TCPAuthenticationController.logOut()
@@ -25,12 +25,14 @@ class TCPJourneyBlogController: UIViewController, UITableViewDelegate, UITableVi
   
   // MARK: - Properties
   var journeyPosts: [Journey] = []
+  var selectedJourney: Journey?
 
   // MARK: - Methods
   override func viewDidLoad() {
     super.viewDidLoad()
-    
-    self.journeyTable?.contentInset = UIEdgeInsetsMake(self.topBar.frame.size.height, 0, 0, 0)
+
+    // Move the journeys below the top bar (so they can blur behind it)
+    self.journeyTable?.contentInset = UIEdgeInsetsMake(self.topBar.frame.size.height + 8, 0, 8, 0)
     
     // TODO: Make sure we always have a journey table
     guard journeyTable != nil else {
@@ -80,7 +82,18 @@ class TCPJourneyBlogController: UIViewController, UITableViewDelegate, UITableVi
     // Dispose of any resources that can be recreated.
   }
   
-  // MARK: - UITableViewDataSource Methods
+  override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+    // If we're going to a TCPJourneyPostController send the selected journey over
+    if let journeyPostController = segue.destination as? TCPJourneyPostController {
+      // Pass the journey post to the next view
+      journeyPostController.selectedJourney = self.selectedJourney
+      
+      // Because OCD
+      self.selectedJourney = nil
+    }
+  }
+  
+  // MARK: - UITableViewDataSource
   func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
     let journeyPost = tableView.dequeueReusableCell(withIdentifier: "journeyPostCell") as! TCPJourneyPost
     let journey = self.journeyPosts[indexPath.row]
@@ -89,15 +102,15 @@ class TCPJourneyBlogController: UIViewController, UITableViewDelegate, UITableVi
     for titleLabel in journeyPost.titleLabels {
       titleLabel.text = "TC Journey to " + journey.title
     }
-    
+
     for body in journeyPost.bodies {
       body.text = journey.body
     }
-    
+
     for travelerName in journeyPost.travelerNames {
       travelerName.text = journey.travelerName
     }
-    
+
     return journeyPost
   }
   
@@ -179,5 +192,13 @@ class TCPJourneyBlogController: UIViewController, UITableViewDelegate, UITableVi
     }
     
     journeyTask.resume()
+  }
+  
+  // MARK: - UITableViewDelegate
+  func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+    // Remember the selected journey post so we can send it to the next view
+    self.selectedJourney = self.journeyPosts[indexPath.row]
+    
+    performSegue(withIdentifier: "journeyPostSegue", sender: self)
   }
 }

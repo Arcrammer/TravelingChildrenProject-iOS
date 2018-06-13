@@ -30,10 +30,13 @@ class TCPJourneyBlogController: UIViewController, UITableViewDelegate, UITableVi
   // MARK: - Methods
   override func viewDidLoad() {
     super.viewDidLoad()
-
-    // Move the journeys below the top bar (so they can blur behind it)
-    self.journeyTable?.contentInset = UIEdgeInsetsMake(self.topBar.frame.size.height + 8, 0, 8, 0)
     
+    if let topBar = self.topBar,
+    let journeyTable = self.journeyTable {
+      // Move the journeys below the top bar (so they can blur behind it)
+      journeyTable.contentInset = UIEdgeInsetsMake(topBar.frame.size.height + 8, 0, 8, 0)
+    }
+
     // TODO: Make sure we always have a journey table
     guard journeyTable != nil else {
       print("No journey table view in this view controller")
@@ -45,9 +48,6 @@ class TCPJourneyBlogController: UIViewController, UITableViewDelegate, UITableVi
   }
 
   override func viewWillAppear(_ animated: Bool) {
-    self.title = "Journey Blog"
-    self.navigationController?.navigationBar.barTintColor = UIColor.TCPBrown
-
     // TODO: Make sure we always have a journey table
     guard journeyTable != nil else {
       print("No journey table view in this view controller")

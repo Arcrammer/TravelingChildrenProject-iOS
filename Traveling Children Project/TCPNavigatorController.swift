@@ -19,7 +19,7 @@ class TCPNavigatorController: UIViewController, UITableViewDelegate, UITableView
     "Travel Tokens",
     "Sign Out"
   ]
-  
+
   // MARK: - Methods
   override func viewWillAppear(_ animated: Bool) {
     // Make the tab bar orange

@@ -92,7 +92,7 @@ class TCPJourneyBlogController: UIViewController, UITableViewDelegate, UITableVi
       self.selectedJourney = nil
     }
   }
-  
+
   // MARK: - UITableViewDataSource
   func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
     let journeyPost = tableView.dequeueReusableCell(withIdentifier: "journeyPostCell") as! TCPJourneyPost

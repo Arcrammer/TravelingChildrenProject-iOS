@@ -6,21 +6,20 @@
 //
 import UIKit
 
-class TCPReadingLogController: UIViewController, UITableViewDataSource {
+class TCPReadingLogController: UIViewController, TCPParentPINCodeDelegate, UITableViewDataSource {
   // MARK: - Outlets
   @IBOutlet weak var iconLabel: UILabel!
   @IBOutlet weak var containerView: UIView!
   @IBOutlet weak var monthlyReadingGoalLabelContainer: UIView!
   @IBOutlet weak var monthlyReadingGoalLabel: UILabel!
   
-  // MARK: - Properties
-  var travelers: Array<Dictionary<String, Any>> = []
-  
-  // MARK: - Actions
-  @IBAction func close(_ sender: Any) {
-    dismiss(animated: true, completion: nil)
+  @IBAction func pop(_ sender: UIButton) {
+    self.navigationController?.popViewController(animated: true)
   }
   
+  // MARK: - Properties
+  var travelers: Array<Dictionary<String, Any>> = []
+
   // MARK: - Methods
   override func viewWillAppear(_ animated: Bool) {
     // Apply rounded corners to the container view
@@ -45,7 +44,20 @@ class TCPReadingLogController: UIViewController, UITableViewDataSource {
     self.iconLabel.text = "\u{f036}"
   }
   
-  // MARK: - UITableViewDataSource Methods
+  override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+    // Set this object as the delegate if we're going to the parent PIN view
+    if let parentPINCodeController = segue.destination as? TCPParentPINCodeViewController {
+      parentPINCodeController.delegate = self
+    }
+  }
+  
+  // MARK: - TCPParentPINCodeDelegate
+  func parentPINWasSuccessful() {
+    // Present the reading log
+    performSegue(withIdentifier: "readingLogSegue", sender: self)
+  }
+
+  // MARK: - UITableViewDataSource
   func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
     let cell = tableView.dequeueReusableCell(withIdentifier: "readingLogCell")!
     let traveler = self.travelers[indexPath.row]

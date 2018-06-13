@@ -6,13 +6,17 @@
 //
 import UIKit
 
+protocol TCPParentPINCodeDelegate {
+  func parentPINWasSuccessful()
+}
+
 class TCPParentPINCodeViewController: UIViewController, UITextFieldDelegate {
   // MARK: - Outlets
   @IBOutlet weak var firstPasscodeField: UITextField!
   
   // MARK: - Actions
   @IBAction func dismiss(_ sender: UIButton) {
-    self.navigationController?.popViewController(animated: true)
+    dismiss(animated: true, completion: nil)
   }
   
   @IBAction func passcodeFieldValueChanged(_ sender: UITextField) {
@@ -32,11 +36,26 @@ class TCPParentPINCodeViewController: UIViewController, UITextFieldDelegate {
   }
 
   @IBAction func submitPasscode() {
-    print("We're going to pretend the passcode was right")
-    performSegue(withIdentifier: "TCPEditReadingLogSegue", sender: self)
+    guard self.delegate != nil else {
+      return
+    }
+    
+    // Tell the delgate the passcode was successful
+    print("Pretending the parent PIN was successful")
+    self.delegate!.parentPINWasSuccessful()
+    
+    // Dismiss the parent PIN view
+    dismiss(animated: true, completion: nil)
   }
   
+  // MARK: - Properties
+  var delegate: TCPParentPINCodeDelegate?
+  
   // MARK: - Methods
+  required init?(coder aDecoder: NSCoder) {
+    super.init(coder: aDecoder)
+  }
+  
   override func viewDidLoad() {
     // Send the user to the first passcode field
     self.firstPasscodeField.becomeFirstResponder()

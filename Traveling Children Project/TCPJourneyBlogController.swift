@@ -34,7 +34,7 @@ class TCPJourneyBlogController: UIViewController, UITableViewDelegate, UITableVi
     if let topBar = self.topBar,
     let journeyTable = self.journeyTable {
       // Move the journeys below the top bar (so they can blur behind it)
-      journeyTable.contentInset = UIEdgeInsetsMake(topBar.frame.size.height + 8, 0, 8, 0)
+      journeyTable.contentInset = UIEdgeInsetsMake(topBar.frame.size.height + 4, 0, 4, 0)
     }
 
     // TODO: Make sure we always have a journey table
@@ -60,12 +60,16 @@ class TCPJourneyBlogController: UIViewController, UITableViewDelegate, UITableVi
     if (self.iconLabel != nil) {
       self.iconLabel.font = UIFont(name: "FontAwesome", size: 20)!
 
+      // Icon labels
       switch self.tabBarController!.selectedIndex {
       case 0:
-        self.iconLabel.text = "\u{f124}"
+        // Home for 'Journeys'
+        self.iconLabel.text = "\u{f015}"
       case 1:
-        self.iconLabel.text = "\u{f067}"
+        // Location arrow for 'My Journeys'
+        self.iconLabel.text = "\u{f124}"
       case 2:
+        // Heart for 'Liked Journeys'
         self.iconLabel.text = "\u{f004}"
       default:
         return

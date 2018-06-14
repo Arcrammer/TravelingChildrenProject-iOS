@@ -29,7 +29,7 @@ class TCPJourneyPostController: UIViewController {
     }
     
     // Update the view data
-    self.titleHeader.text! += selectedJourney.title
+    self.titleHeader.text! += " " + selectedJourney.title
     self.body.text = selectedJourney.body
     self.travelerName.text = selectedJourney.travelerName
   }

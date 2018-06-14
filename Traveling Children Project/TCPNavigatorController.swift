@@ -15,8 +15,8 @@ class TCPNavigatorController: UIViewController, UITableViewDelegate, UITableView
   let menuLabels = [
     "Passport Profile",
     "Reading Log",
-    "Downloads",
-    "Travel Tokens",
+//    "Downloads",
+//    "Travel Tokens",
     "Sign Out"
   ]
 
@@ -31,9 +31,10 @@ class TCPNavigatorController: UIViewController, UITableViewDelegate, UITableView
     let navigatorCell = tableView.dequeueReusableCell(withIdentifier: "navigatorCell")!
     navigatorCell.textLabel!.text = self.menuLabels[indexPath.row].uppercased()
     navigatorCell.textLabel!.textColor = UIColor.white
-    navigatorCell.textLabel!.font = UIFont(name: "ProximaSansSemibold", size: 20)
+    navigatorCell.textLabel!.font = UIFont(name: "ProximaSansBold", size: 20)
     navigatorCell.selectedBackgroundView = UIView()
     navigatorCell.selectedBackgroundView!.backgroundColor = UIColor.TCPLightBrown
+    navigatorCell.layoutMargins = UIEdgeInsets.zero
     
     // Custom (thicker) separators
     let separatorWidth: CGFloat = 2

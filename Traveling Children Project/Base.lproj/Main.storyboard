@@ -47,7 +47,7 @@
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     </imageView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eRz-4z-r42">
-                                        <rect key="frame" x="0.0" y="8" width="181" height="34"/>
+                                        <rect key="frame" x="0.0" y="8.6666666666666643" width="186" height="33"/>
                                         <fontDescription key="fontDescription" name="ProximaNova-Bold" family="Proxima Nova" pointSize="18"/>
                                         <state key="normal" title="« PASSPORT PROFILE">
                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
@@ -57,7 +57,7 @@
                                         </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" tag="1" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="A8f-2G-DOj">
-                                        <rect key="frame" x="189" y="8" width="35" height="35"/>
+                                        <rect key="frame" x="194" y="8" width="35" height="35"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="35" id="6NC-bC-0YJ"/>
                                             <constraint firstAttribute="height" constant="35" id="GWX-7d-51C"/>
@@ -404,7 +404,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iP8-zm-Phj" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3999" y="-54"/>
+            <point key="canvasLocation" x="3018" y="1069"/>
         </scene>
         <!--Reading Log Controller-->
         <scene sceneID="YsC-0m-60q">
@@ -434,7 +434,7 @@
                                         </constraints>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" tag="1" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UQL-Xf-6sJ">
-                                        <rect key="frame" x="149" y="8" width="35" height="35"/>
+                                        <rect key="frame" x="151" y="8" width="35" height="35"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="35" id="GVN-G9-ov5"/>
                                             <constraint firstAttribute="height" constant="35" id="vF2-cg-Y86"/>
@@ -444,7 +444,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" tag="2" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Traveling Traveler" textAlignment="right" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsLetterSpacingToFitWidth="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="os5-7X-3kJ">
-                                        <rect key="frame" x="236" y="8.3333333333333357" width="80" height="34.333333333333336"/>
+                                        <rect key="frame" x="236" y="9.3333333333333357" width="80" height="32.666666666666664"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="80" id="Pl6-t8-oav"/>
                                         </constraints>
@@ -453,7 +453,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="adH-Y7-12b">
-                                        <rect key="frame" x="8" y="8.6666666666666643" width="133" height="34"/>
+                                        <rect key="frame" x="8" y="9.3333333333333357" width="135" height="33"/>
                                         <fontDescription key="fontDescription" name="ProximaNova-Bold" family="Proxima Nova" pointSize="18"/>
                                         <state key="normal" title="« READING LOG">
                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
@@ -548,7 +548,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="f4A-wp-YhB" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3999" y="740"/>
+            <point key="canvasLocation" x="3018" y="1876"/>
         </scene>
         <!--Reading Log Controller-->
         <scene sceneID="6qG-h4-DIj">
@@ -578,7 +578,7 @@
                                         </constraints>
                                     </imageView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="F13-Oo-cPP">
-                                        <rect key="frame" x="8" y="8" width="133" height="34"/>
+                                        <rect key="frame" x="8" y="8.6666666666666643" width="135" height="33"/>
                                         <fontDescription key="fontDescription" name="ProximaNova-Bold" family="Proxima Nova" pointSize="18"/>
                                         <state key="normal" title="« READING LOG">
                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
@@ -588,7 +588,7 @@
                                         </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" tag="1" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SbK-SC-fvt">
-                                        <rect key="frame" x="149" y="8" width="35" height="35"/>
+                                        <rect key="frame" x="151" y="8" width="35" height="35"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="35" id="heH-X6-dpI"/>
                                             <constraint firstAttribute="height" constant="35" id="sjy-iK-ZCH"/>
@@ -598,7 +598,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" tag="2" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Traveling Traveler" textAlignment="right" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsLetterSpacingToFitWidth="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FAZ-Pn-k35">
-                                        <rect key="frame" x="236" y="8.3333333333333357" width="80" height="34.333333333333336"/>
+                                        <rect key="frame" x="236" y="9.3333333333333357" width="80" height="32.666666666666664"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="80" id="vfo-Ih-8dR"/>
                                         </constraints>
@@ -679,7 +679,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0wI-JN-NrC" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5471" y="740"/>
+            <point key="canvasLocation" x="4522" y="1876"/>
         </scene>
         <!--TCPParentPINCodeView-->
         <scene sceneID="hdC-gm-Zyb">
@@ -687,7 +687,7 @@
                 <viewControllerPlaceholder storyboardName="References" referencedIdentifier="TCPParentPINCodeView" id="wgr-gT-cyj" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="78T-N1-1hA" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4728" y="686"/>
+            <point key="canvasLocation" x="3766" y="1780"/>
         </scene>
         <!--Journey Blog Controller-->
         <scene sceneID="hNz-n2-bh7">
@@ -820,13 +820,13 @@
                                         </constraints>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="JOURNEY BLOG" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PIa-77-FUv">
-                                        <rect key="frame" x="0.0" y="13.000000000000002" width="150" height="24.666666666666671"/>
+                                        <rect key="frame" x="0.0" y="13.666666666666663" width="154.33333333333334" height="23.333333333333329"/>
                                         <fontDescription key="fontDescription" name="ProximaNova-Bold" family="Proxima Nova" pointSize="20"/>
                                         <color key="textColor" red="0.23137254900000001" green="0.14117647059999999" blue="0.086274509799999996" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" tag="1" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="h0a-A2-YuH">
-                                        <rect key="frame" x="158" y="7.6666666666666643" width="35" height="35"/>
+                                        <rect key="frame" x="162.33333333333334" y="7.6666666666666643" width="35" height="35"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="35" id="Gbg-06-Z7q"/>
                                             <constraint firstAttribute="width" constant="35" id="oCk-PN-mqq"/>
@@ -843,7 +843,7 @@
                                         </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" tag="2" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsLetterSpacingToFitWidth="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jjZ-NP-21T">
-                                        <rect key="frame" x="236" y="10.666666666666663" width="80" height="29.333333333333329"/>
+                                        <rect key="frame" x="236" y="11.333333333333336" width="80" height="28"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="80" id="Pim-xc-pzA"/>
                                         </constraints>
@@ -1033,13 +1033,13 @@
                                         </constraints>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="MY JOURNEYS" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WhH-Qj-Euk">
-                                        <rect key="frame" x="0.0" y="13.000000000000002" width="138.66666666666666" height="24.666666666666671"/>
+                                        <rect key="frame" x="0.0" y="13.666666666666663" width="142.33333333333334" height="23.333333333333329"/>
                                         <fontDescription key="fontDescription" name="ProximaNova-Bold" family="Proxima Nova" pointSize="20"/>
                                         <color key="textColor" red="0.23137254900000001" green="0.14117647059999999" blue="0.086274509799999996" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" tag="1" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pFz-gB-4Ln">
-                                        <rect key="frame" x="146.66666666666666" y="8" width="35" height="35"/>
+                                        <rect key="frame" x="150.33333333333334" y="8" width="35" height="35"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="35" id="eMB-tb-wlu"/>
                                             <constraint firstAttribute="width" constant="35" id="yTs-V3-LLt"/>
@@ -1049,7 +1049,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" tag="2" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Traveling Traveler" textAlignment="right" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsLetterSpacingToFitWidth="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WE7-ic-vIi">
-                                        <rect key="frame" x="236" y="10.333333333333334" width="80" height="29.333333333333329"/>
+                                        <rect key="frame" x="236" y="11" width="80" height="28"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="80" id="2g7-ER-DDh"/>
                                         </constraints>
@@ -1098,16 +1098,17 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="BDr-kG-h92"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="" image="location" id="cPa-gy-q4n"/>
+                    <navigationItem key="navigationItem" id="BYU-3z-gR1"/>
                     <connections>
                         <outlet property="iconLabel" destination="pFz-gB-4Ln" id="vOK-tk-oVH"/>
                         <outlet property="journeyTable" destination="QB7-yU-Bdi" id="Dxh-uG-ybk"/>
                         <outlet property="topBar" destination="5JF-It-tJk" id="gu5-8O-OAc"/>
+                        <segue destination="62E-b8-Mjc" kind="show" identifier="journeyPostSegue" id="SCo-B7-zlh"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4Nw-L8-lE0" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1072.8" y="332.51231527093597"/>
+            <point key="canvasLocation" x="2508" y="-364"/>
         </scene>
         <!--Authentication Controller-->
         <scene sceneID="22I-fw-MNS">
@@ -1465,7 +1466,7 @@
                     </connections>
                 </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="0.0" y="-741"/>
+            <point key="canvasLocation" x="-1" y="-828"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="yl2-sM-qoP">
@@ -1480,9 +1481,9 @@
                     </tabBar>
                     <connections>
                         <segue destination="eVm-bJ-mby" kind="relationship" relationship="viewControllers" id="sKt-sl-ih4"/>
-                        <segue destination="8rJ-Kc-sve" kind="relationship" relationship="viewControllers" id="lzU-1b-eKA"/>
+                        <segue destination="Hs4-KX-P0I" kind="relationship" relationship="viewControllers" id="lzU-1b-eKA"/>
                         <segue destination="wCE-rY-zMY" kind="relationship" relationship="viewControllers" id="wvA-bx-iAs"/>
-                        <segue destination="bzO-15-BLz" kind="relationship" relationship="viewControllers" id="cjB-fA-ttK"/>
+                        <segue destination="TTk-Bl-3y9" kind="relationship" relationship="viewControllers" id="cjB-fA-ttK"/>
                         <segue destination="4zb-Ms-dpS" kind="relationship" relationship="viewControllers" id="CLa-df-dus"/>
                     </connections>
                 </tabBarController>
@@ -1517,14 +1518,14 @@
                                             <constraint firstAttribute="height" constant="35" id="oj5-Qr-2mL"/>
                                         </constraints>
                                     </imageView>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="COMPOSE JOURNEY" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jYF-YH-Wmv">
-                                        <rect key="frame" x="0.0" y="13" width="196" height="25"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="COMPOSE JOURNEY" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jYF-YH-Wmv">
+                                        <rect key="frame" x="0.0" y="13.999999999999998" width="199.33333333333334" height="23.333333333333329"/>
                                         <fontDescription key="fontDescription" name="ProximaNova-Bold" family="Proxima Nova" pointSize="20"/>
                                         <color key="textColor" red="0.23137254900000001" green="0.14117647059999999" blue="0.086274509799999996" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" tag="1" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RUa-zZ-nZA">
-                                        <rect key="frame" x="192.66666666666666" y="7.6666666666666643" width="35" height="35"/>
+                                        <rect key="frame" x="207.33333333333334" y="7.6666666666666643" width="35" height="35"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="35" id="ffe-Tb-KAz"/>
                                             <constraint firstAttribute="width" constant="35" id="vaQ-PN-cBT"/>
@@ -1534,9 +1535,9 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" tag="2" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsLetterSpacingToFitWidth="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iCf-zc-apd">
-                                        <rect key="frame" x="236" y="10.666666666666663" width="80" height="29.333333333333329"/>
+                                        <rect key="frame" x="266" y="11.333333333333336" width="50" height="28"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" constant="80" id="ter-CF-tKQ"/>
+                                            <constraint firstAttribute="width" constant="50" id="ter-CF-tKQ"/>
                                         </constraints>
                                         <attributedString key="attributedText">
                                             <fragment content="Traveling Traveler">
@@ -1582,7 +1583,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UL6-7d-VdY" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1072.8" y="-407.14285714285717"/>
+            <point key="canvasLocation" x="-2" y="1068"/>
         </scene>
         <!--Journey Post Controller-->
         <scene sceneID="sKP-JA-kgH">
@@ -1612,7 +1613,7 @@
                                         </constraints>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" tag="2" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsLetterSpacingToFitWidth="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pgE-mO-NWO">
-                                        <rect key="frame" x="236" y="10.666666666666663" width="80" height="29.333333333333329"/>
+                                        <rect key="frame" x="236" y="11.333333333333336" width="80" height="28"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="80" id="xwM-4P-9Kq"/>
                                         </constraints>
@@ -1627,7 +1628,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="C0C-qs-Yni">
-                                        <rect key="frame" x="0.0" y="8.6666666666666643" width="149" height="34"/>
+                                        <rect key="frame" x="0.0" y="9.3333333333333357" width="153" height="33"/>
                                         <fontDescription key="fontDescription" name="ProximaNova-Bold" family="Proxima Nova" pointSize="18"/>
                                         <state key="normal" title="« JOURNEY BLOG">
                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
@@ -1729,7 +1730,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JS2-eF-cvS" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3020" y="-1177"/>
+            <point key="canvasLocation" x="4521" y="-364"/>
         </scene>
         <!--Journey Blog Controller-->
         <scene sceneID="9TO-KR-3L2">
@@ -1759,13 +1760,13 @@
                                         </constraints>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="LIKED JOURNEYS" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5c4-fH-Vmg">
-                                        <rect key="frame" x="0.0" y="13.000000000000002" width="163.33333333333334" height="24.666666666666671"/>
+                                        <rect key="frame" x="0.0" y="13.666666666666663" width="168" height="23.333333333333329"/>
                                         <fontDescription key="fontDescription" name="ProximaNova-Bold" family="Proxima Nova" pointSize="20"/>
                                         <color key="textColor" red="0.23137254900000001" green="0.14117647059999999" blue="0.086274509799999996" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" tag="1" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qlZ-XU-W1Z">
-                                        <rect key="frame" x="171.33333333333334" y="7.6666666666666643" width="35" height="35"/>
+                                        <rect key="frame" x="176" y="7.6666666666666643" width="35" height="35"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="35" id="8dZ-Qh-5wE"/>
                                             <constraint firstAttribute="height" constant="35" id="8fe-tp-But"/>
@@ -1775,7 +1776,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" tag="2" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsLetterSpacingToFitWidth="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FqT-NH-yvz">
-                                        <rect key="frame" x="236" y="10.666666666666663" width="80" height="29.333333333333329"/>
+                                        <rect key="frame" x="236" y="11.333333333333336" width="80" height="28"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="80" id="gtF-aJ-Fs2"/>
                                         </constraints>
@@ -1922,16 +1923,17 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="3Wz-BY-LCK"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="" image="heart" id="ufm-pm-3dL"/>
+                    <navigationItem key="navigationItem" id="Go3-7A-u6i"/>
                     <connections>
                         <outlet property="iconLabel" destination="qlZ-XU-W1Z" id="i3i-kw-Wab"/>
                         <outlet property="journeyTable" destination="Arm-I3-LwG" id="M8a-55-Ubl"/>
                         <outlet property="topBar" destination="Aqg-P6-buu" id="JUI-y8-YYv"/>
+                        <segue destination="62E-b8-Mjc" kind="show" identifier="journeyPostSegue" id="13c-m0-xkD"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Umn-Pv-fEO" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1073" y="1069"/>
+            <point key="canvasLocation" x="2508" y="364"/>
         </scene>
         <!--Navigator Controller-->
         <scene sceneID="oIf-xb-0Ga">
@@ -1982,13 +1984,13 @@
                                         </constraints>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="NAVIGATOR" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5s7-xt-G7O">
-                                        <rect key="frame" x="0.0" y="13.000000000000002" width="112.66666666666667" height="24.666666666666671"/>
+                                        <rect key="frame" x="0.0" y="13.666666666666663" width="110.66666666666667" height="23.333333333333329"/>
                                         <fontDescription key="fontDescription" name="ProximaNova-Bold" family="Proxima Nova" pointSize="20"/>
                                         <color key="textColor" red="0.23137254900000001" green="0.14117647059999999" blue="0.086274509799999996" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" tag="1" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="y3C-8d-1NI">
-                                        <rect key="frame" x="120.66666666666666" y="7.6666666666666643" width="35" height="35"/>
+                                        <rect key="frame" x="118.66666666666669" y="7.6666666666666643" width="35" height="35"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="35" id="4de-6Y-KC4"/>
                                             <constraint firstAttribute="width" constant="35" id="9Li-uz-Nat"/>
@@ -1998,7 +2000,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" tag="2" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsLetterSpacingToFitWidth="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ySR-Yc-Bq7">
-                                        <rect key="frame" x="236" y="10.666666666666663" width="80" height="29.333333333333329"/>
+                                        <rect key="frame" x="236" y="11.333333333333336" width="80" height="28"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="80" id="rw8-Tp-KXY"/>
                                         </constraints>
@@ -2053,7 +2055,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xa6-V7-lSY" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3009" y="343"/>
+            <point key="canvasLocation" x="2030" y="1068"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="dMg-zw-wfD">
@@ -2091,7 +2093,45 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="R1t-ke-DPc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2050" y="341"/>
+            <point key="canvasLocation" x="1073" y="1068"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="NUg-Ol-xUr">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" navigationBarHidden="YES" id="Hs4-KX-P0I" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="" image="location" id="cPa-gy-q4n"/>
+                    <toolbarItems/>
+                    <nil key="simulatedTopBarMetrics"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="TFU-2d-s0F">
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="8rJ-Kc-sve" kind="relationship" relationship="rootViewController" id="hwS-cb-f4X"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="hR8-LA-oLW" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1551" y="-364"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="tBn-0w-bNH">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" navigationBarHidden="YES" id="TTk-Bl-3y9" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="" image="heart" id="ufm-pm-3dL"/>
+                    <toolbarItems/>
+                    <nil key="simulatedTopBarMetrics"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="6mZ-yr-R4f">
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="bzO-15-BLz" kind="relationship" relationship="rootViewController" id="hPJ-wi-4H6"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="gOL-SO-q4U" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1550" y="364"/>
         </scene>
     </scenes>
     <resources>
@@ -2102,4 +2142,7 @@
         <image name="location" width="25" height="25"/>
         <image name="plus-circle" width="60" height="60"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="13c-m0-xkD"/>
+    </inferredMetricsTieBreakers>
 </document>

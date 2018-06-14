@@ -159,6 +159,9 @@ class TCPJourneyBlogController: UIViewController, UITableViewDelegate, UITableVi
         return
       }
 
+      // Clear out all the old journey posts from last time we grabbed data from the server
+      self.journeyPosts.removeAll(keepingCapacity: false)
+      
       for serializedJourney in journeys {
         guard let title = serializedJourney["title"] as? String,
           let travelerName = serializedJourney["traveler_name"] as? String,

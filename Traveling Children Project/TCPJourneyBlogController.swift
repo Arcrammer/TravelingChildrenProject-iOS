@@ -13,6 +13,10 @@ class TCPJourneyBlogController: UIViewController, UITableViewDelegate, UITableVi
   @IBOutlet weak var topBar: UIView!
   
   // MARK: - Actions
+  @IBAction func reloadJourneys(_ sender: Any) {
+    self.loadJourneys()
+  }
+  
   @IBAction func logOut(_ sender: Any) {
     // Deauth the user
     TCPAuthenticationController.logOut()
@@ -97,6 +101,90 @@ class TCPJourneyBlogController: UIViewController, UITableViewDelegate, UITableVi
     }
   }
 
+  /**
+   * loadJourneys()
+   *
+   * Grabs journeys from the server
+   */
+  private func loadJourneys() {
+    // Determine which URL to send the request to based on which view this object is
+    var journeyRequestURL: String = "http://" + kServerDomain + "/journeys"
+    if let title = self.title {
+      switch title {
+      case "My Journeys":
+        journeyRequestURL = "http://" + kServerDomain + "/journeys/created"
+        break
+        
+      default:
+        return
+      }
+    }
+
+    var journeyRequest = URLRequest(url: URL(string: journeyRequestURL)!)
+    journeyRequest.httpMethod = "POST"
+    print("Requesting journeys from \(journeyRequestURL)...")
+
+    // Send the Passport ID too
+    let userData = NSKeyedUnarchiver.unarchiveObject(with: UserDefaults.standard.object(forKey: "Traveler") as! Data) as! [String: AnyObject]
+    guard let passportID = userData["passport_id"] as? String else {
+      return
+    }
+    journeyRequest.httpBody = "passport_id=\(passportID)".data(using: String.Encoding.utf8)
+
+    let journeyTask = URLSession.shared.dataTask(with: journeyRequest) {
+      data, response, error in
+      
+      // Make sure there aren't any errors
+      guard error == nil else {
+        let errorAlertController = UIAlertController(title: "Something Happened", message: error!.localizedDescription, preferredStyle: .actionSheet)
+        errorAlertController.addAction(UIAlertAction(title: "Try Again", style: .default, handler: {
+          (action: UIAlertAction) in
+          self.loadJourneys()
+        }))
+        errorAlertController.addAction(UIAlertAction(title: "Close", style: .cancel, handler: nil))
+        self.present(errorAlertController, animated: true, completion: nil)
+        
+        return
+      }
+      
+      // Make sure there's data
+      guard let data = data else {
+        print("No data in that request... :/")
+        return
+      }
+      
+      // Make sure there are journeys
+      guard let journeys = try? JSONSerialization.jsonObject(with: data, options: []) as! Array<[String: Any]> else {
+        print("Couldn't serialize journeys to JSON")
+        return
+      }
+
+      for serializedJourney in journeys {
+        guard let title = serializedJourney["title"] as? String,
+          let travelerName = serializedJourney["traveler_name"] as? String,
+          let body = serializedJourney["body"] as? String else {
+            print("Missing journey data for journey with _id:", serializedJourney["_id"]!)
+            return
+        }
+        
+        let journeyPost = Journey(
+          title: title,
+          travelerName: "Traveling " + travelerName,
+          body: body
+        )
+        
+        self.journeyPosts.insert(journeyPost, at: self.journeyPosts.count)
+      }
+      
+      // Reload table view data
+      DispatchQueue.main.async(execute: {
+        self.journeyTable!.reloadData()
+      })
+    }
+    
+    journeyTask.resume()
+  }
+
   // MARK: - UITableViewDataSource
   func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
     let journeyPost = tableView.dequeueReusableCell(withIdentifier: "journeyPostCell") as! TCPJourneyPost
@@ -131,71 +219,6 @@ class TCPJourneyBlogController: UIViewController, UITableViewDelegate, UITableVi
   
   func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
     return self.journeyPosts.count
-  }
-  
-  /**
-   * loadJourneys()
-   *
-   * Grabs journeys from the server
-   */
-  private func loadJourneys() {
-    print("Requesting journeys from \(kServerDomain)...")
-    
-    var journeyRequest = URLRequest(url: URL(string: "http://" + kServerDomain + "/journeys")!)
-    journeyRequest.httpMethod = "POST"
-    
-    let journeyTask = URLSession.shared.dataTask(with: journeyRequest) {
-      data, response, error in
-      
-      // Make sure there aren't any errors
-      guard error == nil else {
-        let errorAlertController = UIAlertController(title: "Something Happened", message: error!.localizedDescription, preferredStyle: .actionSheet)
-        errorAlertController.addAction(UIAlertAction(title: "Try Again", style: .default, handler: {
-          (action: UIAlertAction) in
-          self.loadJourneys()
-        }))
-        errorAlertController.addAction(UIAlertAction(title: "Close", style: .cancel, handler: nil))
-        self.present(errorAlertController, animated: true, completion: nil)
-        
-        return
-      }
-      
-      // Make sure there's data
-      guard let data = data else {
-        print("No data in that request... :/")
-        return
-      }
-      
-      // Make sure there are journeys
-      guard let journeys = try? JSONSerialization.jsonObject(with: data, options: []) as! Array<[String: Any]> else {
-        print("Couldn't serialize journeys to JSON")
-        return
-      }
-      
-      for serializedJourney in journeys {
-        guard let title = serializedJourney["title"] as? String,
-          let travelerName = serializedJourney["traveler_name"] as? String,
-          let body = serializedJourney["body"] as? String else {
-            print("Missing journey data for journey with _id:", serializedJourney["_id"]!)
-            return
-        }
-        
-        let journeyPost = Journey(
-          title: title,
-          travelerName: "Traveling " + travelerName,
-          body: body
-        )
-        
-        self.journeyPosts.insert(journeyPost, at: self.journeyPosts.count)
-      }
-      
-      // Reload table view data
-      DispatchQueue.main.async(execute: {
-        self.journeyTable!.reloadData()
-      })
-    }
-    
-    journeyTask.resume()
   }
   
   // MARK: - UITableViewDelegate

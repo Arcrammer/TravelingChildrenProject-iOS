@@ -10,16 +10,22 @@ import UIKit
 
 class TCPComposeJourneyController: UIViewController {
   // MARK: - Outlets
-  @IBOutlet weak var iconLabel: UILabel!
+  @IBOutlet var iconLabel: UILabel!
   
   // MARK: - Methods
   required init?(coder aDecoder: NSCoder) {
     super.init(coder: aDecoder)
-
+  }
+  
+  override func viewDidLoad() {
     // Set the icon
-    self.iconLabel.font = UIFont(name: "FontAwesome", size: 20)!
-
-    // Item label
-    self.iconLabel.text = "\u{f067}"
+    if (self.iconLabel != nil) {
+      self.iconLabel.font = UIFont(name: "FontAwesome", size: 20)!
+      
+      // Item label
+      self.iconLabel.text = "\u{f067}"
+    }
+    
+    
   }
 }

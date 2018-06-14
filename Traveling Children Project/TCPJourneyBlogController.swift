@@ -68,7 +68,7 @@ class TCPJourneyBlogController: UIViewController, UITableViewDelegate, UITableVi
       case 1:
         // Location arrow for 'My Journeys'
         self.iconLabel.text = "\u{f124}"
-      case 2:
+      case 3:
         // Heart for 'Liked Journeys'
         self.iconLabel.text = "\u{f004}"
       default:

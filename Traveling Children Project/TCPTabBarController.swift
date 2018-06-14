@@ -15,4 +15,27 @@ class TCPTabBarController: UITabBarController {
     super.didReceiveMemoryWarning()
     // Dispose of any resources that can be recreated.
   }
+  
+  override func tabBar(_ tabBar: UITabBar, didSelect item: UITabBarItem) {
+    // Change the bar colors by the selected view
+    switch item.tag {
+      case 3:
+        // Compose Journey
+        self.tabBar.barTintColor = UIColor.TCPBrown
+        self.tabBar.tintColor = UIColor.TCPOrange
+        break
+
+      case 5:
+        // Navigator
+        self.tabBar.barTintColor = UIColor.TCPOrange
+        self.tabBar.tintColor = UIColor.TCPYellow
+        break
+      
+      default:
+        // Everything else
+        self.tabBar.barTintColor = UIColor.TCPBrown
+        self.tabBar.tintColor = UIColor.TCPYellow
+        break
+    }
+  }
 }

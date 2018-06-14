@@ -444,7 +444,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" tag="2" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Traveling Traveler" textAlignment="right" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsLetterSpacingToFitWidth="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="os5-7X-3kJ">
-                                        <rect key="frame" x="236" y="9.3333333333333357" width="80" height="32.666666666666664"/>
+                                        <rect key="frame" x="236" y="9" width="80" height="32.666666666666664"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="80" id="Pl6-t8-oav"/>
                                         </constraints>
@@ -598,7 +598,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" tag="2" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Traveling Traveler" textAlignment="right" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsLetterSpacingToFitWidth="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FAZ-Pn-k35">
-                                        <rect key="frame" x="236" y="9.3333333333333357" width="80" height="32.666666666666664"/>
+                                        <rect key="frame" x="236" y="9" width="80" height="32.666666666666664"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="80" id="vfo-Ih-8dR"/>
                                         </constraints>
@@ -1508,13 +1508,13 @@
                                         </constraints>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="COMPOSE JOURNEY" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jYF-YH-Wmv">
-                                        <rect key="frame" x="0.0" y="13" width="175" height="25"/>
-                                        <fontDescription key="fontDescription" name="ProximaNova-Bold" family="Proxima Nova" pointSize="18"/>
+                                        <rect key="frame" x="0.0" y="13" width="196" height="25"/>
+                                        <fontDescription key="fontDescription" name="ProximaNova-Bold" family="Proxima Nova" pointSize="20"/>
                                         <color key="textColor" red="0.23137254900000001" green="0.14117647059999999" blue="0.086274509799999996" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" tag="1" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RUa-zZ-nZA">
-                                        <rect key="frame" x="187.66666666666666" y="7.6666666666666643" width="35" height="35"/>
+                                        <rect key="frame" x="192.66666666666666" y="7.6666666666666643" width="35" height="35"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="35" id="ffe-Tb-KAz"/>
                                             <constraint firstAttribute="width" constant="35" id="vaQ-PN-cBT"/>
@@ -1565,7 +1565,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="GVf-eq-RY2"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="" image="plus-circle" id="Gfg-rv-5n5"/>
+                    <tabBarItem key="tabBarItem" tag="3" title="" image="plus-circle" id="Gfg-rv-5n5"/>
                     <connections>
                         <outlet property="iconLabel" destination="RUa-zZ-nZA" id="GXH-O6-DT1"/>
                     </connections>
@@ -2068,7 +2068,7 @@
         <scene sceneID="Ped-4n-QSz">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" navigationBarHidden="YES" id="4zb-Ms-dpS" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="" image="ellipsis" id="1HB-vp-oet"/>
+                    <tabBarItem key="tabBarItem" tag="5" title="" image="ellipsis" id="1HB-vp-oet"/>
                     <toolbarItems/>
                     <nil key="simulatedTopBarMetrics"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="XkX-O3-MbY">

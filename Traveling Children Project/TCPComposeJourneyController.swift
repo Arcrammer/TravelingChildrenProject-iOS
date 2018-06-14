@@ -25,7 +25,5 @@ class TCPComposeJourneyController: UIViewController {
       // Item label
       self.iconLabel.text = "\u{f067}"
     }
-    
-    
   }
 }

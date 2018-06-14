@@ -21,11 +21,6 @@ class TCPNavigatorController: UIViewController, UITableViewDelegate, UITableView
   ]
 
   // MARK: - Methods
-  override func viewWillAppear(_ animated: Bool) {
-    // Make the tab bar orange
-    self.tabBarController!.tabBar.barTintColor = UIColor.TCPOrange
-  }
-  
   // MARK: - UITableViewDataSource Methods
   func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
     let navigatorCell = tableView.dequeueReusableCell(withIdentifier: "navigatorCell")!

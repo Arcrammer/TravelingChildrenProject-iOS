@@ -115,6 +115,10 @@ class TCPJourneyBlogController: UIViewController, UITableViewDelegate, UITableVi
         journeyRequestURL = "http://" + kServerDomain + "/journeys/created"
         break
         
+      case "Liked Journeys":
+        journeyRequestURL = "http://" + kServerDomain + "/journeys/liked"
+        break
+        
       default:
         return
       }
@@ -184,6 +188,8 @@ class TCPJourneyBlogController: UIViewController, UITableViewDelegate, UITableVi
         self.journeyTable!.reloadData()
       })
     }
+    
+    print(self.journeyPosts)
     
     journeyTask.resume()
   }

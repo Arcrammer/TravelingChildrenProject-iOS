@@ -13,6 +13,7 @@ class TCPJourneyPostController: UIViewController {
   @IBOutlet weak var titleHeader: UILabel!
   @IBOutlet weak var body: UITextView!
   @IBOutlet weak var travelerName: UILabel!
+  @IBOutlet weak var backgroundView: UIView!
   
   // MARK: - Actions
   @IBAction func pop(_ sender: UIButton) {
@@ -24,6 +25,10 @@ class TCPJourneyPostController: UIViewController {
   
   // MARK: - Methods
   override func viewDidLoad() {
+    self.backgroundView.layer.cornerRadius = 10
+    self.backgroundView.layer.masksToBounds = true
+
+    
     guard let selectedJourney = self.selectedJourney else {
       return
     }

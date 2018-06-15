@@ -12,27 +12,35 @@ class TCPReadingLogController: UIViewController, TCPParentPINCodeDelegate, UITab
   @IBOutlet weak var containerView: UIView!
   @IBOutlet weak var monthlyReadingGoalLabelContainer: UIView!
   @IBOutlet weak var monthlyReadingGoalLabel: UILabel!
+  @IBOutlet weak var readingLogTable: UITableView!
   
   @IBAction func pop(_ sender: UIButton) {
     self.navigationController?.popViewController(animated: true)
   }
   
   // MARK: - Properties
-  var travelers: Array<Dictionary<String, Any>> = []
+  var travelers: [[String:Any]] = []
 
   // MARK: - Methods
+  required init?(coder aDecoder: NSCoder) {
+    super.init(coder: aDecoder)
+  }
+  
   override func viewWillAppear(_ animated: Bool) {
     // Apply rounded corners to the container view
     self.containerView.layer.cornerRadius = 10
     self.containerView.layer.masksToBounds = true
     
-    if UserDefaults.standard.dictionary(forKey: "Traveler") != nil {
-      let userData = UserDefaults.standard.object(forKey: "Traveler") as! Dictionary<String, AnyObject>
-      if let travelers = userData["travelers"] as? Array<Dictionary<String, Any>> {
-        for traveler in travelers {
-          if traveler["currently_reading"] != nil {
-            self.travelers.append(traveler)
-          }
+    guard let userData = UserDefaults.standard.dictionary(forKey: "Traveler") else {
+      return
+    }
+
+    // Populate self.travelers from the UserDefaults
+    if let travelers = userData["travelers"] as? [[String: Any]] {
+      for traveler in travelers {
+        // Only add travelers who are currently reading
+        if traveler["currently_reading"] != nil {
+          self.travelers.append(traveler)
         }
       }
     }
@@ -49,6 +57,10 @@ class TCPReadingLogController: UIViewController, TCPParentPINCodeDelegate, UITab
     if let parentPINCodeController = segue.destination as? TCPParentPINCodeViewController {
       parentPINCodeController.delegate = self
     }
+  }
+  
+  override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+    self.view.endEditing(true)
   }
   
   // MARK: - TCPParentPINCodeDelegate
@@ -105,7 +117,7 @@ class TCPReadingLogController: UIViewController, TCPParentPINCodeDelegate, UITab
         travelerBookMinutes.text = currentBookMinutes.stringValue
       }
     }
-    
+
     return cell
   }
   

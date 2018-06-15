@@ -27,7 +27,6 @@ class TCPJourneyPostController: UIViewController {
   override func viewDidLoad() {
     self.backgroundView.layer.cornerRadius = 10
     self.backgroundView.layer.masksToBounds = true
-
     
     guard let selectedJourney = self.selectedJourney else {
       return

@@ -189,8 +189,6 @@ class TCPJourneyBlogController: UIViewController, UITableViewDelegate, UITableVi
       })
     }
     
-    print(self.journeyPosts)
-    
     journeyTask.resume()
   }
 

@@ -18,6 +18,8 @@ class TCPJourneyPost: UITableViewCell {
   // MARK: - Methods
   required init?(coder: NSCoder) {
     super.init(coder: coder)
+    
+    self.contentView.frame = self.frame
   }
   
   override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
@@ -26,7 +28,7 @@ class TCPJourneyPost: UITableViewCell {
   
   override func layoutSubviews() {
     super.layoutSubviews()
-    
+
     // Background radius
     for backgroundView in self.backgroundViews {
       backgroundView.layer.cornerRadius = 10

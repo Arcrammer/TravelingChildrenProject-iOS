@@ -167,17 +167,21 @@ class TCPJourneyBlogController: UIViewController, UITableViewDelegate, UITableVi
       self.journeyPosts.removeAll(keepingCapacity: false)
       
       for serializedJourney in journeys {
-        guard let title = serializedJourney["title"] as? String,
+        guard let headerImageFileName = serializedJourney["header_image_filename"] as? String,
+          let title = serializedJourney["title"] as? String,
           let travelerName = serializedJourney["traveler_name"] as? String,
-          let body = serializedJourney["body"] as? String else {
+          let body = serializedJourney["body"] as? String,
+          let tags = serializedJourney["tags"] as? String else {
             print("Missing journey data for journey with _id:", serializedJourney["_id"]!)
             return
         }
         
         let journeyPost = Journey(
+          headerImageFileName: headerImageFileName,
           title: title,
           travelerName: "Traveling " + travelerName,
-          body: body
+          body: body,
+          tags: tags
         )
         
         self.journeyPosts.insert(journeyPost, at: self.journeyPosts.count)

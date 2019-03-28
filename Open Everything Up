@@ -1,0 +1,5 @@
+#!/bin/bash
+open /Users/alexander/TravelingChildrenProject-iOS/Traveling\ Children\ Project.xcworkspace
+open /Users/alexander/TravelingChildrenProject-iOS/TCP_JourneyPassport_MobileApp.pdf
+cd /Users/alexander/Sites/TCP-Express
+gulp
